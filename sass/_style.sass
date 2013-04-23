@@ -1,0 +1,75 @@
+/* Typography */
+$base-font-size: 20px
+$base-line-height: 30px
++establish-baseline
+
+$heading-font: 'Exo', sans-serif
+$body-font: 'Roboto', sans-serif
+
+body
+    font-family: $body-font
+    font-weight: 300
+    letter-spacing: 0.02em
+
+b
+    font-weight: 500
+
+#{headings()}
+    font-family: $heading-font
+    font-weight: 700
+
+h1
+    +adjust-font-size-to(56px)
+
+/* Colors */
+// Named
+$dark-gray: #4f4f4f
+$light-gray: #9d9d9d
+$white: #fff
+$near-white: #ececec
+$black: #000
+$yellow: #FED100
+$yellow-orange: #FBBD1C
+$orange-yellow: #F4961F
+$orange: adjust-color($orange-yellow, $green: -20, $blue: -20)
+$red-orange: adjust-color($orange, $green: -20, $blue: -20)
+
+
+// Semantic
+$background-color: $dark-gray
+
+
+/* Layout */
+body
+    background: $background-color
+    > div
+        border-top: rgba($white, 0.3) 1px solid
+        padding: 1em
+        &:nth-child(2)
+            background: $yellow-orange
+        &:nth-child(3)
+            background: $orange-yellow
+        &:nth-child(4)
+            background: $orange
+        &:nth-child(5)
+            background: $red-orange
+
+
+.header
+    border-top: none
+    margin: 100px 0
+    div
+        margin: 0 auto
+        max-width: 32em
+        vertical-align: middle
+        p
+            color: $near-white
+            text-align: justify
+            margin: 0 10px
+    h1
+        text-align: center
+        letter-spacing: 0.05em
+        color: $yellow
+        +text-shadow(rgba($white, 0.7) 1px 1px 0, rgba($black, 0.7) -1px -1px 0)
+        margin-bottom: 0.4em
+
