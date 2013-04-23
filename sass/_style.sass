@@ -28,13 +28,14 @@ $light-gray: #9d9d9d
 $white: #fff
 $near-white: #ececec
 $black: #000
+$near-black: lighten($black, 20%)
 $cyan: #4DFFE7
 // Step Gradient
 $step1: adjust-color($cyan, $green: -20)
-$step2: adjust-color($step1, $green: -20)
-$step3: adjust-color($step2, $green: -20)
-$step4: adjust-color($step3, $green: -20)
-$step5: adjust-color($step4, $green: -20)
+$step2: adjust-color(adjust-color($step1, $green: -20), $lightness: 2, $saturation: 2)
+$step3: adjust-color(adjust-color($step2, $green: -20), $lightness: 2, $saturation: 2)
+$step4: adjust-color(adjust-color($step3, $green: -20), $lightness: 2, $saturation: 2)
+$step5: adjust-color(adjust-color($step4, $green: -20), $lightness: 2, $saturation: 2)
 
 // Semantic
 $background-color: $dark-gray
@@ -70,6 +71,10 @@ body
         &:nth-child(6)
             background: $step5
 
+.text
+    padding: 5px
+    color: $near-black
+
 
 .header
     border: none
@@ -96,21 +101,20 @@ div[data-picture] > img
 
 /* Tablets and larger screens */
 @media screen and (min-width: $tablet-min)
-    div[data-picture] > img
-        max-width: 66%
 
-    body > div
-        p
-            width: 33%
+    div.project
+        display: table
+        padding: 0
+        .row
+            display: table-row
+            padding: 0
+            > div
+                display: table-cell
+                vertical-align: middle
+                &[data-picture]
+                    width: 66%
+        .text
             padding: 10px
-        &:nth-child(even)
-            img
-                float: left
-            p
-                float: right
-        &:nth-child(odd)
-            img
-                float: right
-            p
-                float: left
+            // p
+            //     background: rgba($white, 0.5)
 
