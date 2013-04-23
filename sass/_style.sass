@@ -28,15 +28,17 @@ $light-gray: #9d9d9d
 $white: #fff
 $near-white: #ececec
 $black: #000
-$yellow: #FED100
-$yellow-orange: #FBBD1C
-$orange-yellow: #F4961F
-$orange: adjust-color($orange-yellow, $green: -20, $blue: -20)
-$red-orange: adjust-color($orange, $green: -20, $blue: -20)
-$red: adjust-color($red-orange, $green: -20, $blue: -20)
+$cyan: #4DFFE7
+// Step Gradient
+$step1: adjust-color($cyan, $green: -20)
+$step2: adjust-color($step1, $green: -20)
+$step3: adjust-color($step2, $green: -20)
+$step4: adjust-color($step3, $green: -20)
+$step5: adjust-color($step4, $green: -20)
 
 // Semantic
 $background-color: $dark-gray
+$name-color: $cyan
 
 /* Media query variables */
 $phone-min: 320px
@@ -49,34 +51,38 @@ $large-screen-min: 1824px
 /* Layout */
 html
     +box-sizing(border-box)
-    
+
 body
     background: $background-color
     > div
-        border-top: rgba($white, 0.3) 1px solid
-        padding: 1em
+        margin-bottom: 2em
         +clearfix
         p
             width: 33%
         &:nth-child(2)
-            background: $yellow-orange
+            background: $step1
         &:nth-child(3)
-            background: $orange-yellow
+            background: $step2
         &:nth-child(4)
-            background: $orange
+            background: $step3
         &:nth-child(5)
-            background: $red-orange
+            background: $step4
         &:nth-child(6)
-            background: $red
+            background: $step5
         &:nth-child(even)
             img
                 float: left
             p
                 float: right
+        &:nth-child(odd)
+            img
+                float: right
+            p
+                float: left
 
 
 .header
-    border-top: none
+    border: none
     margin: 100px 0
     div
         margin: 0 auto
@@ -90,7 +96,7 @@ body
     h1
         text-align: center
         letter-spacing: 0.05em
-        color: $yellow
+        color: $name-color
         +text-shadow(rgba($white, 0.7) 1px 1px 0, rgba($black, 0.7) -1px -1px 0)
         margin-bottom: 0.4em
 

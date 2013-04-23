@@ -92,75 +92,80 @@ h1 {
 /* Colors */
 /* Media query variables */
 /* Layout */
-/* line 50, ../sass/_style.sass */
+/* line 52, ../sass/_style.sass */
 html {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
-/* line 53, ../sass/_style.sass */
+/* line 55, ../sass/_style.sass */
 body {
   background: #4f4f4f; }
-  /* line 55, ../sass/_style.sass */
+  /* line 57, ../sass/_style.sass */
   body > div {
-    border-top: rgba(255, 255, 255, 0.3) 1px solid;
-    padding: 1em;
+    margin-bottom: 2em;
     overflow: hidden;
     *zoom: 1; }
-    /* line 59, ../sass/_style.sass */
+    /* line 60, ../sass/_style.sass */
     body > div p {
       width: 33%; }
-    /* line 61, ../sass/_style.sass */
+    /* line 62, ../sass/_style.sass */
     body > div:nth-child(2) {
-      background: #fbbd1c; }
-    /* line 63, ../sass/_style.sass */
+      background: #4debe7; }
+    /* line 64, ../sass/_style.sass */
     body > div:nth-child(3) {
-      background: #f4961f; }
-    /* line 65, ../sass/_style.sass */
+      background: #4dd7e7; }
+    /* line 66, ../sass/_style.sass */
     body > div:nth-child(4) {
-      background: #f4820b; }
-    /* line 67, ../sass/_style.sass */
+      background: #4dc3e7; }
+    /* line 68, ../sass/_style.sass */
     body > div:nth-child(5) {
-      background: #f46e00; }
-    /* line 69, ../sass/_style.sass */
+      background: #4dafe7; }
+    /* line 70, ../sass/_style.sass */
     body > div:nth-child(6) {
-      background: #f45a00; }
-    /* line 72, ../sass/_style.sass */
+      background: #4d9be7; }
+    /* line 73, ../sass/_style.sass */
     body > div:nth-child(even) img {
       float: left; }
-    /* line 74, ../sass/_style.sass */
+    /* line 75, ../sass/_style.sass */
     body > div:nth-child(even) p {
       float: right; }
+    /* line 78, ../sass/_style.sass */
+    body > div:nth-child(odd) img {
+      float: right; }
+    /* line 80, ../sass/_style.sass */
+    body > div:nth-child(odd) p {
+      float: left; }
 
-/* line 78, ../sass/_style.sass */
+/* line 84, ../sass/_style.sass */
 .header {
-  border-top: none;
+  border: none;
   margin: 100px 0; }
-  /* line 81, ../sass/_style.sass */
+  /* line 87, ../sass/_style.sass */
   .header div {
     margin: 0 auto;
     max-width: 32em;
     vertical-align: middle; }
-    /* line 85, ../sass/_style.sass */
+    /* line 91, ../sass/_style.sass */
     .header div p {
       color: #ececec;
       text-align: justify;
       margin: 0 10px;
       width: 100%; }
-  /* line 90, ../sass/_style.sass */
+  /* line 96, ../sass/_style.sass */
   .header h1 {
     text-align: center;
     letter-spacing: 0.05em;
-    color: #fed100;
+    color: #4dffe7;
     text-shadow: rgba(255, 255, 255, 0.7) 1px 1px 0, rgba(0, 0, 0, 0.7) -1px -1px 0;
     margin-bottom: 0.4em; }
 
-/* line 97, ../sass/_style.sass */
+/* line 103, ../sass/_style.sass */
 div[data-picture] > img {
   max-width: 100%; }
 
 /* Tablets and larger screens */
 @media screen and (min-width: 768px) {
-  /* line 102, ../sass/_style.sass */
+  /* line 108, ../sass/_style.sass */
   div[data-picture] > img {
     max-width: 66%; } }
