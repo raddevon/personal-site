@@ -49,7 +49,7 @@ $desktop-min: 1224px
 $large-screen-min: 1824px
 
 /* Layout */
-html
+*
     +box-sizing(border-box)
 
 body
@@ -58,7 +58,7 @@ body
         margin-bottom: 2em
         +clearfix
         p
-            width: 33%
+            padding: 5px
         &:nth-child(2)
             background: $step1
         &:nth-child(3)
@@ -69,16 +69,6 @@ body
             background: $step4
         &:nth-child(6)
             background: $step5
-        &:nth-child(even)
-            img
-                float: left
-            p
-                float: right
-        &:nth-child(odd)
-            img
-                float: right
-            p
-                float: left
 
 
 .header
@@ -91,7 +81,7 @@ body
         p
             color: $near-white
             text-align: justify
-            margin: 0 10px
+            padding: 0 10px
             width: 100%
     h1
         text-align: center
@@ -102,9 +92,25 @@ body
 
 div[data-picture] > img
     max-width: 100%
+    position: relative
 
 /* Tablets and larger screens */
 @media screen and (min-width: $tablet-min)
     div[data-picture] > img
         max-width: 66%
+
+    body > div
+        p
+            width: 33%
+            padding: 10px
+        &:nth-child(even)
+            img
+                float: left
+            p
+                float: right
+        &:nth-child(odd)
+            img
+                float: right
+            p
+                float: left
 
