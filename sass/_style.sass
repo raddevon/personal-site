@@ -33,18 +33,31 @@ $yellow-orange: #FBBD1C
 $orange-yellow: #F4961F
 $orange: adjust-color($orange-yellow, $green: -20, $blue: -20)
 $red-orange: adjust-color($orange, $green: -20, $blue: -20)
-
+$red: adjust-color($red-orange, $green: -20, $blue: -20)
 
 // Semantic
 $background-color: $dark-gray
 
+/* Media query variables */
+$phone-min: 320px
+$phone-max: 480px
+$tablet-min: 768px
+$tablet-max: 1024px
+$desktop-min: 1224px
+$large-screen-min: 1824px
 
 /* Layout */
+html
+    +box-sizing(border-box)
+    
 body
     background: $background-color
     > div
         border-top: rgba($white, 0.3) 1px solid
         padding: 1em
+        +clearfix
+        p
+            width: 33%
         &:nth-child(2)
             background: $yellow-orange
         &:nth-child(3)
@@ -53,6 +66,13 @@ body
             background: $orange
         &:nth-child(5)
             background: $red-orange
+        &:nth-child(6)
+            background: $red
+        &:nth-child(even)
+            img
+                float: left
+            p
+                float: right
 
 
 .header
@@ -66,10 +86,19 @@ body
             color: $near-white
             text-align: justify
             margin: 0 10px
+            width: 100%
     h1
         text-align: center
         letter-spacing: 0.05em
         color: $yellow
         +text-shadow(rgba($white, 0.7) 1px 1px 0, rgba($black, 0.7) -1px -1px 0)
         margin-bottom: 0.4em
+
+div[data-picture] > img
+    max-width: 100%
+
+/* Tablets and larger screens */
+@media screen and (min-width: $tablet-min)
+    div[data-picture] > img
+        max-width: 66%
 

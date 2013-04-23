@@ -90,45 +90,77 @@ h1 {
   line-height: 1.07143em; }
 
 /* Colors */
+/* Media query variables */
 /* Layout */
-/* line 43, ../sass/_style.sass */
+/* line 50, ../sass/_style.sass */
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/* line 53, ../sass/_style.sass */
 body {
   background: #4f4f4f; }
-  /* line 45, ../sass/_style.sass */
+  /* line 55, ../sass/_style.sass */
   body > div {
     border-top: rgba(255, 255, 255, 0.3) 1px solid;
-    padding: 1em; }
-    /* line 48, ../sass/_style.sass */
+    padding: 1em;
+    overflow: hidden;
+    *zoom: 1; }
+    /* line 59, ../sass/_style.sass */
+    body > div p {
+      width: 33%; }
+    /* line 61, ../sass/_style.sass */
     body > div:nth-child(2) {
       background: #fbbd1c; }
-    /* line 50, ../sass/_style.sass */
+    /* line 63, ../sass/_style.sass */
     body > div:nth-child(3) {
       background: #f4961f; }
-    /* line 52, ../sass/_style.sass */
+    /* line 65, ../sass/_style.sass */
     body > div:nth-child(4) {
       background: #f4820b; }
-    /* line 54, ../sass/_style.sass */
+    /* line 67, ../sass/_style.sass */
     body > div:nth-child(5) {
       background: #f46e00; }
+    /* line 69, ../sass/_style.sass */
+    body > div:nth-child(6) {
+      background: #f45a00; }
+    /* line 72, ../sass/_style.sass */
+    body > div:nth-child(even) img {
+      float: left; }
+    /* line 74, ../sass/_style.sass */
+    body > div:nth-child(even) p {
+      float: right; }
 
-/* line 58, ../sass/_style.sass */
+/* line 78, ../sass/_style.sass */
 .header {
   border-top: none;
   margin: 100px 0; }
-  /* line 61, ../sass/_style.sass */
+  /* line 81, ../sass/_style.sass */
   .header div {
     margin: 0 auto;
     max-width: 32em;
     vertical-align: middle; }
-    /* line 65, ../sass/_style.sass */
+    /* line 85, ../sass/_style.sass */
     .header div p {
       color: #ececec;
       text-align: justify;
-      margin: 0 10px; }
-  /* line 69, ../sass/_style.sass */
+      margin: 0 10px;
+      width: 100%; }
+  /* line 90, ../sass/_style.sass */
   .header h1 {
     text-align: center;
     letter-spacing: 0.05em;
     color: #fed100;
     text-shadow: rgba(255, 255, 255, 0.7) 1px 1px 0, rgba(0, 0, 0, 0.7) -1px -1px 0;
     margin-bottom: 0.4em; }
+
+/* line 97, ../sass/_style.sass */
+div[data-picture] > img {
+  max-width: 100%; }
+
+/* Tablets and larger screens */
+@media screen and (min-width: 768px) {
+  /* line 102, ../sass/_style.sass */
+  div[data-picture] > img {
+    max-width: 66%; } }
