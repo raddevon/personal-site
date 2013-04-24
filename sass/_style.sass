@@ -20,6 +20,8 @@ b
 
 h1
     +adjust-font-size-to(56px)
+h2
+    +adjust-font-size-to(40px)
 
 /* Colors */
 // Named
@@ -30,23 +32,27 @@ $near-white: #ececec
 $black: #000
 $near-black: lighten($black, 20%)
 $cyan: #4DFFE7
+$green: #A3FF4D
 // Step Gradient
-$step1: adjust-color($cyan, $green: -20)
-$step2: adjust-color(adjust-color($step1, $green: -20), $lightness: 2, $saturation: 2)
-$step3: adjust-color(adjust-color($step2, $green: -20), $lightness: 2, $saturation: 2)
-$step4: adjust-color(adjust-color($step3, $green: -20), $lightness: 2, $saturation: 2)
-$step5: adjust-color(adjust-color($step4, $green: -20), $lightness: 2, $saturation: 2)
+$step1: $cyan
+$step2: mix($cyan, $green, 75)
+$step3: mix($cyan, $green, 50)
+$step4: mix($cyan, $green, 25)
+$step5: $green
 
 // Semantic
 $background-color: $dark-gray
 $name-color: $cyan
+$text-color: $near-black
+$header-link: $green
+$link: $black
 
 /* Media query variables */
 $phone-min: 320px
 $phone-max: 480px
-$tablet-min: 768px
+$tablet-min: 481px
 $tablet-max: 1024px
-$desktop-min: 1224px
+$desktop-min: 1025px
 $large-screen-min: 1824px
 
 /* Layout */
@@ -57,9 +63,6 @@ body
     background: $background-color
     > div
         margin-bottom: 2em
-        +clearfix
-        p
-            padding: 5px
         &:nth-child(2)
             background: $step1
         &:nth-child(3)
@@ -70,15 +73,28 @@ body
             background: $step4
         &:nth-child(6)
             background: $step5
-
 .text
     padding: 5px
-    color: $near-black
+    color: $text-color
 
+a[href]
+    color: $link
+    text-decoration: underline
+    +single-transition(all, 0.2s, ease-out, 0)
+    &:hover
+        background: $near-white
+        color: $text-color
+        +single-transition(all, 0.2s, ease-out, 0)
+        +border-radius(3px)
 
 .header
     border: none
     margin: 100px 0
+    a[href]
+        color: $header-link
+        &:hover
+            background: $header-link
+            color: $text-color
     div
         margin: 0 auto
         max-width: 32em
@@ -95,9 +111,25 @@ body
         +text-shadow(rgba($white, 0.7) 1px 1px 0, rgba($black, 0.7) -1px -1px 0)
         margin-bottom: 0.4em
 
-div[data-picture] > img
-    max-width: 100%
-    position: relative
+div[data-picture] 
+    text-align: center
+    > img
+        width: 100%
+        max-width: 100%
+        position: relative
+
+/* Hiding and displaying elements with media queries */
+.hidden-phone
+    @media screen and (max-width: $phone-max)
+        display: none !important
+
+.hidden-tablet
+    @media screen and (min-width: $tablet-min) and (max-width: $tablet-max)
+        display: none !important
+
+.hidden-desktop
+    @media screen and (min-width: $desktop-min)
+        display: none !important
 
 /* Tablets and larger screens */
 @media screen and (min-width: $tablet-min)
@@ -113,8 +145,11 @@ div[data-picture] > img
                 vertical-align: middle
                 &[data-picture]
                     width: 66%
+                    padding: 0
+                    &:nth-child(even)
+                        text-align: right
+                    img
+                        margin-bottom: -7px
         .text
             padding: 10px
-            // p
-            //     background: rgba($white, 0.5)
 
