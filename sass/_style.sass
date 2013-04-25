@@ -34,12 +34,6 @@ $black: #000
 $near-black: lighten($black, 20%)
 $cyan: #4DFFE7
 $green: #A3FF4D
-// Step Gradient
-$step1: $cyan
-$step2: mix($cyan, $green, 75)
-$step3: mix($cyan, $green, 50)
-$step4: mix($cyan, $green, 25)
-$step5: $green
 
 // Semantic
 $background-color: $dark-gray
@@ -48,10 +42,9 @@ $text-color: $near-black
 $header-link: $green
 $link: $black
 
-$row1: $cyan
-$row2: complement(#f2065f)
-$row3: #e6c56a
-$row4: #e78a2e
+// Project rows
+$row-even: $cyan
+$row-odd: $green
 
 /* Media query variables */
 $phone-min: 320px
@@ -67,16 +60,13 @@ $large-screen-min: 1824px
 
 body
     background: $background-color
-    > div
+    > div.project
         margin-bottom: 2em
-        &:nth-child(2)
-            background: $row1
-        &:nth-child(3)
-            background: $row2
-        &:nth-child(4)
-            background: $row3
-        &:nth-child(5)
-            background: $row4
+        &:nth-child(even)
+            background: $row-even
+        &:nth-child(odd)
+            background: $row-odd
+
 .text
     padding: 5px
     color: $text-color
