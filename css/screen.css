@@ -209,28 +209,27 @@ div[data-picture] {
     text-align: justify; }
 
   /* line 136, ../sass/_style.sass */
+  .text {
+    padding: 10px;
+    min-width: 15em; } }
+/* Desktop-only styles */
+@media screen and (min-width: 1025px) {
+  /* line 142, ../sass/_style.sass */
   div.project {
-    display: table;
-    padding: 0; }
-    /* line 139, ../sass/_style.sass */
+    display: table; }
+    /* line 144, ../sass/_style.sass */
     div.project .row {
-      display: table-row;
-      padding: 0; }
-      /* line 142, ../sass/_style.sass */
+      display: table-row; }
+      /* line 146, ../sass/_style.sass */
       div.project .row > div {
         display: table-cell;
         vertical-align: middle; }
-        /* line 145, ../sass/_style.sass */
+        /* line 149, ../sass/_style.sass */
         div.project .row > div[data-picture] {
-          width: 66%;
-          padding: 0; }
-          /* line 148, ../sass/_style.sass */
+          width: 66%; }
+          /* line 151, ../sass/_style.sass */
           div.project .row > div[data-picture]:nth-child(even) {
             text-align: right; }
-          /* line 150, ../sass/_style.sass */
+          /* line 153, ../sass/_style.sass */
           div.project .row > div[data-picture] img {
-            margin-bottom: -7px; }
-    /* line 152, ../sass/_style.sass */
-    div.project .text {
-      padding: 10px;
-      min-width: 15em; } }
+            margin-bottom: -7px; } }
