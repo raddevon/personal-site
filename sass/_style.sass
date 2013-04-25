@@ -45,6 +45,7 @@ $link: $black
 // Project rows
 $row-even: $cyan
 $row-odd: $green
+$row-fallback: $green
 
 /* Media query variables */
 $phone-min: 320px
@@ -62,6 +63,7 @@ body
     background: $background-color
     > div.project
         margin-bottom: 2em
+        background: $row-fallback
         &:nth-child(even)
             background: $row-even
         &:nth-child(odd)
@@ -81,7 +83,7 @@ a[href]
         +single-transition(all, 0.2s, ease-out, 0)
         +border-radius(3px)
 
-.header
+header
     border: none
     margin: 100px 0
     a[href]
@@ -105,7 +107,7 @@ a[href]
         +text-shadow(rgba($white, 0.7) 1px 1px 0, rgba($black, 0.7) -1px -1px 0)
         margin-bottom: 0.4em
 
-div[data-picture] 
+div[data-picture]
     text-align: center
     > img
         width: 100%
@@ -128,6 +130,9 @@ div[data-picture]
 /* Tablets and larger screens */
 @media screen and (min-width: $tablet-min)
 
+    header p
+        text-align: justify
+
     div.project
         display: table
         padding: 0
@@ -146,4 +151,5 @@ div[data-picture]
                         margin-bottom: -7px
         .text
             padding: 10px
+            min-width: 15em
 
