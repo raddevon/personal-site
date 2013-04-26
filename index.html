@@ -8,12 +8,48 @@
 </head>
 <body>
     <header>
-        <div>
+        <div id="me">
             <h1>Devon N Campbell</h1>
-            <p>I'm a web developer in Knoxville, Tennessee. I have years of experience in IT support and a variety of skills. You can connect with me on <a href="http://www.twitter.com/raddevon/">Twitter</a>, <a href="http://www.linkedin.com/in/raddevon">LinkedIn</a>, and <a href="http://github.com/raddevon/">Github</a>. I'm available for hire, and I'm always on the lookout for interesting projects. Below you'll find some of my recent work.</p>
+            <p>I'm a web developer in Knoxville, Tennessee. I have <a href="#" data-expando="experience">years of experience</a> in IT and <a href="#" data-expando="skills">a variety of skills</a>. You can connect with me on <a href="http://www.twitter.com/raddevon/">Twitter</a>, <a href="http://www.linkedin.com/in/raddevon">LinkedIn</a>, and <a href="http://github.com/raddevon/">Github</a>. I'm available for hire, and I'm always on the lookout for interesting projects. Below you'll find some of my recent work.</p>
         </div>
-    </header
-    <section>
+        <div id="expando">
+            <div id="skills">
+                <h2><span class="collapse"><a href="#" data-expando="skills">-</a></span>Skills</h2>
+                <div class="set">
+                    <h3>Front-end web development</h3>
+                    <ul>
+                        <li>HTML5</li>
+                        <li>CSS3</li>
+                        <li>JavaScript</li>
+                        <li>jQuery</li>
+                        <li>E-mail template design</li>
+                    </ul>
+                </div>
+                <div class="set">
+                    <h3>Back-end web development</h3>
+                    <ul>
+                        <li>Python</li>
+                        <li>webapp2</li>
+                        <li>Django</li>
+                    </ul>
+                </div>
+                <div class="set">
+                    <h3>Others</h3>
+                    <ul>
+                        <li>Writing</li>
+                        <li>MailChimp</li>
+                    </ul>
+                </div>
+            </div>
+            <div id="experience">
+                <h2><span class="collapse"><a href="#" data-expando="experience">-</a></span>Experience</h2>
+                <p>After nearly ten years of working in IT support &#8212; first for Comcast, then for a local school system &#8212; it's time for a change.</p>
+                <p>During my time with the Jefferson County School system, I built and launched the county's first online job application on the Drupal platform. Then, I created a ticketing system for our helpdesk, also on Drupal.</p>
+                <p>I was also responsible for a bi-weekly newsletter from the technology department to the district's staff. I ran the newsletter on MailChimp and was responsible for all parts of it including creation of the HTML template and the writing. This evolved into <a href="http://www.pixed.us/">Pixed</a>.</p>
+            </div>
+        </div>
+    </header>
+    <section id="projects">
         <div class="project">
             <div class="row">
                 <div data-picture data-alt="Screenshot of Pixed">
@@ -118,4 +154,7 @@
     </section>
 </body>
 <script src="js/picturefill.js"></script>
+<script src="js/jquery-1.9.1.js"></script>
+<script src="js/jquery.easing.min.js"></script>
+<script src="js/me.raddevon.js"></script>
 </html>

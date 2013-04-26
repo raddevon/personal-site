@@ -1,0 +1,1 @@
+function expandoToggle(e){e.preventDefault();var t=$("#"+$(this).data("expando"));t.prependTo(t.parent()).slideToggle(400,"easeInOutQuart")}$(document).ready(function(){$("[data-expando]").on("click",expandoToggle)});

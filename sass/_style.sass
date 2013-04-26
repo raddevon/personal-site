@@ -11,7 +11,7 @@ body
     font-weight: 300
     letter-spacing: 0.02em
 
-b
+b, em
     font-weight: 500
 
 #{headings()}
@@ -23,6 +23,8 @@ h1
 h2
     +adjust-font-size-to(40px)
     font-style: italic
+h3
+    +adjust-font-size-to(24px)
 
 /* Colors */
 // Named
@@ -55,25 +57,7 @@ $tablet-max: 1024px
 $desktop-min: 1025px
 $large-screen-min: 1824px
 
-/* Layout */
-*
-    +box-sizing(border-box)
-
-body
-    background: $background-color
-    > div.project
-        margin-bottom: 2em
-        background: $row-fallback
-        &:nth-child(even)
-            background: $row-even
-        &:nth-child(odd)
-            background: $row-odd
-
-.text
-    padding: 5px
-    color: $text-color
-
-a[href]
+@mixin black-link
     color: $link
     text-decoration: underline
     +single-transition(all, 0.2s, ease-out, 0)
@@ -83,6 +67,33 @@ a[href]
         +single-transition(all, 0.2s, ease-out, 0)
         +border-radius(3px)
 
+/* Layout */
+*
+    +box-sizing(border-box)
+
+body
+    background: $background-color
+
+p
+    margin-bottom: 1.2em
+    &:last-child
+        margin-bottom: 0
+
+#projects div.project
+    margin-bottom: 2em
+    background: $row-fallback
+    &:nth-child(even)
+        background: $row-even
+    &:nth-child(odd)
+        background: $row-odd
+
+.text
+    padding: 5px
+    color: $text-color
+
+a[href]
+    +black-link
+
 header
     border: none
     margin: 100px 0
@@ -91,7 +102,7 @@ header
         &:hover
             background: $header-link
             color: $text-color
-    div
+    div#me
         margin: 0 auto
         max-width: 32em
         vertical-align: middle
@@ -106,6 +117,37 @@ header
         color: $name-color
         +text-shadow(rgba($white, 0.7) 1px 1px 0, rgba($black, 0.7) -1px -1px 0)
         margin-bottom: 0.4em
+
+#expando
+    background: $cyan
+    color: $text-color
+    a[href]
+        +black-link
+    > div
+        margin: 10px auto
+        padding: 10px
+        max-width: 32em
+        display: none
+        position: relative
+        ul
+            margin-left: 10px
+    .collapse
+        position: absolute
+        left: -15px
+        a[href]
+            color: $text-color
+            text-decoration: none
+            +transition(none)
+            &:hover
+                background: none
+
+
+#skills .set
+    margin-bottom: 10px
+    &:last-child
+        margin-bottom: 0
+
+
 
 div[data-picture]
     text-align: center
