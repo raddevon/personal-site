@@ -257,15 +257,10 @@ div[data-picture] {
   /* line 177, ../sass/_style.sass */
   .text {
     padding: 10px;
-    min-width: 15em; }
-
-  /* line 181, ../sass/_style.sass */
-  .collapse a[href] {
-    position: absolute;
-    left: -15px; } }
+    min-width: 15em; } }
 /* Desktop-only styles */
 @media screen and (min-width: 1025px) {
-  /* line 187, ../sass/_style.sass */
+  /* line 183, ../sass/_style.sass */
   a[href] {
     color: black;
     text-decoration: underline;
@@ -289,31 +284,31 @@ div[data-picture] {
       -o-border-radius: 3px;
       border-radius: 3px; }
 
-  /* line 189, ../sass/_style.sass */
+  /* line 185, ../sass/_style.sass */
   div.project {
     display: table; }
-    /* line 191, ../sass/_style.sass */
+    /* line 187, ../sass/_style.sass */
     div.project .row {
       display: table-row; }
-      /* line 193, ../sass/_style.sass */
+      /* line 189, ../sass/_style.sass */
       div.project .row > div {
         display: table-cell;
         vertical-align: middle; }
-        /* line 196, ../sass/_style.sass */
+        /* line 192, ../sass/_style.sass */
         div.project .row > div[data-picture] {
           width: 66%; }
-          /* line 198, ../sass/_style.sass */
+          /* line 194, ../sass/_style.sass */
           div.project .row > div[data-picture]:nth-child(even) {
             text-align: right; }
-          /* line 200, ../sass/_style.sass */
+          /* line 196, ../sass/_style.sass */
           div.project .row > div[data-picture] img {
             margin-bottom: -7px; }
 
-  /* line 204, ../sass/_style.sass */
+  /* line 200, ../sass/_style.sass */
   header #me a[href]:hover {
     background: #a3ff4d;
     color: #333333; }
-  /* line 207, ../sass/_style.sass */
+  /* line 203, ../sass/_style.sass */
   header #me a[href].on {
     background: #a3ff4d;
     color: #333333;
@@ -323,7 +318,7 @@ div[data-picture] {
     -o-border-radius: 3px;
     border-radius: 3px; }
 
-  /* line 212, ../sass/_style.sass */
+  /* line 208, ../sass/_style.sass */
   .collapse a[href] {
     position: absolute;
     left: -15px; } }
