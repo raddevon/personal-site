@@ -132,15 +132,13 @@ header
         position: relative
         ul
             margin-left: 10px
-    .collapse
-        position: absolute
-        left: -15px
-        a[href]
-            color: $text-color
-            text-decoration: none
-            +transition(none)
-            &:hover
-                background: none
+    .collapse a[href]
+        color: $text-color
+        text-decoration: none
+        margin-right: 5px
+        +transition(none)
+        &:hover
+            background: none
 
 
 #skills .set
@@ -208,3 +206,6 @@ div[data-picture]
                 color: $text-color
                 +border-radius(3px)
 
+    .collapse a[href]
+        position: absolute
+        left: -15px
