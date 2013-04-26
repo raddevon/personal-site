@@ -57,15 +57,22 @@ $tablet-max: 1024px
 $desktop-min: 1025px
 $large-screen-min: 1824px
 
-@mixin black-link
+=black-link($desktop: False)
     color: $link
     text-decoration: underline
     +single-transition(all, 0.2s, ease-out, 0)
-    &:hover
-        background: $near-white
-        color: $text-color
-        +single-transition(all, 0.2s, ease-out, 0)
-        +border-radius(3px)
+    @if $desktop
+        &:hover
+            background: $near-white
+            color: $text-color
+            +single-transition(all, 0.2s, ease-out, 0)
+            +border-radius(3px)
+    @else
+        &:active
+            background: $near-white
+            color: $text-color
+            +single-transition(all, 0.2s, ease-out, 0)
+            +border-radius(3px)
 
 /* Layout */
 *
@@ -99,7 +106,7 @@ header
     margin: 100px 0
     a[href]
         color: $header-link
-        &:hover
+        &:active
             background: $header-link
             color: $text-color
         &.on
@@ -184,6 +191,8 @@ div[data-picture]
 
 /* Desktop-only styles */
 @media screen and (min-width: $desktop-min)
+    a[href]
+        +black-link(true)
     div.project
         display: table
         .row
@@ -197,4 +206,14 @@ div[data-picture]
                         text-align: right
                     img
                         margin-bottom: -7px
+
+    header
+        a[href]
+            &:hover
+                background: $header-link
+                color: $text-color
+            &.on
+                background: $header-link
+                color: $text-color
+                +border-radius(3px)
 
