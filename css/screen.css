@@ -145,20 +145,6 @@ a[href] {
   -moz-transition: all 0.2s ease-out 0;
   -o-transition: all 0.2s ease-out 0;
   transition: all 0.2s ease-out 0; }
-  /* line 65, ../sass/_style.sass */
-  a[href]:hover {
-    background: #ececec;
-    color: #333333;
-    -webkit-transition: all 0.2s ease-out;
-    -webkit-transition-delay: 0;
-    -moz-transition: all 0.2s ease-out 0;
-    -o-transition: all 0.2s ease-out 0;
-    transition: all 0.2s ease-out 0;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    -ms-border-radius: 3px;
-    -o-border-radius: 3px;
-    border-radius: 3px; }
 
 /* line 98, ../sass/_style.sass */
 header {
@@ -212,20 +198,6 @@ header {
     -moz-transition: all 0.2s ease-out 0;
     -o-transition: all 0.2s ease-out 0;
     transition: all 0.2s ease-out 0; }
-    /* line 65, ../sass/_style.sass */
-    #expando-wrapper a[href]:hover {
-      background: #ececec;
-      color: #333333;
-      -webkit-transition: all 0.2s ease-out;
-      -webkit-transition-delay: 0;
-      -moz-transition: all 0.2s ease-out 0;
-      -o-transition: all 0.2s ease-out 0;
-      transition: all 0.2s ease-out 0;
-      -webkit-border-radius: 3px;
-      -moz-border-radius: 3px;
-      -ms-border-radius: 3px;
-      -o-border-radius: 3px;
-      border-radius: 3px; }
   /* line 131, ../sass/_style.sass */
   #expando-wrapper > div {
     margin: 10px auto;
