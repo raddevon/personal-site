@@ -1,8 +1,13 @@
 function expandoToggle (event) {
     event.preventDefault();
     var expando = $($(this).data('expando'));
+    var clicked = $(this);
     expando.prependTo(expando.parent()).slideToggle(400, 'easeInOutQuart');
-    $(this).toggleClass('on');
+    $('[data-expando]').each( function() {
+        if ($(this).data('expando') === clicked.data('expando')) {
+            $(this).toggleClass('on');
+        }
+    });
 }
 
 function expandoCloseAll (event) {

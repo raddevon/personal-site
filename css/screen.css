@@ -151,22 +151,22 @@ header {
   border: none;
   margin: 100px 0; }
   /* line 101, ../sass/_style.sass */
-  header a[href] {
-    color: #a3ff4d; }
-    /* line 103, ../sass/_style.sass */
-    header a[href].on {
-      background: #a3ff4d;
-      color: #333333;
-      -webkit-border-radius: 3px;
-      -moz-border-radius: 3px;
-      -ms-border-radius: 3px;
-      -o-border-radius: 3px;
-      border-radius: 3px; }
-  /* line 107, ../sass/_style.sass */
   header div#me {
     margin: 0 auto;
     max-width: 32em;
     vertical-align: middle; }
+    /* line 105, ../sass/_style.sass */
+    header div#me a[href] {
+      color: #a3ff4d; }
+      /* line 107, ../sass/_style.sass */
+      header div#me a[href].on {
+        background: #a3ff4d;
+        color: #333333;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        -ms-border-radius: 3px;
+        -o-border-radius: 3px;
+        border-radius: 3px; }
     /* line 111, ../sass/_style.sass */
     header div#me p {
       color: #ececec;
@@ -309,12 +309,12 @@ div[data-picture] {
           div.project .row > div[data-picture] img {
             margin-bottom: -7px; }
 
-  /* line 205, ../sass/_style.sass */
-  header a[href]:hover {
+  /* line 204, ../sass/_style.sass */
+  header #me a[href]:hover {
     background: #a3ff4d;
     color: #333333; }
-  /* line 208, ../sass/_style.sass */
-  header a[href].on {
+  /* line 207, ../sass/_style.sass */
+  header #me a[href].on {
     background: #a3ff4d;
     color: #333333;
     -webkit-border-radius: 3px;
@@ -323,7 +323,7 @@ div[data-picture] {
     -o-border-radius: 3px;
     border-radius: 3px; }
 
-  /* line 213, ../sass/_style.sass */
+  /* line 212, ../sass/_style.sass */
   .collapse a[href] {
     position: absolute;
     left: -15px; } }
