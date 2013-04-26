@@ -191,11 +191,11 @@ header {
     margin-bottom: 0.4em; }
 
 /* line 121, ../sass/_style.sass */
-#expando {
+#expando-wrapper {
   background: #4dffe7;
   color: #333333; }
   /* line 124, ../sass/_style.sass */
-  #expando a[href] {
+  #expando-wrapper a[href] {
     color: black;
     text-decoration: underline;
     -webkit-transition: all 0.2s ease-out;
@@ -204,7 +204,7 @@ header {
     -o-transition: all 0.2s ease-out 0;
     transition: all 0.2s ease-out 0; }
     /* line 64, ../sass/_style.sass */
-    #expando a[href]:hover {
+    #expando-wrapper a[href]:hover {
       background: #ececec;
       color: #333333;
       -webkit-transition: all 0.2s ease-out;
@@ -218,42 +218,41 @@ header {
       -o-border-radius: 3px;
       border-radius: 3px; }
   /* line 126, ../sass/_style.sass */
-  #expando > div {
+  #expando-wrapper > div {
     margin: 10px auto;
     padding: 10px;
     max-width: 32em;
-    display: none;
     position: relative; }
-    /* line 132, ../sass/_style.sass */
-    #expando > div ul {
+    /* line 131, ../sass/_style.sass */
+    #expando-wrapper > div ul {
       margin-left: 10px; }
-  /* line 134, ../sass/_style.sass */
-  #expando .collapse {
+  /* line 133, ../sass/_style.sass */
+  #expando-wrapper .collapse {
     position: absolute;
     left: -15px; }
-    /* line 137, ../sass/_style.sass */
-    #expando .collapse a[href] {
+    /* line 136, ../sass/_style.sass */
+    #expando-wrapper .collapse a[href] {
       color: #333333;
       text-decoration: none;
       -webkit-transition: none;
       -moz-transition: none;
       -o-transition: none;
       transition: none; }
-      /* line 141, ../sass/_style.sass */
-      #expando .collapse a[href]:hover {
+      /* line 140, ../sass/_style.sass */
+      #expando-wrapper .collapse a[href]:hover {
         background: none; }
 
-/* line 145, ../sass/_style.sass */
+/* line 144, ../sass/_style.sass */
 #skills .set {
   margin-bottom: 10px; }
-  /* line 147, ../sass/_style.sass */
+  /* line 146, ../sass/_style.sass */
   #skills .set:last-child {
     margin-bottom: 0; }
 
-/* line 152, ../sass/_style.sass */
+/* line 151, ../sass/_style.sass */
 div[data-picture] {
   text-align: center; }
-  /* line 154, ../sass/_style.sass */
+  /* line 153, ../sass/_style.sass */
   div[data-picture] > img {
     width: 100%;
     max-width: 100%;
@@ -261,48 +260,48 @@ div[data-picture] {
 
 /* Hiding and displaying elements with media queries */
 @media screen and (max-width: 480px) {
-  /* line 160, ../sass/_style.sass */
+  /* line 159, ../sass/_style.sass */
   .hidden-phone {
     display: none !important; } }
 
 @media screen and (min-width: 481px) and (max-width: 1024px) {
-  /* line 164, ../sass/_style.sass */
+  /* line 163, ../sass/_style.sass */
   .hidden-tablet {
     display: none !important; } }
 
 @media screen and (min-width: 1025px) {
-  /* line 168, ../sass/_style.sass */
+  /* line 167, ../sass/_style.sass */
   .hidden-desktop {
     display: none !important; } }
 
 /* Tablets and larger screens */
 @media screen and (min-width: 481px) {
-  /* line 175, ../sass/_style.sass */
+  /* line 174, ../sass/_style.sass */
   header p {
     text-align: justify; }
 
-  /* line 178, ../sass/_style.sass */
+  /* line 177, ../sass/_style.sass */
   .text {
     padding: 10px;
     min-width: 15em; } }
 /* Desktop-only styles */
 @media screen and (min-width: 1025px) {
-  /* line 184, ../sass/_style.sass */
+  /* line 183, ../sass/_style.sass */
   div.project {
     display: table; }
-    /* line 186, ../sass/_style.sass */
+    /* line 185, ../sass/_style.sass */
     div.project .row {
       display: table-row; }
-      /* line 188, ../sass/_style.sass */
+      /* line 187, ../sass/_style.sass */
       div.project .row > div {
         display: table-cell;
         vertical-align: middle; }
-        /* line 191, ../sass/_style.sass */
+        /* line 190, ../sass/_style.sass */
         div.project .row > div[data-picture] {
           width: 66%; }
-          /* line 193, ../sass/_style.sass */
+          /* line 192, ../sass/_style.sass */
           div.project .row > div[data-picture]:nth-child(even) {
             text-align: right; }
-          /* line 195, ../sass/_style.sass */
+          /* line 194, ../sass/_style.sass */
           div.project .row > div[data-picture] img {
             margin-bottom: -7px; } }
