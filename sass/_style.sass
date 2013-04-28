@@ -123,17 +123,28 @@ header
 #expando-wrapper
     background: $cyan
     color: $text-color
-    a[href]
+    p a[href], li a[href]
         +black-link
     > div
         margin: 10px auto
         padding: 10px
         max-width: 32em
         position: relative
+        &.expando-close
+            display: none
+            text-align: center
+            margin-bottom: -1em
+            +adjust-font-size-to(56px)
+            a:hover
+                background: none
+                +transition(none)
+            i
+                position: relative
+                top: -0.4em
         ul
             margin-left: 10px
-    .collapse a[href]
-        color: $text-color
+    a[href] i
+        color: $dark-gray
         text-decoration: none
         margin-right: 5px
         +transition(none)
@@ -205,6 +216,6 @@ div[data-picture]
             color: $text-color
             +border-radius(3px)
 
-    .collapse a[href]
+    .collapse
         position: absolute
-        left: -15px
+        left: -45px
