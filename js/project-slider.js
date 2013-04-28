@@ -1,9 +1,21 @@
-function toggleControls(){
+function displayElements(elements, mode) {
+    elements.each(function() {
+        $(this).css('display', mode);
+    });
+}
+
+function hideElements(elements) {
+    elements.each(function() {
+        $(this).css('display', 'none');
+    });
+}
+
+function toggleControls(mode) {
     // Show slider controls at desktop width and higher
     if ($(window).width() > 1024){
-        $('.slider-control').css('display', 'table-cell');
+        displayElements($('.slider-control'), mode);
     } else {
-        $('.slider-control').css('display', 'none');
+        hideElements($('.slider-control'));
     }
 }
 
@@ -40,7 +52,7 @@ function projectSliderToggle(event){
 
 $(document).ready( function() {
     $('.slider-control').on('click', projectSliderToggle);
-    toggleControls();
+    toggleControls('table-cell');
 });
 
-$(window).resize(toggleControls());
+$(window).resize(toggleControls('table-cell'));

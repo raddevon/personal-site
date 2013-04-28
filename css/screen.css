@@ -400,22 +400,23 @@ div[data-picture] {
       div.project .row > div {
         display: table-cell;
         vertical-align: middle;
-        position: relative; }
-        /* line 208, ../sass/_style.sass */
+        position: relative;
+        left: 0; }
+        /* line 209, ../sass/_style.sass */
         div.project .row > div[data-picture] {
           width: 66%; }
-          /* line 210, ../sass/_style.sass */
+          /* line 211, ../sass/_style.sass */
           div.project .row > div[data-picture]:nth-child(even) {
             text-align: right; }
-          /* line 212, ../sass/_style.sass */
+          /* line 213, ../sass/_style.sass */
           div.project .row > div[data-picture] img {
             margin-bottom: -7px; }
 
-  /* line 216, ../sass/_style.sass */
+  /* line 217, ../sass/_style.sass */
   header #me a[href]:hover {
     background: #a3ff4d;
     color: #333333; }
-  /* line 219, ../sass/_style.sass */
+  /* line 220, ../sass/_style.sass */
   header #me a[href].on {
     background: #a3ff4d;
     color: #333333;
@@ -425,12 +426,12 @@ div[data-picture] {
     -o-border-radius: 3px;
     border-radius: 3px; }
 
-  /* line 224, ../sass/_style.sass */
+  /* line 225, ../sass/_style.sass */
   .collapse {
     position: absolute;
     left: -45px; }
 
-  /* line 228, ../sass/_style.sass */
+  /* line 229, ../sass/_style.sass */
   div.project .row > .slider-control {
     position: relative;
     height: 2em;
