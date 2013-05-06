@@ -10,6 +10,7 @@ body
     font-family: $body-font
     font-weight: 300
     letter-spacing: 0.02em
+    overflow-x: hidden
 
 b, em
     font-weight: 500
@@ -86,7 +87,7 @@ a[href]
 a[href] i, i
     color: $dark-gray
 
-#projects div.project
+#projects div.project-wrap
     margin-bottom: 2em
     background: $row-fallback
     &:nth-child(even)
@@ -160,7 +161,8 @@ header
     &:last-child
         margin-bottom: 0
 
-
+.slide-out
+    display: none
 
 div[data-picture]
     text-align: center
@@ -191,23 +193,27 @@ div[data-picture]
     .text
         padding: 10px
         min-width: 15em
+        width: 33.3333333333333333%
 
 /* Desktop-only styles */
 @media screen and (min-width: $desktop-min)
     p a[href]
         +black-link(true)
+
+    div.project-wrap
+        position: relative
+
     div.project
         display: table
         .row
             display: table-row
-            overflow: hidden
             > div
                 display: table-cell
                 vertical-align: middle
                 position: relative
                 left: 0
                 &[data-picture]
-                    width: 66%
+                    width: 66.666666666666666%
                     &:nth-child(even)
                         text-align: right
                     img
@@ -231,3 +237,6 @@ div[data-picture]
         height: 2em
         +adjust-font-size-to(30px)
         display: none
+
+    .slide-out
+        display: table-cell

@@ -23,12 +23,12 @@ function projectSliderToggle(event){
     event.preventDefault();
 
     var sliderToggle = $(this).find('i');
-    var projectRow = $(this).closest('.project .row');
+    var projectRow = $(this).closest('.project-wrap');
     var projectImage = projectRow.find('[data-picture]');
     var newLeft;
 
     // If the project image is outside the viewport, the new left position will be the starting position
-    if (!projectImage.is(':in-viewport')) {
+    if (projectImage.offset().left < 0 || projectImage.offset().left >= $(window).width() - 1) {
         newLeft = 0;
     // If no and the arrow points left, the new left position is negative the width of the image to push it out of the viewport
     } else if (sliderToggle.hasClass('icon-left')) {
@@ -38,12 +38,8 @@ function projectSliderToggle(event){
         newLeft = projectImage.outerWidth() + 'px';
     }
 
-    // Each child of the project row gets moved to the new left position
-    projectRow.children().each(function() {
-        $(this).animate({
-            left: newLeft
-        }, 400, 'easeInOutQuart');
-    });
+    // Move the entire project row to new left position
+    projectRow.animate({ left: newLeft }, 400, 'easeInOutQuart');
 
     // Change the control to point the opposite direction
     sliderToggle.toggleClass('icon-left');
@@ -53,6 +49,9 @@ function projectSliderToggle(event){
 $(document).ready( function() {
     $('.slider-control').on('click', projectSliderToggle);
     toggleControls('table-cell');
+
 });
 
-$(window).resize(toggleControls('table-cell'));
+$(window).resize(function() {
+    toggleControls('table-cell');
+});
