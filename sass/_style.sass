@@ -203,6 +203,7 @@ footer
         padding: 0.1em 0.1em 0.15em 0.1em
     li
         margin-top: 0.3em
+        text-overflow: ellipsis
 
 /* Hiding and displaying elements with media queries */
 .hidden-phone
@@ -226,6 +227,10 @@ footer
     .text, .project-data
         padding: 10px
         min-width: 15em
+
+    .project-data li
+        -ms-text-overflow: clip
+        text-overflow: clip
 
 /* Desktop-only styles */
 @media screen and (min-width: $desktop-min)

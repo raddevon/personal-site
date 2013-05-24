@@ -380,37 +380,43 @@ footer {
   padding: 0.1em 0.1em 0.15em 0.1em; }
 /* line 204, ../sass/_style.sass */
 .project-data li {
-  margin-top: 0.3em; }
+  margin-top: 0.3em;
+  text-overflow: ellipsis; }
 
 /* Hiding and displaying elements with media queries */
 @media screen and (max-width: 480px) {
-  /* line 208, ../sass/_style.sass */
+  /* line 209, ../sass/_style.sass */
   .hidden-phone {
     display: none !important; } }
 
 @media screen and (min-width: 481px) and (max-width: 1024px) {
-  /* line 212, ../sass/_style.sass */
+  /* line 213, ../sass/_style.sass */
   .hidden-tablet {
     display: none !important; } }
 
 @media screen and (min-width: 1025px) {
-  /* line 216, ../sass/_style.sass */
+  /* line 217, ../sass/_style.sass */
   .hidden-desktop {
     display: none !important; } }
 
 /* Tablets and larger screens */
 @media screen and (min-width: 481px) {
-  /* line 223, ../sass/_style.sass */
+  /* line 224, ../sass/_style.sass */
   header p {
     text-align: justify; }
 
-  /* line 226, ../sass/_style.sass */
+  /* line 227, ../sass/_style.sass */
   .text, .project-data {
     padding: 10px;
-    min-width: 15em; } }
+    min-width: 15em; }
+
+  /* line 231, ../sass/_style.sass */
+  .project-data li {
+    -ms-text-overflow: clip;
+    text-overflow: clip; } }
 /* Desktop-only styles */
 @media screen and (min-width: 1025px) {
-  /* line 232, ../sass/_style.sass */
+  /* line 237, ../sass/_style.sass */
   p a[href] {
     color: black;
     text-decoration: underline;
@@ -434,63 +440,63 @@ footer {
       -o-border-radius: 3px;
       border-radius: 3px; }
 
-  /* line 235, ../sass/_style.sass */
+  /* line 240, ../sass/_style.sass */
   #projects {
     width: 100%;
     overflow-x: hidden; }
 
-  /* line 239, ../sass/_style.sass */
+  /* line 244, ../sass/_style.sass */
   div.project-wrap {
     position: relative; }
-    /* line 241, ../sass/_style.sass */
+    /* line 246, ../sass/_style.sass */
     div.project-wrap:nth-child(even) .project {
       position: relative;
       left: -66%; }
 
-  /* line 245, ../sass/_style.sass */
+  /* line 250, ../sass/_style.sass */
   div.project {
     display: table;
     width: 166.66667%; }
-    /* line 248, ../sass/_style.sass */
+    /* line 253, ../sass/_style.sass */
     div.project .row {
       display: table-row; }
-      /* line 250, ../sass/_style.sass */
+      /* line 255, ../sass/_style.sass */
       div.project .row > div {
         display: table-cell;
         vertical-align: middle;
         position: relative;
         left: 0; }
-        /* line 255, ../sass/_style.sass */
+        /* line 260, ../sass/_style.sass */
         div.project .row > div[data-picture] {
           width: 40%; }
-          /* line 257, ../sass/_style.sass */
+          /* line 262, ../sass/_style.sass */
           div.project .row > div[data-picture]:nth-child(even) {
             text-align: right; }
-          /* line 259, ../sass/_style.sass */
+          /* line 264, ../sass/_style.sass */
           div.project .row > div[data-picture] img {
             margin-bottom: -7px; }
 
-  /* line 262, ../sass/_style.sass */
+  /* line 267, ../sass/_style.sass */
   .text {
     padding: 20px;
     width: 20%; }
 
-  /* line 266, ../sass/_style.sass */
+  /* line 271, ../sass/_style.sass */
   .project-data {
     padding: 20px;
     width: 40%;
     border: none;
     text-align: center; }
-    /* line 271, ../sass/_style.sass */
+    /* line 276, ../sass/_style.sass */
     .project-data > div {
       text-align: left;
       display: inline-block; }
 
-  /* line 276, ../sass/_style.sass */
+  /* line 281, ../sass/_style.sass */
   header #me a[href]:hover {
     background: #a3ff4d;
     color: #333333; }
-  /* line 279, ../sass/_style.sass */
+  /* line 284, ../sass/_style.sass */
   header #me a[href].on {
     background: #a3ff4d;
     color: #333333;
@@ -500,12 +506,12 @@ footer {
     -o-border-radius: 3px;
     border-radius: 3px; }
 
-  /* line 284, ../sass/_style.sass */
+  /* line 289, ../sass/_style.sass */
   .collapse {
     position: absolute;
     left: -45px; }
 
-  /* line 288, ../sass/_style.sass */
+  /* line 293, ../sass/_style.sass */
   div.project .row > .slider-control {
     position: relative;
     height: 2em;
@@ -513,6 +519,6 @@ footer {
     line-height: 2em;
     display: none; }
 
-  /* line 294, ../sass/_style.sass */
+  /* line 299, ../sass/_style.sass */
   .slide-out {
     display: table-cell; } }
