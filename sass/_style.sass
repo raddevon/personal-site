@@ -86,18 +86,25 @@ a[href]
 a[href] i, i
     color: $dark-gray
 
-#projects div.project-wrap
-    margin-bottom: 2em
-    background: $row-fallback
-    -webkit-transform:translate3d(0,0,0)
-    -webkit-backface-visibility: hidden
-    &:nth-child(even) .project
-        background: $row-even
-    &:nth-child(odd) .project
-        background: $row-odd
-    *
+#projects
+    div[data-picture]
+        text-align: center
+        > img
+            width: 100%
+            max-width: 100%
+            position: relative
+    div.project-wrap
+        margin-bottom: 2em
+        background: $row-fallback
         -webkit-transform:translate3d(0,0,0)
         -webkit-backface-visibility: hidden
+        &:nth-child(even) .project
+            background: $row-even
+        &:nth-child(odd) .project
+            background: $row-odd
+        *
+            -webkit-transform:translate3d(0,0,0)
+            -webkit-backface-visibility: hidden
 
 .text, .project-data
     padding: 5px
@@ -106,10 +113,10 @@ a[href] i, i
 .project-data
     border-top: rgba($light-gray, 0.5) 1px solid
 
-header
+header, footer
     border: none
     margin: 100px 0
-    div#me
+    > div
         margin: 0 auto
         max-width: 32em
         vertical-align: middle
@@ -130,6 +137,19 @@ header
         color: $name-color
         +text-shadow(rgba($white, 0.7) 1px 1px 0, rgba($black, 0.7) -1px -1px 0)
         margin-bottom: 0.4em
+
+footer
+    margin: 20px inherit
+
+.social
+    text-align: center
+    a
+        text-decoration: none
+    div[data-picture]
+        display: inline-block
+        img
+            width: 32px
+            height: 32px
 
 #expando-wrapper
     background: $cyan
@@ -170,13 +190,6 @@ header
 
 .slide-out
     display: none
-
-div[data-picture]
-    text-align: center
-    > img
-        width: 100%
-        max-width: 100%
-        position: relative
 
 .project-data
     h3
