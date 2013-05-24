@@ -89,10 +89,15 @@ a[href] i, i
 #projects div.project-wrap
     margin-bottom: 2em
     background: $row-fallback
+    -webkit-transform:translate3d(0,0,0)
+    -webkit-backface-visibility: hidden
     &:nth-child(even) .project
         background: $row-even
     &:nth-child(odd) .project
         background: $row-odd
+    *
+        -webkit-transform:translate3d(0,0,0)
+        -webkit-backface-visibility: hidden
 
 .text, .project-data
     padding: 5px
