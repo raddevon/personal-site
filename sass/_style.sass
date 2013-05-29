@@ -126,7 +126,6 @@ header, footer
                 +border-radius(3px)
         p
             color: $near-white
-            text-align: justify
             padding: 0 10px
             width: 100%
     h1
@@ -152,8 +151,11 @@ footer
 #expando-wrapper
     background: $cyan
     color: $text-color
-    p a[href], li a[href]
-        +black-link
+    max-width: 100%
+    p 
+        color: $near-black
+        a[href], li a[href]
+            +black-link
     > div
         margin: 10px auto
         padding: 10px
@@ -194,12 +196,16 @@ footer
         margin-bottom: 0.2em
     h4
         margin-top: 0.2em
+    ul
+        list-style: none
     li
         margin-top: 0.3em
         width: 100%
         overflow: hidden
         text-overflow: ellipsis
-        list-style: none
+        white-space: nowrap
+        &.code
+            white-space: normal
         &:before
             +icon-styling
             background: $dark-gray
@@ -229,7 +235,7 @@ footer
 /* Tablets and larger screens */
 @media screen and (min-width: $tablet-min)
 
-    header p
+    header p, footer p
         text-align: justify
 
     .text, .project-data
