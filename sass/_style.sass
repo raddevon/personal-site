@@ -96,14 +96,12 @@ a[href] i, i
     div.project-wrap
         margin-bottom: 2em
         background: $row-fallback
-        -webkit-transform:translate3d(0,0,0)
         -webkit-backface-visibility: hidden
         &:nth-child(even) .project
             background: $row-even
         &:nth-child(odd) .project
             background: $row-odd
         *
-            -webkit-transform:translate3d(0,0,0)
             -webkit-backface-visibility: hidden
 
 .text, .project-data
@@ -196,15 +194,24 @@ footer
         margin-bottom: 0.2em
     h4
         margin-top: 0.2em
-    i
-        background: $dark-gray
-        border-radius: 50%
-        color: $near-white
-        padding: 0.1em 0.1em 0.15em 0.1em
     li
         margin-top: 0.3em
         width: 100%
+        overflow: hidden
         text-overflow: ellipsis
+        list-style: none
+        &:before
+            +icon-styling
+            background: $dark-gray
+            border-radius: 50%
+            color: $near-white
+            padding: 0.1em 0.3em
+        &.git:before
+            content: '\67'
+        &.code:before
+            content: '\e714'
+        &.link:before
+            content: '🔗'
 
 /* Hiding and displaying elements with media queries */
 .hidden-phone
