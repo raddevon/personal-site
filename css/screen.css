@@ -475,15 +475,15 @@ footer {
         vertical-align: middle;
         position: relative;
         left: 0; }
-        /* line 274, ../sass/_style.sass */
-        div.project .row > div[data-picture] {
-          width: 40%; }
-          /* line 276, ../sass/_style.sass */
-          div.project .row > div[data-picture]:nth-child(even) {
-            text-align: right; }
-          /* line 278, ../sass/_style.sass */
-          div.project .row > div[data-picture] img {
-            margin-bottom: -7px; }
+    /* line 274, ../sass/_style.sass */
+    div.project [data-picture] {
+      width: 40%; }
+      /* line 276, ../sass/_style.sass */
+      div.project [data-picture]:nth-child(even) {
+        text-align: right; }
+      /* line 278, ../sass/_style.sass */
+      div.project [data-picture] img {
+        margin-bottom: -7px; }
 
   /* line 281, ../sass/_style.sass */
   .text {
