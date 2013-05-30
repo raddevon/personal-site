@@ -92,8 +92,9 @@ p
 a[href]
     +black-link
 
-a[href] i, i
+a[href] i, i, header > div#expando-wrapper h2 a[href].on
     color: $dark-gray
+    background: none
 
 #projects
     div[data-picture]
@@ -145,18 +146,7 @@ header, footer
 
 header
     padding: 10% 0
-    &.background-1
-        background-image: url(../img/header-1.jpg) center center fixed no-repeat
-        -moz-background-size: cover /* Firefox 3.6 */
-        background-size: cover /* Chrome, Firefox 4.0+, Safari 4.1+, Opera 10+ and IE9 */
-    &.background-2
-        background: url(../img/header-2.jpg) center center fixed no-repeat
-        -moz-background-size: cover /* Firefox 3.6 */
-        background-size: cover /* Chrome, Firefox 4.0+, Safari 4.1+, Opera 10+ and IE9 */
-    &.background-3
-        background: url(../img/header-3.jpg) center center fixed no-repeat
-        -moz-background-size: cover /* Firefox 3.6 */
-        background-size: cover /* Chrome, Firefox 4.0+, Safari 4.1+, Opera 10+ and IE9 */
+    background: $near-black
 
 footer
     margin: 20px inherit
@@ -272,12 +262,10 @@ footer
         +adjust-font-size-to(24px)
 
     header
-        min-height: 95%
+        min-height: 65%
         margin-bottom: 5%
-        padding: 30% 0
-        min-height: 95vh
-        margin-bottom: 2em
-        padding: 30vh 0
+        padding: 10% 0
+        background: $near-black
 
     header p, footer p
         text-align: justify
@@ -292,6 +280,24 @@ footer
 
 /* Desktop-only styles */
 @media screen and (min-width: $desktop-min)
+
+    header
+        min-height: 95%
+        margin-bottom: 5%
+        padding: 30% 0
+        min-height: 95vh
+        margin-bottom: 2em
+        padding: 30vh 0
+        &.background-1
+            background: url(../img/header-1.jpg) center center fixed no-repeat
+            +background-size(cover)
+        &.background-2
+            background: url(../img/header-2.jpg) center center fixed no-repeat
+            +background-size(cover)
+        &.background-3
+            background: url(../img/header-3.jpg) center center fixed no-repeat
+            +background-size(cover)
+
     p a[href]
         +black-link(true)
 
