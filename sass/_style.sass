@@ -44,7 +44,7 @@ $near-black: lighten($black, 20%)
 $cyan: #4DFFE7
 $green: #A3FF4D
 
-$darken: rgba(0, 0, 0, 0.5)
+$darken: rgba(0, 0, 0, 0.1)
 
 // Semantic
 $background-color: $dark-gray
@@ -145,13 +145,25 @@ header, footer
 
 header
     padding: 10% 0
+    &.background-1
+        background-image: url(../img/header-1.jpg) center center fixed no-repeat
+        -moz-background-size: cover /* Firefox 3.6 */
+        background-size: cover /* Chrome, Firefox 4.0+, Safari 4.1+, Opera 10+ and IE9 */
+    &.background-2
+        background: url(../img/header-2.jpg) center center fixed no-repeat
+        -moz-background-size: cover /* Firefox 3.6 */
+        background-size: cover /* Chrome, Firefox 4.0+, Safari 4.1+, Opera 10+ and IE9 */
+    &.background-3
+        background: url(../img/header-3.jpg) center center fixed no-repeat
+        -moz-background-size: cover /* Firefox 3.6 */
+        background-size: cover /* Chrome, Firefox 4.0+, Safari 4.1+, Opera 10+ and IE9 */
 
 footer
     margin: 20px inherit
 
 #me p
     color: $near-white
-    margin: 0 auto
+    margin: 0 auto 1em auto
     max-width: 32em
     +adjust-font-size-to(18px)
 
@@ -195,6 +207,7 @@ footer
         color: $dark-gray
         text-decoration: none
         margin-right: 5px
+        background: none
         +transition(none)
         &:hover
             background: none
@@ -263,7 +276,7 @@ footer
         margin-bottom: 5%
         padding: 30% 0
         min-height: 95vh
-        margin-bottom: 5vh
+        margin-bottom: 2em
         padding: 30vh 0
 
     header p, footer p
@@ -340,6 +353,11 @@ footer
         height: 2em
         +adjust-font-size-to(30px)
         display: none
+        +single-transition(all, 0.2s, ease-out, 0)
+        &:hover
+            background: $darken
+            cursor: hand
+            cursor: pointer
 
     .slide-out
         display: table-cell
