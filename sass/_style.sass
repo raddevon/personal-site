@@ -6,6 +6,12 @@ $base-line-height: 30px
 $heading-font: 'Exo', sans-serif
 $body-font: 'Roboto', sans-serif
 
+@font-face
+    font-family: "Code-Bold"
+    src: url("../fonts/CODE_Bold.eot?") format("eot"), url("../fonts/CODE_Bold.woff") format("woff"), url("../fonts/CODE_Bold.ttf") format("truetype"), url("../fonts/CODE_Bold.svg#Code-Bold") format("svg")
+    font-weight: normal
+    font-style: normal
+
 body
     font-family: $body-font
     font-weight: 300
@@ -19,7 +25,8 @@ b, em
     font-weight: 700
 
 h1
-    +adjust-font-size-to(56px)
+    +adjust-font-size-to(48px)
+    font-family: "Code-Bold"
 h2
     +adjust-font-size-to(40px)
     font-style: italic
@@ -37,9 +44,11 @@ $near-black: lighten($black, 20%)
 $cyan: #4DFFE7
 $green: #A3FF4D
 
+$darken: rgba(0, 0, 0, 0.1)
+
 // Semantic
 $background-color: $dark-gray
-$name-color: $cyan
+$name-color: $near-white
 $text-color: $near-black
 $header-link: $green
 $link: $black
@@ -83,8 +92,9 @@ p
 a[href]
     +black-link
 
-a[href] i, i
+a[href] i, i, header > div#expando-wrapper h2 a[href].on
     color: $dark-gray
+    background: none
 
 #projects
     div[data-picture]
@@ -113,10 +123,9 @@ a[href] i, i
 
 header, footer
     border: none
-    margin: 100px 0
+    margin: 0
     > div
         margin: 0 auto
-        max-width: 32em
         vertical-align: middle
         a[href]
             color: $header-link
@@ -127,16 +136,26 @@ header, footer
         p
             color: $near-white
             padding: 0 10px
-            width: 100%
+            margin: 0 auto 10px auto
+            max-width: 32em
     h1
         text-align: center
         letter-spacing: 0.05em
         color: $name-color
-        +text-shadow(rgba($white, 0.7) 1px 1px 0, rgba($black, 0.7) -1px -1px 0)
         margin-bottom: 0.4em
+
+header
+    padding: 10% 0
+    background: $near-black
 
 footer
     margin: 20px inherit
+
+#me p
+    color: $near-white
+    margin: 0 auto 1em auto
+    max-width: 32em
+    +adjust-font-size-to(18px)
 
 .social
     text-align: center
@@ -152,7 +171,7 @@ footer
     background: $cyan
     color: $text-color
     max-width: 100%
-    p 
+    p
         color: $near-black
         a[href], li a[href]
             +black-link
@@ -178,6 +197,7 @@ footer
         color: $dark-gray
         text-decoration: none
         margin-right: 5px
+        background: none
         +transition(none)
         &:hover
             background: none
@@ -235,6 +255,18 @@ footer
 /* Tablets and larger screens */
 @media screen and (min-width: $tablet-min)
 
+    h1
+        +adjust-font-size-to(96px)
+
+    #me p
+        +adjust-font-size-to(24px)
+
+    header
+        min-height: 65%
+        margin-bottom: 5%
+        padding: 10% 0
+        background: $near-black
+
     header p, footer p
         text-align: justify
 
@@ -248,6 +280,24 @@ footer
 
 /* Desktop-only styles */
 @media screen and (min-width: $desktop-min)
+
+    header
+        min-height: 95%
+        margin-bottom: 5%
+        padding: 30% 0
+        min-height: 95vh
+        margin-bottom: 2em
+        padding: 30vh 0
+        &.background-1
+            background: url(../img/header-1.jpg) center center fixed no-repeat
+            +background-size(cover)
+        &.background-2
+            background: url(../img/header-2.jpg) center center fixed no-repeat
+            +background-size(cover)
+        &.background-3
+            background: url(../img/header-3.jpg) center center fixed no-repeat
+            +background-size(cover)
+
     p a[href]
         +black-link(true)
 
@@ -271,12 +321,12 @@ footer
                 vertical-align: middle
                 position: relative
                 left: 0
-                &[data-picture]
-                    width: 40%
-                    &:nth-child(even)
-                        text-align: right
-                    img
-                        margin-bottom: -7px
+        [data-picture]
+            width: 40%
+            &:nth-child(even)
+                text-align: right
+            img
+                margin-bottom: -7px
 
     .text
         padding: 20px
@@ -309,6 +359,11 @@ footer
         height: 2em
         +adjust-font-size-to(30px)
         display: none
+        +single-transition(all, 0.2s, ease-out, 0)
+        &:hover
+            background: $darken
+            cursor: hand
+            cursor: pointer
 
     .slide-out
         display: table-cell
