@@ -3,12 +3,21 @@ $base-font-size: 20px
 $base-line-height: 30px
 +establish-baseline
 
-$heading-font: 'Exo', sans-serif
+$nav-font: 'Code-Bold', sans-serif
+$name-font: 'Code-Bold', sans-serif
+$tagline-font: 'Code-Light', sans-serif
+$heading-font: 'Code-Light', sans-serif
+$project-heading-font: 'Exo', sans-serif
 $body-font: 'Roboto', sans-serif
 
 @font-face
     font-family: "Code-Bold"
     src: url("../fonts/CODE_Bold.eot?") format("eot"), url("../fonts/CODE_Bold.woff") format("woff"), url("../fonts/CODE_Bold.ttf") format("truetype"), url("../fonts/CODE_Bold.svg#Code-Bold") format("svg")
+    font-weight: normal
+    font-style: normal
+@font-face
+    font-family: "Code-Light"
+    src: url("../fonts/CODE_Light.eot?") format("eot"), url("../fonts/CODE_Light.woff") format("woff"), url("../fonts/CODE_Light.ttf") format("truetype"), url("../fonts/CODE_Light.svg#Code-Bold") format("svg")
     font-weight: normal
     font-style: normal
 
@@ -21,12 +30,20 @@ b, em
     font-weight: 500
 
 #{headings()}
-    font-family: $heading-font
+    font-family: $project-heading-font
     font-weight: 700
 
-h1
+#name
     +adjust-font-size-to(48px)
-    font-family: "Code-Bold"
+    font-family: 'Code-Bold', sans-serif
+
+#tagline
+    +adjust-font-size-to(34px)
+
+h1
+    +adjust-font-size-to(40px)
+    font-family: $heading-font
+
 h2
     +adjust-font-size-to(40px)
     font-style: italic
@@ -45,13 +62,14 @@ $cyan: #4DFFE7
 $green: #A3FF4D
 
 $darken: rgba(0, 0, 0, 0.1)
+$very-darken: rgba(0, 0, 0, 0.7)
 
 // Semantic
-$background-color: $dark-gray
+$background-color: $near-black
 $name-color: $near-white
 $text-color: $near-black
-$header-link: $green
 $link: $black
+$secondary-link: $green
 
 // Project rows
 $row-even: $cyan
@@ -66,7 +84,7 @@ $tablet-max: 1024px
 $desktop-min: 1025px
 $large-screen-min: 1824px
 
-=black-link($desktop: false)
+=primary-link($desktop: false)
     color: $link
     text-decoration: underline
     +single-transition(all, 0.2s, ease-out, 0)
@@ -74,8 +92,15 @@ $large-screen-min: 1824px
         &:hover
             background: $near-white
             color: $text-color
-            +single-transition(all, 0.2s, ease-out, 0)
-            +border-radius(3px)
+
+=secondary-link($desktop: false)
+    color: $green
+    text-decoration: underline
+    +single-transition(all, 0.2s, ease-out, 0)
+    @if $desktop
+        &:hover
+            background: $secondary-link
+            color: $text-color
 
 /* Layout */
 *
@@ -90,7 +115,7 @@ p
         margin-bottom: 0
 
 a[href]
-    +black-link
+    +primary-link
 
 a[href] i, i, header > div#expando-wrapper h2 a[href].on
     color: $dark-gray
@@ -111,6 +136,8 @@ a[href] i, i, header > div#expando-wrapper h2 a[href].on
             background: $row-even
         &:nth-child(odd) .project
             background: $row-odd
+        &:last-child
+            margin-bottom: 0
         *
             -webkit-backface-visibility: hidden
 
@@ -128,22 +155,15 @@ header, footer
         margin: 0 auto
         vertical-align: middle
         a[href]
-            color: $header-link
+            color: $secondary-link
             &.on
-                background: $header-link
+                background: $secondary-link
                 color: $text-color
-                +border-radius(3px)
         p
             color: $near-white
             padding: 0 10px
             margin: 0 auto 10px auto
             max-width: 32em
-    h1
-        text-align: center
-        letter-spacing: 0.05em
-        color: $name-color
-        margin-bottom: 0.4em
-        text-shadow: 0px 0px 0.1em $white
 
 header
     padding: 10% 0
@@ -151,12 +171,21 @@ header
 
 footer
     margin: 20px inherit
+    a[href]
+        +secondary-link
 
-#me p
-    color: $near-white
-    margin: 0 auto 1em auto
-    max-width: 32em
-    +adjust-font-size-to(18px)
+.static-navbar
+    display: none
+
+#name
+    text-shadow: 0px 0px 0.1em $name-color
+    color: $name-color
+
+h1
+    text-align: center
+    letter-spacing: 0.05em
+    color: $name-color
+    margin-bottom: 0.4em
 
 .social
     text-align: center
@@ -169,15 +198,20 @@ footer
             height: 32px
 
 #expando-wrapper
-    background: $cyan
+    background: $green
     color: $text-color
     max-width: 100%
+    max-height: 300px
+    max-height: 45vh
+    overflow-y: scroll
     p
         color: $near-black
         a[href], li a[href]
-            +black-link
+            +primary-link
+        &:last-child
+            margin-bottom: 10px
     > div
-        margin: 10px auto
+        margin: 0 auto
         padding: 10px
         max-width: 32em
         position: relative
@@ -206,8 +240,6 @@ footer
 
 #skills .set
     margin-bottom: 10px
-    &:last-child
-        margin-bottom: 0
 
 .slide-out
     display: none
@@ -227,6 +259,7 @@ footer
         white-space: nowrap
         &.code
             white-space: normal
+        // Icon bullets for .project-data div
         &:before
             +icon-styling
             background: $dark-gray
@@ -234,11 +267,11 @@ footer
             color: $near-white
             padding: 0.1em 0.3em
         &.git:before
-            content: '\67'
+            content: '\e800'
         &.code:before
-            content: '\e714'
+            content: '\e807'
         &.link:before
-            content: '🔗'
+            content: '\e802'
 
 /* Hiding and displaying elements with media queries */
 .hidden-phone
@@ -256,17 +289,60 @@ footer
 /* Tablets and larger screens */
 @media screen and (min-width: $tablet-min)
 
-    h1
+    .static-navbar
+        display: block
+        position: fixed
+        top: 0
+        z-index: 200
+        width: 100%
+        background: $very-darken
+        color: $near-white
+
+    .nav-list-wrapper
+        +clearfix
+    .nav-list li
+        display: inline-block
+        float: left
+        font-family: $nav-font
+        a
+            display: block
+            padding: 1em
+            color: $near-white
+            text-decoration: none
+            &:hover, &.on
+                background: rgba($green, 1)
+                color: $near-black
+        a i
+            padding: 0
+            color: $near-white
+        a:hover i
+            color: $near-black
+    .resume
+        float: left
+        li
+            border-right: rgba(255,255,255,0.3) 1px solid
+    .outside-links
+        float: right
+        li
+            border-left: rgba(255,255,255,0.3) 1px solid
+
+    #name
         +adjust-font-size-to(96px)
 
-    #me p
-        +adjust-font-size-to(24px)
+    #tagline
+        +adjust-font-size-to(48px)
+
+    h1
+        +adjust-font-size-to(64px)
 
     header
         min-height: 65%
         margin-bottom: 5%
         padding: 10% 0
         background: $near-black
+
+    footer
+        margin: 4em
 
     header p, footer p
         text-align: justify
@@ -300,7 +376,10 @@ footer
             +background-size(cover)
 
     p a[href]
-        +black-link(true)
+        +primary-link(true)
+
+    footer p a[href]
+        +secondary-link(true)
 
     #projects
         width: 100%
@@ -341,15 +420,6 @@ footer
         > div
             text-align: left
             display: inline-block
-
-    header #me a[href]
-        &:hover
-            background: $header-link
-            color: $text-color
-        &.on
-            background: $header-link
-            color: $text-color
-            +border-radius(3px)
 
     .collapse
         position: absolute
