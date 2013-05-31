@@ -3,6 +3,7 @@ $base-font-size: 20px
 $base-line-height: 30px
 +establish-baseline
 
+$nav-font: 'Code-Bold', sans-serif
 $heading-font: 'Exo', sans-serif
 $body-font: 'Roboto', sans-serif
 
@@ -26,7 +27,7 @@ b, em
 
 #name
     +adjust-font-size-to(48px)
-    font-family: "Code-Bold"
+    font-family: 'Code-Bold', sans-serif
 h2
     +adjust-font-size-to(40px)
     font-style: italic
@@ -45,6 +46,7 @@ $cyan: #4DFFE7
 $green: #A3FF4D
 
 $darken: rgba(0, 0, 0, 0.1)
+$very-darken: rgba(0, 0, 0, 0.7)
 
 // Semantic
 $background-color: $dark-gray
@@ -145,6 +147,9 @@ header
 
 footer
     margin: 20px inherit
+
+.static-navbar
+    display: none
 
 h1
     text-align: center
@@ -256,6 +261,34 @@ h1
 
 /* Tablets and larger screens */
 @media screen and (min-width: $tablet-min)
+
+    .static-navbar
+        display: block
+        position: fixed
+        top: 0
+        z-index: 200
+        width: 100%
+        background: $very-darken
+        color: $near-white
+        font-family: $nav-font
+        li
+            display: inline-block
+        .resume
+            float: left
+            li
+                border-right: rgba(255,255,255,0.3) 1px solid
+        .outside-links
+            float: right
+            li
+                border-left: rgba(255,255,255,0.3) 1px solid
+        a
+            display: block
+            padding: 1em
+            color: $near-white
+            text-decoration: none
+            &:hover
+                background: rgba($green, 1)
+                color: $near-black
 
     #name
         +adjust-font-size-to(96px)
