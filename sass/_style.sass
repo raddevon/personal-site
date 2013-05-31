@@ -6,7 +6,8 @@ $base-line-height: 30px
 $nav-font: 'Code-Bold', sans-serif
 $name-font: 'Code-Bold', sans-serif
 $tagline-font: 'Code-Light', sans-serif
-$heading-font: 'Exo', sans-serif
+$heading-font: 'Code-Light', sans-serif
+$project-heading-font: 'Exo', sans-serif
 $body-font: 'Roboto', sans-serif
 
 @font-face
@@ -29,12 +30,20 @@ b, em
     font-weight: 500
 
 #{headings()}
-    font-family: $heading-font
+    font-family: $project-heading-font
     font-weight: 700
 
 #name
     +adjust-font-size-to(48px)
     font-family: 'Code-Bold', sans-serif
+
+#tagline
+    +adjust-font-size-to(34px)
+
+h1
+    +adjust-font-size-to(40px)
+    font-family: $heading-font
+
 h2
     +adjust-font-size-to(40px)
     font-style: italic
@@ -59,8 +68,8 @@ $very-darken: rgba(0, 0, 0, 0.7)
 $background-color: $near-black
 $name-color: $near-white
 $text-color: $near-black
-$header-link: $green
 $link: $black
+$secondary-link: $green
 
 // Project rows
 $row-even: $cyan
@@ -75,7 +84,7 @@ $tablet-max: 1024px
 $desktop-min: 1025px
 $large-screen-min: 1824px
 
-=black-link($desktop: false)
+=primary-link($desktop: false)
     color: $link
     text-decoration: underline
     +single-transition(all, 0.2s, ease-out, 0)
@@ -83,8 +92,15 @@ $large-screen-min: 1824px
         &:hover
             background: $near-white
             color: $text-color
-            +single-transition(all, 0.2s, ease-out, 0)
-            +border-radius(3px)
+
+=secondary-link($desktop: false)
+    color: $green
+    text-decoration: underline
+    +single-transition(all, 0.2s, ease-out, 0)
+    @if $desktop
+        &:hover
+            background: $secondary-link
+            color: $text-color
 
 /* Layout */
 *
@@ -99,7 +115,7 @@ p
         margin-bottom: 0
 
 a[href]
-    +black-link
+    +primary-link
 
 a[href] i, i, header > div#expando-wrapper h2 a[href].on
     color: $dark-gray
@@ -120,6 +136,8 @@ a[href] i, i, header > div#expando-wrapper h2 a[href].on
             background: $row-even
         &:nth-child(odd) .project
             background: $row-odd
+        &:last-child
+            margin-bottom: 0
         *
             -webkit-backface-visibility: hidden
 
@@ -137,11 +155,10 @@ header, footer
         margin: 0 auto
         vertical-align: middle
         a[href]
-            color: $header-link
+            color: $secondary-link
             &.on
-                background: $header-link
+                background: $secondary-link
                 color: $text-color
-                +border-radius(3px)
         p
             color: $near-white
             padding: 0 10px
@@ -154,22 +171,21 @@ header
 
 footer
     margin: 20px inherit
+    a[href]
+        +secondary-link
 
 .static-navbar
     display: none
+
+#name
+    text-shadow: 0px 0px 0.1em $name-color
+    color: $name-color
 
 h1
     text-align: center
     letter-spacing: 0.05em
     color: $name-color
     margin-bottom: 0.4em
-    text-shadow: 0px 0px 0.1em $white
-
-#me p
-    color: $near-white
-    margin: 0 auto 1em auto
-    max-width: 32em
-    +adjust-font-size-to(18px)
 
 .social
     text-align: center
@@ -191,7 +207,7 @@ h1
     p
         color: $near-black
         a[href], li a[href]
-            +black-link
+            +primary-link
         &:last-child
             margin-bottom: 10px
     > div
@@ -313,14 +329,20 @@ h1
     #name
         +adjust-font-size-to(96px)
 
-    #me p
-        +adjust-font-size-to(24px)
+    #tagline
+        +adjust-font-size-to(48px)
+
+    h1
+        +adjust-font-size-to(64px)
 
     header
         min-height: 65%
         margin-bottom: 5%
         padding: 10% 0
         background: $near-black
+
+    footer
+        margin: 4em
 
     header p, footer p
         text-align: justify
@@ -354,7 +376,10 @@ h1
             +background-size(cover)
 
     p a[href]
-        +black-link(true)
+        +primary-link(true)
+
+    footer p a[href]
+        +secondary-link(true)
 
     #projects
         width: 100%
@@ -395,15 +420,6 @@ h1
         > div
             text-align: left
             display: inline-block
-
-    header #me a[href]
-        &:hover
-            background: $header-link
-            color: $text-color
-        &.on
-            background: $header-link
-            color: $text-color
-            +border-radius(3px)
 
     .collapse
         position: absolute
