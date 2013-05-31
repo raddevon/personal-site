@@ -4,12 +4,19 @@ $base-line-height: 30px
 +establish-baseline
 
 $nav-font: 'Code-Bold', sans-serif
+$name-font: 'Code-Bold', sans-serif
+$tagline-font: 'Code-Light', sans-serif
 $heading-font: 'Exo', sans-serif
 $body-font: 'Roboto', sans-serif
 
 @font-face
     font-family: "Code-Bold"
     src: url("../fonts/CODE_Bold.eot?") format("eot"), url("../fonts/CODE_Bold.woff") format("woff"), url("../fonts/CODE_Bold.ttf") format("truetype"), url("../fonts/CODE_Bold.svg#Code-Bold") format("svg")
+    font-weight: normal
+    font-style: normal
+@font-face
+    font-family: "Code-Light"
+    src: url("../fonts/CODE_Light.eot?") format("eot"), url("../fonts/CODE_Light.woff") format("woff"), url("../fonts/CODE_Light.ttf") format("truetype"), url("../fonts/CODE_Light.svg#Code-Bold") format("svg")
     font-weight: normal
     font-style: normal
 
@@ -49,7 +56,7 @@ $darken: rgba(0, 0, 0, 0.1)
 $very-darken: rgba(0, 0, 0, 0.7)
 
 // Semantic
-$background-color: $dark-gray
+$background-color: $near-black
 $name-color: $near-white
 $text-color: $near-black
 $header-link: $green
@@ -175,15 +182,20 @@ h1
             height: 32px
 
 #expando-wrapper
-    background: $cyan
+    background: $green
     color: $text-color
     max-width: 100%
+    max-height: 300px
+    max-height: 45vh
+    overflow-y: scroll
     p
         color: $near-black
         a[href], li a[href]
             +black-link
+        &:last-child
+            margin-bottom: 10px
     > div
-        margin: 10px auto
+        margin: 0 auto
         padding: 10px
         max-width: 32em
         position: relative
@@ -212,8 +224,6 @@ h1
 
 #skills .set
     margin-bottom: 10px
-    &:last-child
-        margin-bottom: 0
 
 .slide-out
     display: none
@@ -233,6 +243,7 @@ h1
         white-space: nowrap
         &.code
             white-space: normal
+        // Icon bullets for .project-data div
         &:before
             +icon-styling
             background: $dark-gray
@@ -270,26 +281,30 @@ h1
         width: 100%
         background: $very-darken
         color: $near-white
+        
+
+    .nav-list-wrapper
+        +clearfix
+    .nav-list li
+        display: inline-block
+        float: left
         font-family: $nav-font
-        li
-            display: inline-block
-            float: left
-        .resume
-            float: left
-            li
-                border-right: rgba(255,255,255,0.3) 1px solid
-        .outside-links
-            float: right
-            li
-                border-left: rgba(255,255,255,0.3) 1px solid
         a
             display: block
             padding: 1em
             color: $near-white
             text-decoration: none
-            &:hover
+            &:hover, &.on
                 background: rgba($green, 1)
                 color: $near-black
+    .resume
+        float: left
+        li
+            border-right: rgba(255,255,255,0.3) 1px solid
+    .outside-links
+        float: right
+        li
+            border-left: rgba(255,255,255,0.3) 1px solid
 
     #name
         +adjust-font-size-to(96px)
