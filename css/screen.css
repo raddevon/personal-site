@@ -460,74 +460,74 @@ h1 {
     background: rgba(0, 0, 0, 0.7);
     color: #ececec; }
 
-  /* line 286, ../sass/_style.sass */
+  /* line 285, ../sass/_style.sass */
   .nav-list-wrapper {
     overflow: hidden;
     *zoom: 1; }
 
-  /* line 288, ../sass/_style.sass */
+  /* line 287, ../sass/_style.sass */
   .nav-list li {
     display: inline-block;
     float: left;
     font-family: "Code-Bold", sans-serif; }
-    /* line 292, ../sass/_style.sass */
+    /* line 291, ../sass/_style.sass */
     .nav-list li a {
       display: block;
       padding: 1em;
       color: #ececec;
       text-decoration: none; }
-      /* line 297, ../sass/_style.sass */
+      /* line 296, ../sass/_style.sass */
       .nav-list li a:hover, .nav-list li a.on {
         background: #a3ff4d;
         color: #333333; }
 
-  /* line 300, ../sass/_style.sass */
+  /* line 299, ../sass/_style.sass */
   .resume {
     float: left; }
-    /* line 302, ../sass/_style.sass */
+    /* line 301, ../sass/_style.sass */
     .resume li {
       border-right: rgba(255, 255, 255, 0.3) 1px solid; }
 
-  /* line 304, ../sass/_style.sass */
+  /* line 303, ../sass/_style.sass */
   .outside-links {
     float: right; }
-    /* line 306, ../sass/_style.sass */
+    /* line 305, ../sass/_style.sass */
     .outside-links li {
       border-left: rgba(255, 255, 255, 0.3) 1px solid; }
 
-  /* line 309, ../sass/_style.sass */
+  /* line 308, ../sass/_style.sass */
   #name {
     font-size: 4.8em;
     line-height: 1.25em; }
 
-  /* line 312, ../sass/_style.sass */
+  /* line 311, ../sass/_style.sass */
   #me p {
     font-size: 1.2em;
     line-height: 1.25em; }
 
-  /* line 315, ../sass/_style.sass */
+  /* line 314, ../sass/_style.sass */
   header {
     min-height: 65%;
     margin-bottom: 5%;
     padding: 10% 0;
     background: #333333; }
 
-  /* line 321, ../sass/_style.sass */
+  /* line 320, ../sass/_style.sass */
   header p, footer p {
     text-align: justify; }
 
-  /* line 324, ../sass/_style.sass */
+  /* line 323, ../sass/_style.sass */
   .text, .project-data {
     padding: 10px;
     min-width: 15em; }
 
-  /* line 328, ../sass/_style.sass */
+  /* line 327, ../sass/_style.sass */
   .project-data li {
     -ms-text-overflow: clip;
     text-overflow: clip; } }
 /* Desktop-only styles */
 @media screen and (min-width: 1025px) {
-  /* line 335, ../sass/_style.sass */
+  /* line 334, ../sass/_style.sass */
   header {
     min-height: 95%;
     margin-bottom: 5%;
@@ -535,21 +535,21 @@ h1 {
     min-height: 95vh;
     margin-bottom: 2em;
     padding: 30vh 0; }
-    /* line 342, ../sass/_style.sass */
+    /* line 341, ../sass/_style.sass */
     header.background-1 {
       background: url(../img/header-1.jpg) center center fixed no-repeat;
       -webkit-background-size: cover;
       -moz-background-size: cover;
       -o-background-size: cover;
       background-size: cover; }
-    /* line 345, ../sass/_style.sass */
+    /* line 344, ../sass/_style.sass */
     header.background-2 {
       background: url(../img/header-2.jpg) center center fixed no-repeat;
       -webkit-background-size: cover;
       -moz-background-size: cover;
       -o-background-size: cover;
       background-size: cover; }
-    /* line 348, ../sass/_style.sass */
+    /* line 347, ../sass/_style.sass */
     header.background-3 {
       background: url(../img/header-3.jpg) center center fixed no-repeat;
       -webkit-background-size: cover;
@@ -557,7 +557,7 @@ h1 {
       -o-background-size: cover;
       background-size: cover; }
 
-  /* line 352, ../sass/_style.sass */
+  /* line 351, ../sass/_style.sass */
   p a[href] {
     color: black;
     text-decoration: underline;
@@ -581,63 +581,63 @@ h1 {
       -o-border-radius: 3px;
       border-radius: 3px; }
 
-  /* line 355, ../sass/_style.sass */
+  /* line 354, ../sass/_style.sass */
   #projects {
     width: 100%;
     overflow-x: hidden; }
 
-  /* line 359, ../sass/_style.sass */
+  /* line 358, ../sass/_style.sass */
   div.project-wrap {
     position: relative; }
-    /* line 361, ../sass/_style.sass */
+    /* line 360, ../sass/_style.sass */
     div.project-wrap:nth-child(even) .project {
       position: relative;
       left: -66%; }
 
-  /* line 365, ../sass/_style.sass */
+  /* line 364, ../sass/_style.sass */
   div.project {
     display: table;
     width: 166.66667%; }
-    /* line 368, ../sass/_style.sass */
+    /* line 367, ../sass/_style.sass */
     div.project .row {
       display: table-row; }
-      /* line 370, ../sass/_style.sass */
+      /* line 369, ../sass/_style.sass */
       div.project .row > div {
         display: table-cell;
         vertical-align: middle;
         position: relative;
         left: 0; }
-    /* line 375, ../sass/_style.sass */
+    /* line 374, ../sass/_style.sass */
     div.project [data-picture] {
       width: 40%; }
-      /* line 377, ../sass/_style.sass */
+      /* line 376, ../sass/_style.sass */
       div.project [data-picture]:nth-child(even) {
         text-align: right; }
-      /* line 379, ../sass/_style.sass */
+      /* line 378, ../sass/_style.sass */
       div.project [data-picture] img {
         margin-bottom: -7px; }
 
-  /* line 382, ../sass/_style.sass */
+  /* line 381, ../sass/_style.sass */
   .text {
     padding: 20px;
     width: 20%; }
 
-  /* line 386, ../sass/_style.sass */
+  /* line 385, ../sass/_style.sass */
   .project-data {
     padding: 20px;
     width: 40%;
     border: none;
     text-align: center; }
-    /* line 391, ../sass/_style.sass */
+    /* line 390, ../sass/_style.sass */
     .project-data > div {
       text-align: left;
       display: inline-block; }
 
-  /* line 396, ../sass/_style.sass */
+  /* line 395, ../sass/_style.sass */
   header #me a[href]:hover {
     background: #a3ff4d;
     color: #333333; }
-  /* line 399, ../sass/_style.sass */
+  /* line 398, ../sass/_style.sass */
   header #me a[href].on {
     background: #a3ff4d;
     color: #333333;
@@ -647,12 +647,12 @@ h1 {
     -o-border-radius: 3px;
     border-radius: 3px; }
 
-  /* line 404, ../sass/_style.sass */
+  /* line 403, ../sass/_style.sass */
   .collapse {
     position: absolute;
     left: -45px; }
 
-  /* line 408, ../sass/_style.sass */
+  /* line 407, ../sass/_style.sass */
   div.project .row > .slider-control {
     position: relative;
     height: 2em;
@@ -664,12 +664,12 @@ h1 {
     -moz-transition: all 0.2s ease-out 0;
     -o-transition: all 0.2s ease-out 0;
     transition: all 0.2s ease-out 0; }
-    /* line 414, ../sass/_style.sass */
+    /* line 413, ../sass/_style.sass */
     div.project .row > .slider-control:hover {
       background: rgba(0, 0, 0, 0.1);
       cursor: hand;
       cursor: pointer; }
 
-  /* line 419, ../sass/_style.sass */
+  /* line 418, ../sass/_style.sass */
   .slide-out {
     display: table-cell; } }
