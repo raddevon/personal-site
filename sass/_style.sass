@@ -53,7 +53,8 @@ h3
 /* Colors */
 // Named
 $dark-gray: #4f4f4f
-$light-gray: #9d9d9d
+$gray: #9d9d9d
+$light-gray: #dbdbdb
 $white: #fff
 $near-white: #ececec
 $black: #000
@@ -70,6 +71,8 @@ $name-color: $near-white
 $text-color: $near-black
 $link: $black
 $secondary-link: $green
+$navbar-active: $light-gray
+$expando-background: $light-gray
 
 // Project rows
 $row-even: $cyan
@@ -109,6 +112,16 @@ $large-screen-min: 1824px
 body
     background: $background-color
 
+#overlay
+    position: fixed
+    z-index: 199
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    background: $very-darken
+    display: none
+
 p
     margin-bottom: 1.2em
     &:last-child
@@ -146,7 +159,7 @@ a[href] i, i, header > div#expando-wrapper h2 a[href].on
     color: $text-color
 
 .project-data
-    border-top: rgba($light-gray, 0.5) 1px solid
+    border-top: rgba($gray, 0.5) 1px solid
 
 header, footer
     border: none
@@ -198,12 +211,12 @@ h1
             height: 32px
 
 #expando-wrapper
-    background: $green
+    background: $expando-background
     color: $text-color
     max-width: 100%
-    max-height: 300px
-    max-height: 45vh
-    overflow-y: scroll
+    max-height: 1000px
+    max-height: 80vh
+    overflow-y: auto
     p
         color: $near-black
         a[href], li a[href]
@@ -211,7 +224,7 @@ h1
         &:last-child
             margin-bottom: 10px
     > div
-        margin: 0 auto
+        margin: 0 5em
         padding: 10px
         max-width: 32em
         position: relative
@@ -295,11 +308,11 @@ h1
         top: 0
         z-index: 200
         width: 100%
-        background: $very-darken
         color: $near-white
 
     .nav-list-wrapper
         +clearfix
+        background: $very-darken
     .nav-list li
         display: inline-block
         float: left
@@ -310,13 +323,19 @@ h1
             color: $near-white
             text-decoration: none
             &:hover, &.on
-                background: rgba($green, 1)
+                background: $navbar-active
                 color: $near-black
         a i
             padding: 0
             color: $near-white
         a:hover i
             color: $near-black
+        // Github icon needs to be a bit larger font size to appear the same size as the others
+        i[class=icon-github]
+            +adjust-font-size-to(24px)
+        // Its a element needs less padding to keep the same overall height as the other navbar buttons
+        a[href="http://github.com/raddevon"]
+            padding: 0.95em 1em
     .resume
         float: left
         li
