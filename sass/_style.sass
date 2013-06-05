@@ -53,7 +53,8 @@ h3
 /* Colors */
 // Named
 $dark-gray: #4f4f4f
-$light-gray: #9d9d9d
+$gray: #9d9d9d
+$light-gray: #dbdbdb
 $white: #fff
 $near-white: #ececec
 $black: #000
@@ -70,37 +71,43 @@ $name-color: $near-white
 $text-color: $near-black
 $link: $black
 $secondary-link: $green
+$navbar-active: $light-gray
+$expando-background: $light-gray
 
 // Project rows
-$row-even: $cyan
-$row-odd: $green
-$row-fallback: $green
+$row-even: $near-white
+$row-odd: $near-white
+$row-fallback: $near-white
 
 /* Media query variables */
 $phone-min: 320px
 $phone-max: 480px
 $tablet-min: 481px
+$tablet: 768px
 $tablet-max: 1024px
 $desktop-min: 1025px
 $large-screen-min: 1824px
 
+=fade
+    +single-transition(all, 0.2s, ease-out, 0)
+
 =primary-link($desktop: false)
     color: $link
     text-decoration: underline
-    +single-transition(all, 0.2s, ease-out, 0)
+    +fade
     @if $desktop
         &:hover
-            background: $near-white
-            color: $text-color
+            background: $white
+            color: $black
 
 =secondary-link($desktop: false)
-    color: $green
+    color: $near-white
     text-decoration: underline
-    +single-transition(all, 0.2s, ease-out, 0)
+    +fade
     @if $desktop
         &:hover
-            background: $secondary-link
-            color: $text-color
+            background: $white
+            color: $black
 
 /* Layout */
 *
@@ -108,6 +115,16 @@ $large-screen-min: 1824px
 
 body
     background: $background-color
+
+#overlay
+    position: fixed
+    z-index: 199
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    background: $very-darken
+    display: none
 
 p
     margin-bottom: 1.2em
@@ -146,7 +163,7 @@ a[href] i, i, header > div#expando-wrapper h2 a[href].on
     color: $text-color
 
 .project-data
-    border-top: rgba($light-gray, 0.5) 1px solid
+    border-top: rgba($gray, 0.5) 1px solid
 
 header, footer
     border: none
@@ -198,12 +215,12 @@ h1
             height: 32px
 
 #expando-wrapper
-    background: $green
+    background: $expando-background
     color: $text-color
     max-width: 100%
-    max-height: 300px
-    max-height: 45vh
-    overflow-y: scroll
+    max-height: 1000px
+    max-height: 80vh
+    overflow-y: auto
     p
         color: $near-black
         a[href], li a[href]
@@ -211,21 +228,20 @@ h1
         &:last-child
             margin-bottom: 10px
     > div
-        margin: 0 auto
+        margin: 0 5em
         padding: 10px
         max-width: 32em
         position: relative
         &.expando-close
             display: none
-            text-align: center
-            margin-bottom: -1em
-            +adjust-font-size-to(56px)
-            a:hover
-                background: none
-                +transition(none)
+            margin: 0 0 -2em 0
+            +adjust-font-size-to(24px)
+            a i
+                +fade
+            a:hover i
+                color: $white
             i
                 position: relative
-                top: -0.4em
         ul
             margin-left: 10px
     a[href] i
@@ -286,20 +302,20 @@ h1
     @media screen and (min-width: $desktop-min)
         display: none !important
 
-/* Tablets and larger screens */
-@media screen and (min-width: $tablet-min)
+/* Tablet breakpoint for navbar */
+@media screen and (min-width: $tablet)
 
     .static-navbar
         display: block
         position: fixed
-        top: 0
+        top: 1em
         z-index: 200
         width: 100%
-        background: $very-darken
         color: $near-white
 
     .nav-list-wrapper
         +clearfix
+        background: $very-darken
     .nav-list li
         display: inline-block
         float: left
@@ -310,13 +326,19 @@ h1
             color: $near-white
             text-decoration: none
             &:hover, &.on
-                background: rgba($green, 1)
+                background: $navbar-active
                 color: $near-black
         a i
             padding: 0
             color: $near-white
         a:hover i
             color: $near-black
+        // Github icon needs to be a bit larger font size to appear the same size as the others
+        i[class=icon-github]
+            +adjust-font-size-to(24px)
+        // Its a element needs less padding to keep the same overall height as the other navbar buttons
+        a[href="http://github.com/raddevon"]
+            padding: 0.95em 0.95em
     .resume
         float: left
         li
@@ -325,6 +347,9 @@ h1
         float: right
         li
             border-left: rgba(255,255,255,0.3) 1px solid
+
+/* Tablets and larger screens */
+@media screen and (min-width: $tablet-min)
 
     #name
         +adjust-font-size-to(96px)
@@ -430,7 +455,7 @@ h1
         height: 2em
         +adjust-font-size-to(30px)
         display: none
-        +single-transition(all, 0.2s, ease-out, 0)
+        +fade
         &:hover
             background: $darken
             cursor: hand
