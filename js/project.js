@@ -6,7 +6,7 @@ $('[data-expando]').on('click', function() {
     }
 });
 
-$('#overlay').on('click', function() {
+$('#overlay').on('click', function(e) {
     $('#overlay').hide();
-    expandoCloseAll(null, $('#expando-wrapper'));
+    expandoCloseAll(e, $('#expando-wrapper'));
 });

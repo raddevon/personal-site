@@ -25,26 +25,54 @@ function expandoToggle (event, target) {
     target = typeof target !== 'undefined' ? target : $($(this).data('expando'));
     var clicked = $(this);
 
-    //  Add the last clicked expando to the top of the expando container
+    expandoCloseAll(null, target.parent());
+
+    //  Add the last clicked expando to the top of the expando container and add the on class to links targetting it
     if (target.css('display') === 'none') {
         target.prependTo(target.parent()).slideDown(400, 'easeInOutQuart');
+        $('[data-expando]').each( function() {
+            if ($(this).data('expando') === clicked.data('expando')) {
+                $(this).addClass('on');
+            }
+        });
+    //  Hide the expando container and remove the on class from links targetting it
     } else {
         target.slideUp(400, 'easeInOutQuart');
+        $('[data-expando]').each( function() {
+            if ($(this).data('expando') === clicked.data('expando')) {
+                $(this).removeClass('on');
+            }
+        });
     }
-
-    // Give each element with the data-expando attribute pointing to the just toggled element the on class.
-    $('[data-expando]').each( function() {
-        if ($(this).data('expando') === clicked.data('expando')) {
-            $(this).toggleClass('on');
-        }
-    });
 
     toggleCollapseAll();
 }
 
+function expandoOff (event, target) {
+    //  If the function is called by a click event, suppress the default browser behavior
+    if (event) {
+        event.preventDefault();
+    }
+
+    // If the target argument is not passed, make the data-expando value for the current element the target. Target is required if the function is called manually.
+    target = typeof target !== 'undefined' ? target : $($(this).data('expando'));
+    var clicked = $(this);
+
+    // Close the expando
+    target.slideUp(400, 'easeInOutQuart');
+
+    // Give each element with the data-expando attribute pointing to the just toggled element the on class.
+    $('[data-expando]').each( function() {
+        if ($(this).data('expando') === clicked.data('expando')) {
+            $(this).removeClass('on');
+        }
+    });
+}
+
 function expandoCloseAll (event, expandoContainer) {
     if (event) {
-            event.preventDefault();
+        event.preventDefault();
+        $('.expando-close').slideUp(400, 'easeInOutQuart');
     }
 
     // Find the data-target attribute of the clicked element
@@ -53,7 +81,7 @@ function expandoCloseAll (event, expandoContainer) {
     // Loop through expandos in the container and toggle them if they are currently displayed
     closeTarget.find('.expando').each( function() {
         if ($(this).css('display') !== 'none') {
-            expandoToggle(event, $(this));
+            expandoOff(event, $(this));
         }
     });
 
@@ -63,7 +91,6 @@ function expandoCloseAll (event, expandoContainer) {
     });
 
     // Animate out the close button
-    $('.expando-close').slideUp(400, 'easeInOutQuart');
     $('#overlay').hide();
 }
 
