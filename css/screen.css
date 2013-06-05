@@ -518,7 +518,7 @@ h1 {
       line-height: 1.25em; }
     /* line 337, ../sass/_style.sass */
     .nav-list li a[href="http://github.com/raddevon"] {
-      padding: 0.95em 1em; }
+      padding: 0.95em 0.95em; }
 
   /* line 339, ../sass/_style.sass */
   .resume {
