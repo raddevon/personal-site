@@ -245,14 +245,14 @@ a[href] i, i, header > div#expando-wrapper h2 a[href].on {
 /* line 144, ../sass/_style.sass */
 #projects div.project-wrap {
   margin-bottom: 2em;
-  background: #a3ff4d;
+  background: #ececec;
   -webkit-backface-visibility: hidden; }
   /* line 148, ../sass/_style.sass */
   #projects div.project-wrap:nth-child(even) .project {
-    background: #4dffe7; }
+    background: #ececec; }
   /* line 150, ../sass/_style.sass */
   #projects div.project-wrap:nth-child(odd) .project {
-    background: #a3ff4d; }
+    background: #ececec; }
   /* line 152, ../sass/_style.sass */
   #projects div.project-wrap:last-child {
     margin-bottom: 0; }
@@ -301,7 +301,7 @@ footer {
   margin: 20px inherit; }
   /* line 187, ../sass/_style.sass */
   footer a[href] {
-    color: #a3ff4d;
+    color: #ececec;
     text-decoration: underline;
     -webkit-transition: all 0.2s ease-out;
     -webkit-transition-delay: 0;
@@ -616,12 +616,12 @@ h1 {
     transition: all 0.2s ease-out 0; }
     /* line 95, ../sass/_style.sass */
     p a[href]:hover {
-      background: #ececec;
-      color: #333333; }
+      background: white;
+      color: black; }
 
   /* line 400, ../sass/_style.sass */
   footer p a[href] {
-    color: #a3ff4d;
+    color: #ececec;
     text-decoration: underline;
     -webkit-transition: all 0.2s ease-out;
     -webkit-transition-delay: 0;
@@ -630,8 +630,8 @@ h1 {
     transition: all 0.2s ease-out 0; }
     /* line 104, ../sass/_style.sass */
     footer p a[href]:hover {
-      background: #a3ff4d;
-      color: #333333; }
+      background: white;
+      color: black; }
 
   /* line 403, ../sass/_style.sass */
   #projects {

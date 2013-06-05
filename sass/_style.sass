@@ -75,9 +75,9 @@ $navbar-active: $light-gray
 $expando-background: $light-gray
 
 // Project rows
-$row-even: $cyan
-$row-odd: $green
-$row-fallback: $green
+$row-even: $near-white
+$row-odd: $near-white
+$row-fallback: $near-white
 
 /* Media query variables */
 $phone-min: 320px
@@ -93,17 +93,17 @@ $large-screen-min: 1824px
     +single-transition(all, 0.2s, ease-out, 0)
     @if $desktop
         &:hover
-            background: $near-white
-            color: $text-color
+            background: $white
+            color: $black
 
 =secondary-link($desktop: false)
-    color: $green
+    color: $near-white
     text-decoration: underline
     +single-transition(all, 0.2s, ease-out, 0)
     @if $desktop
         &:hover
-            background: $secondary-link
-            color: $text-color
+            background: $white
+            color: $black
 
 /* Layout */
 *
