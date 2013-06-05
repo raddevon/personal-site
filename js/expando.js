@@ -1,7 +1,11 @@
+function anyExpandoOn () {
+    return !! ($('[data-expando].on').length);
+}
+
 function toggleCollapseAll () {
     var expandoContainer = $($('[data-expando].on').data('expando')).parent();
     //  If at least one element with the data-expando attribute also has the on class, add a collaps all button to the top of the expando container
-    if ($('[data-expando].on').length) {
+    if (anyExpandoOn()) {
         expandoContainer.prepend($('.expando-close').slideDown(400, 'easeInOutQuart'));
 
     //  otherwise hide the button
@@ -11,7 +15,7 @@ function toggleCollapseAll () {
 }
 
 function expandoToggle (event, target) {
-    //  If the function is called by a click event, suppress the devault browser behavior
+    //  If the function is called by a click event, suppress the default browser behavior
     if (event) {
         event.preventDefault();
     }
@@ -33,19 +37,18 @@ function expandoToggle (event, target) {
             $(this).toggleClass('on');
         }
     });
-
-    // Check if the expando now needs a collapse button or not
-    toggleCollapseAll();
 }
 
-function expandoCloseAll (event) {
-    event.preventDefault();
+function expandoCloseAll (event, expandoContainer) {
+    if (event) {
+            event.preventDefault();
+    }
 
     // Find the data-target attribute of the clicked element
-    var expandoContainer = $($(this).find('a').data('target'));
+    var closeTarget = expandoContainer || $($(this).find('a').data('target'));
 
     // Loop through expandos in the container and toggle them if they are currently displayed
-    expandoContainer.find('.expando').each( function() {
+    closeTarget.find('.expando').each( function() {
         if ($(this).css('display') !== 'none') {
             expandoToggle(event, $(this));
         }
