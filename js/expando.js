@@ -37,6 +37,8 @@ function expandoToggle (event, target) {
             $(this).toggleClass('on');
         }
     });
+
+    toggleCollapseAll();
 }
 
 function expandoCloseAll (event, expandoContainer) {
