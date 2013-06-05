@@ -7,10 +7,11 @@ function toggleCollapseAll () {
     //  If at least one element with the data-expando attribute also has the on class, add a collaps all button to the top of the expando container
     if (anyExpandoOn()) {
         expandoContainer.prepend($('.expando-close').slideDown(400, 'easeInOutQuart'));
-
+        $('#overlay').show();
     //  otherwise hide the button
     } else {
         $('.expando-close').slideUp(400, 'easeInOutQuart');
+        $('#overlay').hide();
     }
 }
 
@@ -63,6 +64,7 @@ function expandoCloseAll (event, expandoContainer) {
 
     // Animate out the close button
     $('.expando-close').slideUp(400, 'easeInOutQuart');
+    $('#overlay').hide();
 }
 
 $(document).ready( function() {

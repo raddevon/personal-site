@@ -87,10 +87,13 @@ $tablet-max: 1024px
 $desktop-min: 1025px
 $large-screen-min: 1824px
 
+=fade
+    +single-transition(all, 0.2s, ease-out, 0)
+
 =primary-link($desktop: false)
     color: $link
     text-decoration: underline
-    +single-transition(all, 0.2s, ease-out, 0)
+    +fade
     @if $desktop
         &:hover
             background: $white
@@ -99,7 +102,7 @@ $large-screen-min: 1824px
 =secondary-link($desktop: false)
     color: $near-white
     text-decoration: underline
-    +single-transition(all, 0.2s, ease-out, 0)
+    +fade
     @if $desktop
         &:hover
             background: $white
@@ -232,9 +235,10 @@ h1
             display: none
             margin: 0 0 -2em 0
             +adjust-font-size-to(24px)
-            a:hover
-                background: none
-                +transition(none)
+            a i
+                +fade
+            a:hover i
+                color: $white
             i
                 position: relative
         ul
@@ -447,7 +451,7 @@ h1
         height: 2em
         +adjust-font-size-to(30px)
         display: none
-        +single-transition(all, 0.2s, ease-out, 0)
+        +fade
         &:hover
             background: $darken
             cursor: hand
