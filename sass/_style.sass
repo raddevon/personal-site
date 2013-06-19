@@ -318,26 +318,28 @@ h1
             padding: 1em
             color: $near-white
             text-decoration: none
+            height: 4.23em
             &:hover, &.on
                 background: $navbar-active
                 color: $near-black
         a i
             padding: 0
             color: $near-white
+            vertical-align: middle
         a:hover i
             color: $near-black
-        // Github icon needs to be a bit larger font size to appear the same size as the others
-        i[class=icon-github]
-            +adjust-font-size-to(24px)
-        // Its a element needs less padding to keep the same overall height as the other navbar buttons
-        a[href="http://github.com/raddevon"]
-            padding: 0.95em 0.95em
-        // Larger to-the-top icon
-        i[class=icon-up]
-            font-size: 1.7em
-        // Its a element needs less padding to keep the same overall height as the other navbar buttons
-        a[href="#"]
-            padding: 0.78em 0.78em
+    // Github icon needs to be a bit larger font size to appear the same size as the others
+    i[class=icon-github]
+        +adjust-font-size-to(24px)
+    // Its a element needs less padding to keep the same overall height as the other navbar buttons
+    a[href="http://github.com/raddevon"]
+        padding: 0.95em 0.95em
+    // Larger to-the-top icon
+    i[class=icon-up]
+        font-size: 1.7em
+    // Its a element needs less padding to keep the same overall height as the other navbar buttons
+    a[href="#"]
+        padding: 0.78em 0.78em
     .inside-links
         float: left
         li
@@ -405,6 +407,12 @@ h1
 
     .nav-list li
         font-size: 20px
+        a
+            height: 3.5em
+    // Correct back-to-top icon positioning
+    i[class=icon-up]
+        position: relative
+        top: -0.15em
 
     #name
         +adjust-font-size-to(96px)
