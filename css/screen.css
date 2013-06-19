@@ -349,7 +349,7 @@ footer {
     transition: all 0.2s ease-out 0; }
 
 /* line 213, ../sass/_style.sass */
-#thinkful-badge {
+.thinkful-badge {
   display: block;
   margin: 1em auto; }
 
