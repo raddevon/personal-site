@@ -117,15 +117,14 @@ $large-screen-min: 1824px
 body
     background: $background-color
 
-#overlay
-    position: fixed
-    z-index: 199
-    top: 0
-    right: 0
-    bottom: 0
-    left: 0
-    background: $very-darken
-    display: none
+.wrapper
+    width: 100%
+    background: $light-gray
+    > div
+        max-width: 40em
+        margin: 0 auto 2em auto
+        background: $light-gray
+        padding: 80px 1em
 
 p
     margin-bottom: 1.2em
@@ -224,44 +223,6 @@ h1
             width: 32px
             height: 32px
 
-#expando-wrapper
-    background: $expando-background
-    color: $text-color
-    max-width: 100%
-    max-height: 1000px
-    max-height: 80vh
-    overflow-y: auto
-    p
-        color: $near-black
-        a[href], li a[href]
-            +primary-link
-        &:last-child
-            margin-bottom: 10px
-    > div
-        margin: 0 5em
-        padding: 10px
-        max-width: 32em
-        position: relative
-        &.expando-close
-            display: none
-            margin: 0 0 -2em 0
-            +adjust-font-size-to(24px)
-            a i
-                +fade
-            a:hover i
-                color: $white
-            i
-                position: relative
-        ul
-            margin-left: 10px
-    a[href] i
-        color: $dark-gray
-        text-decoration: none
-        margin-right: 5px
-        background: none
-        +transition(none)
-        &:hover
-            background: none
 
 
 #skills .set
