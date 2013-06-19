@@ -64,3 +64,7 @@
 /* line 71, ../sass/icons.sass */
 .icon-cancel:before {
   content: "\e809"; }
+
+/* line 73, ../sass/icons.sass */
+.icon-up:before {
+  content: "\e80a"; }
