@@ -122,9 +122,8 @@ body
     background: $light-gray
     > div
         max-width: 40em
-        margin: 0 auto 2em auto
-        background: $light-gray
-        padding: 80px 1em
+        margin: 0 auto 1em auto
+        padding: 1em
 
 p
     margin-bottom: 1.2em
@@ -137,6 +136,17 @@ a[href]
 a[href] i, i, header > div#expando-wrapper h2 a[href].on
     color: $dark-gray
     background: none
+
+#featured-heading
+    margin: 0
+
+#featured-intro
+    color: $near-white
+    max-width: 40em
+    padding: 1em
+    margin: auto
+    a[href]
+        +secondary-link
 
 #projects
     div[data-picture]
@@ -180,7 +190,7 @@ header, footer
             color: $near-white
             padding: 0 10px
             margin: 0 auto 10px auto
-            max-width: 32em
+            max-width: 40em
 
 header
     padding: 10% 0
@@ -274,7 +284,7 @@ h1
         display: none !important
 
 /* Navbar breakpoint */
-@media screen and (min-width: 823px)
+@media screen and (min-width: $tablet-max)
 
     .static-navbar
         display: block
@@ -283,6 +293,20 @@ h1
         z-index: 200
         width: 100%
         color: $near-white
+
+    #featured-heading
+        margin: -80px auto 0 auto
+        padding: 80px 0
+
+    #featured-intro
+        padding: 1em
+        margin: -80px auto 1em auto
+        a[href]
+            +secondary-link
+
+    .wrapper > div
+        margin: 0 auto 2em auto
+        padding: 80px 1em
 
 /* Tablet */
 @media screen and (min-width: $tablet)
@@ -391,6 +415,10 @@ h1
 
     footer p a[href]
         +secondary-link(true)
+
+    #featured-intro
+        a[href]
+            +secondary-link(true)
 
     #projects
         width: 100%
