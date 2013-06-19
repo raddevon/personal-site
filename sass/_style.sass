@@ -193,22 +193,26 @@ header, footer
             max-width: 40em
 
 header
-    padding: 10% 0
+    padding: 5% 0
     background: $near-black
     &.background-1
         background: url(../img/header-phone-1.jpg) no-repeat
         background-size: 100%
     &.background-2
-        background: url(../img/header-phone-2.jpg) 0 70% no-repeat
+        background: url(../img/header-phone-2.jpg) no-repeat
         background-size: 100%
     &.background-3
-        background: url(../img/header-phone-3.jpg) 0 25% no-repeat
+        background: url(../img/header-phone-3.jpg) no-repeat
         background-size: 100%
 
 footer
     margin: 20px inherit
     a[href]
         +secondary-link
+
+#thinkful-badge
+    display: block
+    margin: 1em auto
 
 .static-navbar
     display: none
@@ -283,9 +287,16 @@ h1
     @media screen and (min-width: $desktop-min)
         display: none !important
 
-/* Navbar breakpoint */
+/* Tablet widescreen breakpoint */
 @media screen and (min-width: $tablet-max)
 
+    .nav-list li
+        font-size: 18px
+
+
+/* Tablet */
+@media screen and (min-width: $tablet)
+    /* Navbar display and styling */
     .static-navbar
         display: block
         position: fixed
@@ -294,20 +305,6 @@ h1
         width: 100%
         color: $near-white
 
-    // Making room for the navbar when using an anchor link
-    #featured-heading
-        margin: -80px auto 0 auto
-        padding: 80px 0
-    #featured-intro
-        padding: 1em
-        margin: -80px auto 1em auto
-    .wrapper > div
-        margin: 0 auto 2em auto
-        padding: 80px 1em
-
-/* Tablet */
-@media screen and (min-width: $tablet)
-
     .nav-list-wrapper
         +clearfix
         background: $very-darken
@@ -315,6 +312,7 @@ h1
         display: inline-block
         float: left
         font-family: $nav-font
+        font-size: 14px
         a
             display: block
             padding: 1em
@@ -334,12 +332,13 @@ h1
         // Its a element needs less padding to keep the same overall height as the other navbar buttons
         a[href="http://github.com/raddevon"]
             padding: 0.95em 0.95em
+        // Larger to-the-top icon
         i[class=icon-up]
             font-size: 1.7em
         // Its a element needs less padding to keep the same overall height as the other navbar buttons
         a[href="#"]
             padding: 0.78em 0.78em
-    .resume
+    .inside-links
         float: left
         li
             border-right: rgba(255,255,255,0.3) 1px solid
@@ -347,6 +346,18 @@ h1
         float: right
         li
             border-left: rgba(255,255,255,0.3) 1px solid
+    /* End navbar styling */
+
+    // Making room for the navbar when using an anchor link
+    #featured-heading
+        margin: 0 auto 0 auto
+        padding: 80px 0
+    #featured-intro
+        padding: 1em
+        margin: -80px auto 1em auto
+    .wrapper > div
+        margin: 0 auto 2em auto
+        padding: 80px 1em
 
 /* Larger than phone */
 @media screen and (min-width: $tablet-min)
@@ -391,6 +402,9 @@ h1
 
 /* Desktop-only styles */
 @media screen and (min-width: $desktop-min)
+
+    .nav-list li
+        font-size: 20px
 
     #name
         +adjust-font-size-to(96px)
