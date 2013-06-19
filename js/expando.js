@@ -19,6 +19,7 @@ function expandoToggle (event, target) {
     //  If the function is called by a click event, suppress the default browser behavior
     if (event) {
         event.preventDefault();
+        event.stopPropagation();
     }
 
     // If the target argument is not passed, make the data-expando value for the current element the target. Target is required if the function is called manually.
@@ -52,6 +53,7 @@ function expandoOff (event, target) {
     //  If the function is called by a click event, suppress the default browser behavior
     if (event) {
         event.preventDefault();
+        event.stopPropagation();
     }
 
     // If the target argument is not passed, make the data-expando value for the current element the target. Target is required if the function is called manually.
@@ -72,6 +74,7 @@ function expandoOff (event, target) {
 function expandoCloseAll (event, expandoContainer) {
     if (event) {
         event.preventDefault();
+        event.stopPropagation();
         $('.expando-close').slideUp(400, 'easeInOutQuart');
     }
 

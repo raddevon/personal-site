@@ -21,6 +21,7 @@ function toggleControls(mode) {
 
 function projectSliderToggle(event){
     event.preventDefault();
+    event.stopPropagation();
 
     var sliderToggle = $(this).find('i');
     var projectRow = $(this).closest('.project-wrap');
