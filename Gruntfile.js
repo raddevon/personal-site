@@ -51,7 +51,7 @@ module.exports = function (grunt) {
       },
       scripts: {
         files: scripts,
-        tasks: ['jshint']
+        tasks: ['jshint', 'concat']
       },
       styles: {
         files: ['sass/**/*.{sass,scss}'],
@@ -68,7 +68,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   // Default task(s).
-  grunt.registerTask('default', ['jshint', 'compass:dev', 'watch']);
+  grunt.registerTask('default', ['jshint','concat', 'compass:dev', 'watch']);
   grunt.registerTask('build', ['jshint', 'compass:production', 'concat', 'uglify']);
 
 };
