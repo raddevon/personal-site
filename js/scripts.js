@@ -9638,6 +9638,7 @@ function expandoToggle (event, target) {
     //  If the function is called by a click event, suppress the default browser behavior
     if (event) {
         event.preventDefault();
+        event.stopPropagation();
     }
 
     // If the target argument is not passed, make the data-expando value for the current element the target. Target is required if the function is called manually.
@@ -9671,6 +9672,7 @@ function expandoOff (event, target) {
     //  If the function is called by a click event, suppress the default browser behavior
     if (event) {
         event.preventDefault();
+        event.stopPropagation();
     }
 
     // If the target argument is not passed, make the data-expando value for the current element the target. Target is required if the function is called manually.
@@ -9691,6 +9693,7 @@ function expandoOff (event, target) {
 function expandoCloseAll (event, expandoContainer) {
     if (event) {
         event.preventDefault();
+        event.stopPropagation();
         $('.expando-close').slideUp(400, 'easeInOutQuart');
     }
 
@@ -9850,6 +9853,7 @@ function toggleControls(mode) {
 
 function projectSliderToggle(event){
     event.preventDefault();
+    event.stopPropagation();
 
     var sliderToggle = $(this).find('i');
     var projectRow = $(this).closest('.project-wrap');
@@ -9899,12 +9903,15 @@ $('#overlay').on('click', function(e) {
 
 // Smooth scrolling for anchor links
 $('a[href^="#"]').on('click',function (e) {
-    e.preventDefault();
-    var target = this.hash,
-    $target = $(target);
-    $('html, body').stop().animate({
-        'scrollTop': ($target.offset()) ? $target.offset().top : 0
-    }, 400, 'easeInOutQuart', function () {
-        window.location.hash = target;
-    });
+    // Prevent conflict with project sliders
+    if (!$(this).parent().hasClass('slider-control')) {
+        e.preventDefault();
+        var target = this.hash,
+        $target = $(target);
+        $('html, body').stop().animate({
+            'scrollTop': ($target.offset()) ? $target.offset().top : 0
+        }, 400, 'easeInOutQuart', function () {
+            window.location.hash = target;
+        });
+    }
 });
