@@ -1,1 +1,0 @@
-$("[data-expando]").on("click",function(){$("#overlay").show()});
