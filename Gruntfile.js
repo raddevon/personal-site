@@ -40,7 +40,8 @@ module.exports = function (grunt) {
           sassDir: 'sass',
           cssDir: 'css',
           environment: 'production',
-          outputStyle: 'compressed'
+          outputStyle: 'compressed',
+          force: true
         }
       }
     },
