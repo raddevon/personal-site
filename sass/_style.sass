@@ -1,4 +1,6 @@
+////////////////
 /* Typography */
+////////////////
 $base-font-size: 20px
 $base-line-height: 30px
 +establish-baseline
@@ -57,8 +59,10 @@ h3
 #credits
     +adjust-font-size-to(14px)
     line-height: 1.4em
-
+////////////
 /* Colors */
+////////////
+
 // Named
 $dark-gray: #4f4f4f
 $gray: #9d9d9d
@@ -88,7 +92,9 @@ $row-even: $near-white
 $row-odd: $near-white
 $row-fallback: $near-white
 
+///////////////////////////
 /* Media query variables */
+///////////////////////////
 $phone-min: 320px
 $phone-max: 568px
 $tablet-min: 569px
@@ -97,6 +103,9 @@ $tablet-max: 1024px
 $desktop-min: 1025px
 $large-screen-min: 1824px
 
+////////////
+/* Mixins */
+////////////
 =fade
     +single-transition(all, 0.2s, ease-out, 0)
 
@@ -118,7 +127,9 @@ $large-screen-min: 1824px
             background: $white
             color: $black
 
+////////////
 /* Layout */
+////////////
 *
     +box-sizing(border-box)
 
@@ -291,7 +302,9 @@ h1
     height: 7em
     height: 7rem
 
+///////////////////////////////////////////////////////
 /* Hiding and displaying elements with media queries */
+///////////////////////////////////////////////////////
 .hidden-phone
     @media screen and (max-width: $phone-max)
         display: none !important
@@ -304,14 +317,60 @@ h1
     @media screen and (min-width: $desktop-min)
         display: none !important
 
+///////////////////////
+/* Larger than phone */
+///////////////////////
+@media screen and (min-width: $tablet-min)
+
+    #name
+        +adjust-font-size-to(80px)
+
+    #tagline
+        +adjust-font-size-to(48px)
+
+    h1
+        +adjust-font-size-to(64px)
+
+    header
+        min-height: 65%
+        margin-bottom: 5%
+        padding: 20% 0 8% 0
+        background: $near-black
+        &.background-1
+            background: url(../img/header-tablet-1.jpg) no-repeat
+            background-size: 100%
+        &.background-2
+            background: url(../img/header-tablet-2.jpg) bottom no-repeat
+            background-size: 100%
+        &.background-3
+            background: url(../img/header-tablet-3.jpg) no-repeat
+            background-size: 100%
+
+    footer
+        margin: 4em
+
+    header p, footer p
+        text-align: justify
+
+    .text, .project-data
+        padding: 10px
+        min-width: 15em
+
+    .project-data li
+        -ms-text-overflow: clip
+        text-overflow: clip
+
+//////////////////////////////////
 /* Tablet widescreen breakpoint */
+//////////////////////////////////
 @media screen and (min-width: $tablet-max)
 
     .nav-list li
         font-size: 18px
 
-
+////////////
 /* Tablet */
+////////////
 @media screen and (min-width: $tablet)
     /* Navbar display and styling */
     .static-navbar
@@ -378,48 +437,9 @@ h1
         margin: 0 auto 2em auto
         padding: 80px 1em
 
-/* Larger than phone */
-@media screen and (min-width: $tablet-min)
-
-    #name
-        +adjust-font-size-to(80px)
-
-    #tagline
-        +adjust-font-size-to(48px)
-
-    h1
-        +adjust-font-size-to(64px)
-
-    header
-        min-height: 65%
-        margin-bottom: 5%
-        padding: 20% 0 8% 0
-        background: $near-black
-        &.background-1
-            background: url(../img/header-tablet-1.jpg) no-repeat
-            background-size: 100%
-        &.background-2
-            background: url(../img/header-tablet-2.jpg) bottom no-repeat
-            background-size: 100%
-        &.background-3
-            background: url(../img/header-tablet-3.jpg) no-repeat
-            background-size: 100%
-
-    footer
-        margin: 4em
-
-    header p, footer p
-        text-align: justify
-
-    .text, .project-data
-        padding: 10px
-        min-width: 15em
-
-    .project-data li
-        -ms-text-overflow: clip
-        text-overflow: clip
-
+/////////////////////////
 /* Desktop-only styles */
+/////////////////////////
 @media screen and (min-width: $desktop-min)
 
     .nav-list li
