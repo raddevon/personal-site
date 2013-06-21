@@ -124,6 +124,7 @@ $large-screen-min: 1824px
 
 body
     background: $background-color
+    color: $text-color
 
 .wrapper
     width: 100%
@@ -164,15 +165,13 @@ a[href] i, i, header > div#expando-wrapper h2 a[href].on
             max-width: 100%
             position: relative
     div.project-wrap
-        margin-bottom: 2em
+        margin-bottom: 4em
         background: $row-fallback
         -webkit-backface-visibility: hidden
         &:nth-child(even) .project
             background: $row-even
         &:nth-child(odd) .project
             background: $row-odd
-        &:last-child
-            margin-bottom: 0
         *
             -webkit-backface-visibility: hidden
 
@@ -284,9 +283,15 @@ h1
 #credits p, #credits a
     color: $gray
 
+#contact
+    width: 100%
+
 .typeform-widget
     display: block
     margin: auto
+    width: 100%
+    height: 20em
+    height: 20rem
 
 /* Hiding and displaying elements with media queries */
 .hidden-phone
