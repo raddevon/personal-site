@@ -46,6 +46,12 @@ module.exports = function (grunt) {
       }
     },
 
+    smushit: {
+      images: {
+        src: ['img/**/*.{png,jpg,jpeg}']
+      }
+    },
+
     watch: {
       options: {
         livereload: true
@@ -70,16 +76,17 @@ module.exports = function (grunt) {
     }
   });
 
-  // Load the plugin that provides the "uglify" task.
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-smushit');
 
-  // Default task(s).
+  // Development task checks and concatenates JS, compiles SASS preserving comments and nesting, runs dev server, and starts watch
   grunt.registerTask('default', ['jshint','concat', 'compass:dev', 'connect:server', 'watch']);
-  grunt.registerTask('build', ['jshint', 'compass:production', 'concat', 'uglify']);
+  // Build task builds minified versions of static files
+  grunt.registerTask('build', ['jshint', 'compass:production', 'concat', 'uglify', 'smushit']);
 
 };
