@@ -29,16 +29,14 @@ module.exports = function (grunt) {
     },
 
     compass: {
+      options: {
+        sassDir: 'sass',
+        cssDir: 'css'
+      },
       dev: {
-        options: {
-          sassDir: 'sass',
-          cssDir: 'css'
-        }
       },
       production: {
         options: {
-          sassDir: 'sass',
-          cssDir: 'css',
           environment: 'production',
           outputStyle: 'compressed',
           force: true
