@@ -58,6 +58,15 @@ module.exports = function (grunt) {
         files: ['sass/**/*.{sass,scss}'],
         tasks: ['compass:dev']
       }
+    },
+
+    connect: {
+      server: {
+        options: {
+          port: 8888,
+          hostname: '*'
+        }
+      }
     }
   });
 
@@ -67,9 +76,10 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-connect');
 
   // Default task(s).
-  grunt.registerTask('default', ['jshint','concat', 'compass:dev', 'watch']);
+  grunt.registerTask('default', ['jshint','concat', 'compass:dev', 'connect:server', 'watch']);
   grunt.registerTask('build', ['jshint', 'compass:production', 'concat', 'uglify']);
 
 };
