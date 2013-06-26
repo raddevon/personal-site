@@ -56,7 +56,7 @@ cite
 
 #featured-heading
     font-style: normal
-    font-size: 3em
+    font-size: 1.6em
 
 h1, .h1
     +adjust-font-size-to(40px)
@@ -195,13 +195,10 @@ a[href] i, i, header > div#expando-wrapper h2 a[href].on
     div.project-wrap
         margin-bottom: 4em
         background: $row-fallback
-        -webkit-backface-visibility: hidden
         &:nth-child(even) .project
             background: $row-even
         &:nth-child(odd) .project
             background: $row-odd
-        *
-            -webkit-backface-visibility: hidden
 
 .text, .project-data
     padding: 5px
@@ -350,6 +347,9 @@ h1, .h1
     #tagline
         font-size: 0.75em
 
+    #featured-heading
+        font-size: 2.7em
+
     h1
         +adjust-font-size-to(64px)
 
@@ -402,7 +402,6 @@ h1, .h1
         z-index: 200
         width: 100%
         color: $near-white
-
     .nav-list-wrapper
         +clearfix
         background: $very-darken
@@ -474,6 +473,9 @@ h1, .h1
 
     #name
         font-size: 1.5em
+
+    #featured-heading
+        font-size: 3em
 
     header
         min-height: 95%
