@@ -51,17 +51,22 @@ cite
 
 #tagline
     font-size: 0.7em
-    font-weight: 200
     font-family: $tagline-font
     line-height: 1.4em
 
-h1
+#featured-heading
+    font-style: normal
+    font-size: 3em
+
+h1, .h1
     +adjust-font-size-to(40px)
     font-family: $heading-font
+    font-weight: 200
 
 h2
     +adjust-font-size-to(40px)
     font-style: italic
+
 h3
     +adjust-font-size-to(24px)
 
@@ -169,6 +174,7 @@ a[href] i, i, header > div#expando-wrapper h2 a[href].on
 
 #featured-heading
     margin: 0
+    color: $near-white
 
 #featured-intro
     color: $near-white
@@ -256,7 +262,7 @@ footer
 #tagline
     display: block
 
-h1
+h1, .h1
     text-align: center
     letter-spacing: 0.05em
     color: $name-color
