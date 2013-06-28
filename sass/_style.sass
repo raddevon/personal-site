@@ -64,7 +64,7 @@ h1, .h1
     font-weight: 200
 
 h2
-    +adjust-font-size-to(40px)
+    +adjust-font-size-to(32px)
     font-style: italic
 
 h3
@@ -204,8 +204,26 @@ a[href] i, i, header > div#expando-wrapper h2 a[href].on
     padding: 5px
     color: $text-color
 
+.text
+    +clearfix
+
 .project-data
     border-top: rgba($gray, 0.5) 1px solid
+
+.avatar
+    max-width: 40%
+    float: left
+    margin-right: 0.5em
+.avatar + p
+    float: right
+    width: 80%
+.avatar img
+    max-width: 100%
+
+.quote-source
+    text-align: right
+    clear: both
+    font-style: italic
 
 header, footer
     border: none
@@ -456,6 +474,17 @@ h1, .h1
     .wrapper > div
         margin: 0 auto 2em auto
         padding: 80px 1em
+
+    .avatar
+        max-width: 20%
+        float: left
+        margin-right: 1em
+        position: relative
+        top: 0.3em
+
+    h2
+        +adjust-font-size-to(40px)
+        font-style: italic
 
 /////////////////////////
 /* Desktop-only styles */
