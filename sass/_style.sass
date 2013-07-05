@@ -1,0 +1,551 @@
+////////////////
+/* Typography */
+////////////////
+$base-font-size: 20px
+$base-line-height: 30px
++establish-baseline
+
+$nav-font: 'Code Pro', sans-serif
+$name-font: 'Code Pro', sans-serif
+$tagline-font: 'Code Pro', sans-serif
+$heading-font: 'Code Pro', sans-serif
+$project-heading-font: 'Exo', sans-serif
+$body-font: 'Roboto', sans-serif
+
+@font-face
+    font-family: "Code Pro"
+    src: url('../fonts/Code_Pro_Light-webfont.eot')
+    src: url('../fonts/Code_Pro_Light-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/Code_Pro_Light-webfont.woff') format('woff'), url('../fonts/Code_Pro_Light-webfont.ttf') format('truetype'), url('../fonts/Code_Pro_Light-webfont.svg#CodeProLightRegular') format('svg')
+    font-weight: 200
+    font-style: normal
+@font-face
+    font-family: "Code Pro"
+    src: url('../fonts/Code_Pro-webfont.eot')
+    src: url('../fonts/Code_Pro-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/Code_Pro-webfont.woff') format('woff'), url('../fonts/Code_Pro-webfont.ttf') format('truetype'), url('../fonts/Code_Pro-webfont.svg#CodeProRegular') format('svg')
+    font-weight: normal
+    font-style: normal
+
+nav
+    font-family: $nav-font
+    font-weight: normal
+
+body
+    font-family: $body-font
+    font-weight: 300
+    letter-spacing: 0.02em
+
+b, em
+    font-weight: 500
+
+cite
+    font-style: italic
+
+#{headings()}
+    font-family: $project-heading-font
+    font-weight: 700
+
+#name
+    font-size: 1.2em
+    font-family: $name-font
+    font-weight: normal
+
+#tagline
+    font-size: 0.7em
+    font-family: $tagline-font
+    line-height: 1.4em
+
+#featured-heading
+    font-style: normal
+    font-size: 1.6em
+
+h1, .h1
+    +adjust-font-size-to(40px)
+    font-family: $heading-font
+    font-weight: 200
+
+h2
+    +adjust-font-size-to(32px)
+    font-style: italic
+
+h3
+    +adjust-font-size-to(24px)
+
+#credits
+    +adjust-font-size-to(14px)
+    line-height: 1.4em
+
+////////////
+/* Colors */
+////////////
+
+// Named
+$dark-gray: #4f4f4f
+$gray: #9d9d9d
+$light-gray: #dbdbdb
+$white: #fff
+$near-white: #ececec
+$black: #000
+$near-black: lighten($black, 20%)
+$cyan: #4DFFE7
+$green: #A3FF4D
+
+$darken: rgba(0, 0, 0, 0.1)
+$very-darken: rgba(0, 0, 0, 0.7)
+$lighten: rgba(255, 255, 255, 0.2)
+
+// Semantic
+$background-color: $near-black
+$name-color: $near-white
+$text-color: $near-black
+$link: $black
+$secondary-link: $green
+$navbar-active: $light-gray
+$row-color: $light-gray
+
+///////////////////////////
+/* Media query variables */
+///////////////////////////
+$phone-min: 320px
+$phone-max: 568px
+$tablet-min: 569px
+$tablet: 768px
+$tablet-max: 1024px
+$desktop-min: 1025px
+$large-screen-min: 1824px
+
+////////////
+/* Mixins */
+////////////
+=fade
+    +single-transition(all, 0.2s, ease-out, 0)
+
+=primary-link($desktop: false)
+    color: $link
+    text-decoration: underline
+    +fade
+    @if $desktop
+        &:hover
+            background: $white
+            color: $black
+
+=secondary-link($desktop: false)
+    color: $near-white
+    text-decoration: underline
+    +fade
+    @if $desktop
+        &:hover
+            background: $white
+            color: $black
+
+////////////
+/* Layout */
+////////////
+*
+    +box-sizing(border-box)
+
+body
+    background: $background-color
+    color: $text-color
+
+.wrapper
+    width: 100%
+    background: $light-gray
+    margin: 0 auto 4em auto
+    &:last-child
+        margin-bottom: 2em
+    > div
+        max-width: 40em
+        padding: 1em
+        margin: auto
+
+p
+    margin-bottom: 1.2em
+    &:last-child
+        margin-bottom: 0
+
+a[href]
+    +primary-link
+
+a[href] i, i
+    color: $dark-gray
+    background: none
+
+#featured-heading
+    margin: 0
+    color: $near-white
+
+#featured-intro
+    color: $near-white
+    max-width: 40em
+    padding: 1em
+    margin: auto
+    a[href]
+        +secondary-link
+
+.project-wrap
+    width: 100%
+    position: relative
+    margin-bottom: 4em
+    background: $row-color
+
+.project-image
+    max-width: 95vw
+    position: relative
+    margin: auto
+    padding: 1em
+    img
+        margin: auto
+
+.text, .project-data
+    padding: 5px
+    color: $text-color
+
+.text
+    +clearfix
+
+.avatar
+    max-width: 40%
+    float: left
+    margin-right: 0.5em
+.avatar + p
+    float: right
+    width: 80%
+.avatar img
+    max-width: 100%
+
+.quote-source
+    text-align: right
+    clear: both
+    font-style: italic
+
+header, footer
+    border: none
+    margin: 0
+    > div
+        margin: 0 auto
+        vertical-align: middle
+        a[href]
+            color: $secondary-link
+            &.on
+                background: $secondary-link
+                color: $text-color
+        p
+            color: $near-white
+            padding: 0 10px
+            margin: 0 auto 10px auto
+            max-width: 40em
+            max-width: 40rem
+
+header
+    padding: 5% 0
+    background: $near-black
+    &.background-1
+        background: url(../img/header-phone-1.jpg) no-repeat
+        background-size: 100%
+    &.background-2
+        background: url(../img/header-phone-2.jpg) no-repeat
+        background-size: 100%
+    &.background-3
+        background: url(../img/header-phone-3.jpg) no-repeat
+        background-size: 100%
+
+footer
+    margin: 20px inherit
+    a[href]
+        +secondary-link
+
+.thinkful-badge
+    display: block
+    margin: 1em auto
+
+.static-navbar
+    display: none
+
+#name
+    text-shadow: 0px 0px 0.1em $name-color
+    color: $name-color
+    display: block
+    margin-bottom: 0.4em
+
+#tagline
+    display: block
+
+h1, .h1
+    text-align: center
+    letter-spacing: 0.05em
+    color: $name-color
+    margin-bottom: 0.4em
+
+.social
+    text-align: center
+    a
+        text-decoration: none
+    div[data-picture]
+        display: inline-block
+        img
+            width: 32px
+            height: 32px
+
+#skills .set
+    margin-bottom: 10px
+
+.slide-out
+    display: none
+
+.project-data
+    h3
+        margin-bottom: 0.2em
+    h4
+        margin-top: 0.2em
+    ul
+        list-style: none
+    li
+        margin-top: 0.3em
+        width: 100%
+        overflow: hidden
+        text-overflow: ellipsis
+        white-space: nowrap
+        &.code
+            white-space: normal
+        // Icon bullets for .project-data div
+        &:before
+            +icon-styling
+            background: $dark-gray
+            border-radius: 50%
+            color: $near-white
+            padding: 0.1em 0.3em
+        &.git:before
+            content: '\e800'
+        &.code:before
+            content: '\e807'
+        &.link:before
+            content: '\e802'
+
+#credits p, #credits a
+    color: $gray
+
+#contact
+    width: 100%
+
+.typeform-widget
+    width: 100%
+    height: 7em
+    height: 7rem
+
+///////////////////////////////////////////////////////
+/* Hiding and displaying elements with media queries */
+///////////////////////////////////////////////////////
+.hidden-phone
+    @media screen and (max-width: $phone-max)
+        display: none !important
+
+.hidden-tablet
+    @media screen and (min-width: $tablet-min) and (max-width: $tablet-max)
+        display: none !important
+
+.hidden-desktop
+    @media screen and (min-width: $desktop-min)
+        display: none !important
+
+///////////////////////
+/* Larger than phone */
+///////////////////////
+@media screen and (min-width: $tablet-min)
+
+    #name
+        font-size: 1.25em
+
+    #tagline
+        font-size: 0.75em
+
+    #featured-heading
+        font-size: 2.7em
+
+    h1
+        +adjust-font-size-to(64px)
+
+    header
+        min-height: 65%
+        margin-bottom: 5%
+        padding: 20% 0 8% 0
+        background: $near-black
+        &.background-1
+            background: url(../img/header-tablet-1.jpg) no-repeat
+            background-size: 100%
+        &.background-2
+            background: url(../img/header-tablet-2.jpg) bottom no-repeat
+            background-size: 100%
+        &.background-3
+            background: url(../img/header-tablet-3.jpg) no-repeat
+            background-size: 100%
+
+    footer
+        margin: 4em
+
+    header p, footer p
+        text-align: justify
+
+    .text, .project-data
+        padding: 10px
+        min-width: 15em
+
+    .project-data li
+        -ms-text-overflow: clip
+        text-overflow: clip
+
+//////////////////////////////////
+/* Tablet widescreen breakpoint */
+//////////////////////////////////
+@media screen and (min-width: $tablet-max)
+
+    .nav-list-wrapper li
+        font-size: 18px
+
+////////////
+/* Tablet */
+////////////
+@media screen and (min-width: $tablet)
+    /* Navbar display and styling */
+    .static-navbar
+        display: block
+        position: fixed
+        top: 0.5em
+        z-index: 200
+        width: 100%
+        color: $near-white
+    .nav-list-wrapper
+        +clearfix
+        background: $very-darken
+        li
+            display: inline-block
+            float: left
+            font-size: 14px
+            a
+                display: block
+                padding: 1em
+                color: $near-white
+                text-decoration: none
+                height: 4.23em
+                &:hover, &.on
+                    background: $navbar-active
+                    color: $near-black
+            a i
+                padding: 0
+                color: $near-white
+                vertical-align: middle
+            a:hover i
+                color: $near-black
+    // Github icon needs to be a bit larger font size to appear the same size as the others
+    i[class=icon-github]
+        +adjust-font-size-to(24px)
+    // Its a element needs less padding to keep the same overall height as the other navbar buttons
+    a[href="http://github.com/raddevon"]
+        padding: 0.95em 0.95em
+    // Larger to-the-top icon
+    i[class=icon-up]
+        font-size: 1.7em
+    // Its a element needs less padding to keep the same overall height as the other navbar buttons
+    a[href="#"]
+        padding: 0.78em 0.78em
+    .inside-links
+        float: left
+        li
+            border-right: rgba(255,255,255,0.3) 1px solid
+    .k-nav-root
+        float: right
+        li
+            border-left: rgba(255,255,255,0.3) 1px solid
+    /* End navbar styling */
+
+    // Making room for the navbar when using an anchor link
+    #featured-heading
+        margin: 0 auto 0 auto
+        padding: 80px 0
+    #featured-intro
+        padding: 1em
+        margin: -80px auto 3em auto
+    .wrapper > div
+        padding: 80px 1em
+
+    .avatar
+        max-width: 20%
+        float: left
+        margin-right: 1em
+        position: relative
+        top: 0.3em
+
+    h2
+        +adjust-font-size-to(40px)
+        font-style: italic
+
+/////////////////////////
+/* Desktop-only styles */
+/////////////////////////
+@media screen and (min-width: $desktop-min)
+
+    .nav-list-wrapper li
+        font-size: 20px
+        a
+            height: 3.5em
+    // Correct back-to-top icon positioning
+    i[class=icon-up]
+        position: relative
+        top: -0.15em
+
+    #name
+        font-size: 1.5em
+
+    #featured-heading
+        font-size: 3em
+
+    header
+        min-height: 95%
+        margin-bottom: 5%
+        padding: 40% 0 30% 0
+        min-height: 95vh
+        margin-bottom: 2em
+        padding: 40vh 0 30vh 0
+        &.background-1
+            background: url(../img/header-1.jpg) center center fixed no-repeat
+            +background-size(cover)
+        &.background-2
+            background: url(../img/header-2.jpg) center center fixed no-repeat
+            +background-size(cover)
+        &.background-3
+            background: url(../img/header-3.jpg) center center fixed no-repeat
+            +background-size(cover)
+
+    p a[href]
+        +primary-link(true)
+
+    footer p a[href]
+        +secondary-link(true)
+
+    #featured-intro
+        a[href]
+            +secondary-link(true)
+
+    #projects
+        width: 100%
+        overflow-x: hidden
+
+    .row
+        display: table-row
+        > div
+            display: table-cell
+            vertical-align: middle
+            position: relative
+            left: 0
+        a > img
+            height: auto
+            margin: 1em
+
+    .text
+        padding: 20px
+        width: 40em
+        margin: auto
+
+    .typeform-widget
+        width: 100%
+        height: 20em
+        height: 20rem
