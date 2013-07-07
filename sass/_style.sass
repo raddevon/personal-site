@@ -5,6 +5,8 @@ $base-font-size: 20px
 $base-line-height: 30px
 +establish-baseline
 
+$text-width: 40em
+
 $nav-font: 'Code Pro', sans-serif
 $name-font: 'Code Pro', sans-serif
 $tagline-font: 'Code Pro', sans-serif
@@ -154,7 +156,7 @@ body
     &:last-child
         margin-bottom: 2em
     > div
-        max-width: 40em
+        max-width: $text-width
         padding: 1em
         margin: auto
 
@@ -176,7 +178,7 @@ a[href] i, i
 
 #featured-intro
     color: $near-white
-    max-width: 40em
+    max-width: $text-width
     padding: 1em
     margin: auto
     a[href]
@@ -190,18 +192,23 @@ a[href] i, i
 
 .project-image
     max-width: 95vw
+    max-height: 70vh
+    overflow-y: hidden
     position: relative
     margin: auto
     padding: 1em
     img
+        display: block
+        max-width: 100%
         margin: auto
 
-.text, .project-data
-    padding: 5px
-    color: $text-color
-
 .text
+    padding: 0.2em
+    color: $text-color
     +clearfix
+    a
+        +primary-link
+        text-decoration: none
 
 .avatar
     max-width: 40%
@@ -233,7 +240,7 @@ header, footer
             color: $near-white
             padding: 0 10px
             margin: 0 auto 10px auto
-            max-width: 40em
+            max-width: $text-width
             max-width: 40rem
 
 header
@@ -253,6 +260,12 @@ footer
     margin: 20px inherit
     a[href]
         +secondary-link
+
+#social-links
+    text-align: center
+    a
+        +secondary-link
+        text-decoration: none
 
 .thinkful-badge
     display: block
@@ -413,6 +426,10 @@ h1, .h1
         z-index: 200
         width: 100%
         color: $near-white
+        .k-nav-root
+            float: right
+            li
+                border-left: rgba(255,255,255,0.3) 1px solid
     .nav-list-wrapper
         +clearfix
         background: $very-darken
@@ -451,10 +468,6 @@ h1, .h1
         float: left
         li
             border-right: rgba(255,255,255,0.3) 1px solid
-    .k-nav-root
-        float: right
-        li
-            border-left: rgba(255,255,255,0.3) 1px solid
     /* End navbar styling */
 
     // Making room for the navbar when using an anchor link
@@ -529,21 +542,20 @@ h1, .h1
         width: 100%
         overflow-x: hidden
 
-    .row
-        display: table-row
-        > div
-            display: table-cell
-            vertical-align: middle
-            position: relative
-            left: 0
-        a > img
-            height: auto
-            margin: 1em
-
     .text
-        padding: 20px
-        width: 40em
+        padding: 1em
+        width: $text-width
         margin: auto
+        a
+            &:after
+                content: "\00a0"
+            +primary-link(true)
+            text-decoration: none
+
+    #social-links
+        a
+            +secondary-link(true)
+            text-decoration: none
 
     .typeform-widget
         width: 100%
