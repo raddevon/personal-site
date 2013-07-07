@@ -1,0 +1,19 @@
+{
+  "name": "Stark",
+  "version": "0.1",
+  "description": "A dark flat personal portfolio theme for Koken.",
+  "demo": "http://raddevon.com/",
+  "author": {
+    "name": "Devon Campbell",
+    "link": "http://raddevon.com"
+  },
+
+  "navigation_groups": {
+    "social": {
+        "label": "Social",
+        "defaults": [
+            "twitter", "facebook", "gplus"
+        ]
+    }
+  }
+}
