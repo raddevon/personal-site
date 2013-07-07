@@ -1,0 +1,74 @@
+<koken:include file="includes/header.html" />
+    <section id="about-me" class="hidden-phone">
+        <div class="wrapper">
+            <div id="services">
+                <h2>Services</h2>
+                <p>I build web sites that look great on devices big or small using HTML5, CSS3, and JavaScript along with other technologies. Web development is a two-way conversation between the developer and the client. I'll work with you to make sure your users are having the best experience current technology can deliver.</p>
+
+                <p>I'll start with either some sketches or wireframe mock-ups of your design&hellip; maybe both. Then, depending on the site, I'll either move on to a high-fidelity mockup in something like Photoshop, or I'll start building a working prototype in real HTML. You'll be in the loop every step of the way.</p>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div id="skills">
+                <h2>Skills</h2>
+                <div class="set">
+                    <h3>Front-end web development</h3>
+                    <ul>
+                        <li>HTML5</li>
+                        <li>CSS3, SASS, &amp; LESS</li>
+                        <li>JavaScript &amp; jQuery</li>
+                        <li>Email template design</li>
+                    </ul>
+                </div>
+                <div class="set">
+                    <h3>Back-end web development</h3>
+                    <ul>
+                        <li>Python</li>
+                        <li>webapp2</li>
+                        <li>Django</li>
+                    </ul>
+                </div>
+                <div class="set">
+                    <h3>Others</h3>
+                    <ul>
+                        <li>Copywriting</li>
+                        <li>Managing email campaigns with MailChimp</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <h2 id="featured-heading" class="h1">Featured Projects</h2>
+    <p id="featured-intro">Below, you'll find some of my best recent work. Check out <a href="http://raddevon.dunked.com/" target="_blank">my comprehensive portfolio</a> to see the rest.</p>
+    <section id="projects">
+        <koken:load source="featured_albums">
+            <koken:loop>
+                <div class="project-wrap">
+                    <div class="project-image">
+                        <koken:link>
+                            <koken:img respond_to="width" lazy="true" fade="200" />
+                        </koken:link>
+                    </div>
+                    <div class="text">
+                        <h2>
+                            <koken:link>
+                                {{ album.title }}
+                            </koken:link>
+                        </h2>
+                        <p>{{ album.description }}</p>
+                    </div>
+                </div>
+            </koken:loop>
+        <koken:else>
+            <koken:note>
+                <p>This page displays featured albums. Assign some in the library.</p>
+            </koken:note>
+        </koken:load>
+    </section>
+    <div id="contact">
+        <div class="typeform-widget" data-url="http://raddevon.typeform.com/to/LlghO7" data-text="What can I build for you? Tap to contact me."></div>
+        <script>(function(){var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,id='typef_orm',b='https://s3-eu-west-1.amazonaws.com/share.typeform.com/';if(!gi.call(d,id)){js=ce.call(d,'script');js.id=id;js.src=b+'widget.js';q=gt.call(d,'script')[0];q.parentNode.insertBefore(js,q)}})()</script>
+    </div>
+<koken:include file="includes/footer.html" />
+</body>
+</html>
