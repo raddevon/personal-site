@@ -5,7 +5,7 @@
 The home page of Stark includes an About Me section. Each essay in this section appears in a gray bar directly below the header graphic. In order to fill out this section, create an essay for each section you want. Mark the essays as featured *and* add them to the `homepage` category. Order them however you like in the `Featured Essays` section of the Koken admin panel. This section is not displayed on phones for brevity.
 
 ## Projects Section
-The projects section includes up to four featured albums. The graphic used will be the cover graphic for your album. Be sure to fill out the title and description of the album as well as these are also included on the homepage in the featured projects section.
+The projects section includes up to four featured albums. The graphic used will be the cover graphic for your album. Be sure to fill out the title and description of the album as well as these are also included on the homepage in the featured projects section. Choose your cover image carefully! Stark is hungry for wide, high-resolution images to fill out the page nicely.
 
 # Testimonials
 The testimonials section includes up to four albums. For best results, use a photo of the person you're quoting as the album's cover photo. The album title should be the name of the person as you'd like it to appear on the page. The album's description should be the actual testimonial. You must also assign the album to the category `testimonials`.
