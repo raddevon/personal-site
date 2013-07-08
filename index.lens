@@ -63,10 +63,13 @@
             </koken:note>
         </koken:load>
     </section>
-    <div id="contact">
-        <div class="typeform-widget" data-url="http://raddevon.typeform.com/to/LlghO7" data-text="What can I build for you? Tap to contact me."></div>
-        <script>(function(){var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,id='typef_orm',b='https://s3-eu-west-1.amazonaws.com/share.typeform.com/';if(!gi.call(d,id)){js=ce.call(d,'script');js.id=id;js.src=b+'widget.js';q=gt.call(d,'script')[0];q.parentNode.insertBefore(js,q)}})()</script>
-    </div>
+    <koken:load source="essays" filter:category="contact" limit="1">
+        <koken:loop>
+            <div id="contact">
+                {{ essay.content }}
+            </div>
+        </koken:loop>
+    </koken:load>
 <koken:include file="includes/footer.html" />
 </body>
 </html>
