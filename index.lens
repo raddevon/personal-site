@@ -71,5 +71,3 @@
         </koken:loop>
     </koken:load>
 <koken:include file="includes/footer.html" />
-</body>
-</html>
