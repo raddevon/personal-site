@@ -1,43 +1,20 @@
 <koken:include file="includes/header.html" />
-    <section id="about-me" class="hidden-phone">
-        <div class="wrapper">
-            <div id="services">
-                <h2>Services</h2>
-                <p>I build web sites that look great on devices big or small using HTML5, CSS3, and JavaScript along with other technologies. Web development is a two-way conversation between the developer and the client. I'll work with you to make sure your users are having the best experience current technology can deliver.</p>
-
-                <p>I'll start with either some sketches or wireframe mock-ups of your design&hellip; maybe both. Then, depending on the site, I'll either move on to a high-fidelity mockup in something like Photoshop, or I'll start building a working prototype in real HTML. You'll be in the loop every step of the way.</p>
-            </div>
-        </div>
-        <div class="wrapper">
-            <div id="skills">
-                <h2>Skills</h2>
-                <div class="set">
-                    <h3>Front-end web development</h3>
-                    <ul>
-                        <li>HTML5</li>
-                        <li>CSS3, SASS, &amp; LESS</li>
-                        <li>JavaScript &amp; jQuery</li>
-                        <li>Email template design</li>
-                    </ul>
+    <koken:load source="featured_essays" filter:category="homepage">
+        <section id="about-me" class="hidden-phone">
+            <koken:loop>
+                <div class="wrapper">
+                    <div>
+                        <h2>{{ essay.title }}</h2>
+                        {{ essay.content }}
+                    </div>
                 </div>
-                <div class="set">
-                    <h3>Back-end web development</h3>
-                    <ul>
-                        <li>Python</li>
-                        <li>webapp2</li>
-                        <li>Django</li>
-                    </ul>
-                </div>
-                <div class="set">
-                    <h3>Others</h3>
-                    <ul>
-                        <li>Copywriting</li>
-                        <li>Managing email campaigns with MailChimp</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+            </koken:loop>
+        </section>
+    <koken:else>
+        <koken:note>
+            <p>Add essays to the "About Me" section by putting them in the "homepage" category.</p>
+        </koken:note>
+    </koken:load>
     <h2 class="section-heading h1" id="projects-heading">Featured Projects</h2>
     <p class="section-intro">Below, you'll find some of my best recent work. Check out <a href="http://raddevon.dunked.com/" target="_blank">my comprehensive portfolio</a> to see the rest.</p>
     <section id="projects">
