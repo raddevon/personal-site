@@ -56,9 +56,11 @@ cite
     font-family: $tagline-font
     line-height: 1.4em
 
-#featured-heading
+.section-heading
     font-style: normal
+    font-weight: 200
     font-size: 1.6em
+    font-family: $heading-font
 
 h1, .h1
     +adjust-font-size-to(40px)
@@ -91,7 +93,7 @@ $near-black: lighten($black, 20%)
 $cyan: #4DFFE7
 $green: #A3FF4D
 
-$darken: rgba(0, 0, 0, 0.1)
+$darken: rgba(0, 0, 0, 0.4)
 $very-darken: rgba(0, 0, 0, 0.7)
 $lighten: rgba(255, 255, 255, 0.2)
 
@@ -172,11 +174,11 @@ a[href] i, i
     color: $dark-gray
     background: none
 
-#featured-heading
-    margin: 0
+.section-heading
+    margin: 0.4em 0 0 0
     color: $near-white
 
-#featured-intro
+.section-intro
     color: $near-white
     max-width: $text-width
     padding: 1em
@@ -189,6 +191,10 @@ a[href] i, i
     position: relative
     margin-bottom: 4em
     background: $row-color
+    &:last-child
+        margin-bottom: 0
+    &:first-child
+        margin-bottom: 4em
 
 .project-image
     max-width: 95vw
@@ -211,6 +217,7 @@ a[href] i, i
         text-decoration: none
 
 .avatar
+    height: auto
     max-width: 40%
     float: left
     margin-right: 0.5em
@@ -219,6 +226,19 @@ a[href] i, i
     width: 80%
 .avatar img
     max-width: 100%
+
+blockquote
+    quotes: "\201C""\201D""\2018""\2019"
+    &:before
+        content: "\201C"
+    &:after
+        content: "\201D"
+    &:before, &:after
+        font-family: $project-heading-font
+        color: $darken
+        font-size: 3em
+        line-height: 0.1em
+        vertical-align: -0.4em
 
 .quote-source
     text-align: right
@@ -274,6 +294,9 @@ footer
 .static-navbar
     display: none
 
+.nav-list-wrapper li a.k-nav-current
+    display: none
+
 #name
     text-shadow: 0px 0px 0.1em $name-color
     color: $name-color
@@ -287,7 +310,6 @@ h1, .h1
     text-align: center
     letter-spacing: 0.05em
     color: $name-color
-    margin-bottom: 0.4em
 
 .social
     text-align: center
@@ -371,10 +393,10 @@ h1, .h1
     #tagline
         font-size: 0.75em
 
-    #featured-heading
+    .section-heading
         font-size: 2.7em
 
-    h1
+    h1, .h1
         +adjust-font-size-to(64px)
 
     header
@@ -426,7 +448,7 @@ h1, .h1
         z-index: 200
         width: 100%
         color: $near-white
-        .k-nav-root
+        #main-nav
             float: right
             li
                 border-left: rgba(255,255,255,0.3) 1px solid
@@ -471,10 +493,10 @@ h1, .h1
     /* End navbar styling */
 
     // Making room for the navbar when using an anchor link
-    #featured-heading
+    .section-heading
         margin: 0 auto 0 auto
         padding: 80px 0
-    #featured-intro
+    .section-intro
         padding: 1em
         margin: -80px auto 3em auto
     .wrapper > div
@@ -490,6 +512,9 @@ h1, .h1
     h2
         +adjust-font-size-to(40px)
         font-style: italic
+
+    #testimonials h2
+        margin-bottom: 0.4em
 
 /////////////////////////
 /* Desktop-only styles */
@@ -508,7 +533,7 @@ h1, .h1
     #name
         font-size: 1.5em
 
-    #featured-heading
+    .section-heading
         font-size: 3em
 
     header
@@ -534,7 +559,7 @@ h1, .h1
     footer p a[href]
         +secondary-link(true)
 
-    #featured-intro
+    .section-intro
         a[href]
             +secondary-link(true)
 
