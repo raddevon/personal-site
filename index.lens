@@ -66,7 +66,7 @@
         </koken:load>
     </section>
     <h2 class="section-heading h1" id="testimonials-heading">Testimonials</h2>
-    <p class="section-intro">These people love working with me, and so will you!</p>
+    <p class="section-intro">I've finished projects with many happy customers. These people love working with me, and so will you!</p>
     <section id="testimonials">
         <koken:load source="albums" filter:category="testimonials" limit="4" order_by="created_on" order_direction="desc">
             <koken:loop>
