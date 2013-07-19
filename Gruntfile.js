@@ -84,8 +84,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-exec');
 
   // Development task checks and concatenates JS, compiles SASS preserving comments and nesting, runs dev server, and starts watch
-  grunt.registerTask('default', ['jshint', 'concat', 'compass:dev', 'exec:serverup', 'watch', 'exec:serverdown']);
+  grunt.registerTask('default', ['jshint', 'concat', 'compass:dev', 'exec:serverup', 'watch']);
   // Build task builds minified versions of static files
   grunt.registerTask('build', ['jshint', 'compass:production', 'concat', 'uglify', 'smushit']);
-
 };
