@@ -4,7 +4,7 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-/* line 17, ../../../../../../.rvm/gems/ruby-2.0.0-p195/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 17, ../../../../../../.rvm/gems/ruby-2.0.0-p195@rails3tutorial2ndEd/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -26,45 +26,45 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../../.rvm/gems/ruby-2.0.0-p195/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../../.rvm/gems/ruby-2.0.0-p195@rails3tutorial2ndEd/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../../../.rvm/gems/ruby-2.0.0-p195/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../../.rvm/gems/ruby-2.0.0-p195@rails3tutorial2ndEd/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../../.rvm/gems/ruby-2.0.0-p195/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../../.rvm/gems/ruby-2.0.0-p195@rails3tutorial2ndEd/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../../.rvm/gems/ruby-2.0.0-p195/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../../.rvm/gems/ruby-2.0.0-p195@rails3tutorial2ndEd/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../../.rvm/gems/ruby-2.0.0-p195/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../../.rvm/gems/ruby-2.0.0-p195@rails3tutorial2ndEd/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../../.rvm/gems/ruby-2.0.0-p195/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../../.rvm/gems/ruby-2.0.0-p195@rails3tutorial2ndEd/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../../.rvm/gems/ruby-2.0.0-p195/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../../.rvm/gems/ruby-2.0.0-p195@rails3tutorial2ndEd/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../../.rvm/gems/ruby-2.0.0-p195/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 116, ../../../../../../.rvm/gems/ruby-2.0.0-p195@rails3tutorial2ndEd/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
@@ -342,12 +342,12 @@ pre.line-numbers > code {
 }
 
 /* Typography */
-/* line 61, ../../../../../../.rvm/gems/ruby-2.0.0-p195/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
+/* line 61, ../../../../../../.rvm/gems/ruby-2.0.0-p195@rails3tutorial2ndEd/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
 * html {
   font-size: 125%;
 }
 
-/* line 64, ../../../../../../.rvm/gems/ruby-2.0.0-p195/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
+/* line 64, ../../../../../../.rvm/gems/ruby-2.0.0-p195@rails3tutorial2ndEd/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
 html {
   font-size: 20px;
   line-height: 1.5em;
@@ -550,7 +550,7 @@ a[href] i, i {
 
 /* line 199, ../sass/_style.sass */
 .project-image {
-  max-width: 95vw;
+  max-width: 60em;
   max-height: 70vh;
   overflow-y: hidden;
   position: relative;
@@ -1107,14 +1107,18 @@ h1, .h1 {
     width: 100%;
     overflow-x: hidden;
   }
+  /* line 530, ../sass/_style.sass */
+  #projects .text {
+    width: 50em;
+  }
 
-  /* line 531, ../sass/_style.sass */
+  /* line 533, ../sass/_style.sass */
   .text {
     padding: 1em;
     width: 40em;
     margin: auto;
   }
-  /* line 535, ../sass/_style.sass */
+  /* line 537, ../sass/_style.sass */
   .text a {
     color: black;
     text-decoration: underline;
@@ -1125,7 +1129,7 @@ h1, .h1 {
     transition: all 0.2s ease-out 0;
     text-decoration: none;
   }
-  /* line 536, ../sass/_style.sass */
+  /* line 538, ../sass/_style.sass */
   .text a:after {
     content: "\00a0";
   }
@@ -1135,25 +1139,25 @@ h1, .h1 {
     color: black;
   }
 
-  /* line 542, ../sass/_style.sass */
+  /* line 544, ../sass/_style.sass */
   #testimonials .project-wrap:hover blockquote:before, #testimonials .project-wrap:hover blockquote:after {
     color: white;
   }
 
-  /* line 545, ../sass/_style.sass */
+  /* line 547, ../sass/_style.sass */
   #social-links {
     margin-bottom: 1em;
   }
-  /* line 547, ../sass/_style.sass */
+  /* line 549, ../sass/_style.sass */
   #social-links li {
     display: inline-block;
     margin-right: 1em;
   }
-  /* line 550, ../sass/_style.sass */
+  /* line 552, ../sass/_style.sass */
   #social-links li:last-child {
     margin-right: 0;
   }
-  /* line 553, ../sass/_style.sass */
+  /* line 555, ../sass/_style.sass */
   #social-links a i {
     -webkit-transition: all 0.2s ease-out;
     -webkit-transition-delay: 0;
@@ -1161,13 +1165,13 @@ h1, .h1 {
     -o-transition: all 0.2s ease-out 0;
     transition: all 0.2s ease-out 0;
   }
-  /* line 555, ../sass/_style.sass */
+  /* line 557, ../sass/_style.sass */
   #social-links a:hover i {
     color: #ececec;
     background: none;
   }
 
-  /* line 559, ../sass/_style.sass */
+  /* line 561, ../sass/_style.sass */
   .typeform-widget {
     width: 100%;
     height: 20em;
