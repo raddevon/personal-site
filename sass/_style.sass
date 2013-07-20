@@ -186,15 +186,25 @@ a[href] i, i
     a[href]
         +secondary-link
 
-.project-wrap
+.project-wrap, #portfolio
     width: 100%
     position: relative
-    margin-bottom: 4em
     background: $row-color
+
+.project-wrap
+    margin-bottom: 4em
     &:last-child
         margin-bottom: 0
     &:first-child
         margin-bottom: 4em
+
+#portfolio
+    margin: 0
+    padding: 1em
+    +clearfix
+
+.project
+    margin-bottom: 1em
 
 .project-image
     max-width: 60em
@@ -264,7 +274,7 @@ header, footer
             max-width: $text-width
             max-width: 40rem
 
-header
+header#home
     padding: 5% 0
     background: $near-black
     &.background-1
@@ -288,6 +298,11 @@ footer
     a
         color: $gray
         text-decoration: none
+    li
+        display: inline-block
+        margin-right: 1em
+        &:last-child
+            margin-right: 0
 
 .thinkful-badge
     display: block
@@ -312,6 +327,7 @@ h1, .h1
     text-align: center
     letter-spacing: 0.05em
     color: $name-color
+    margin: 1em 0
 
 .skillset
     margin-bottom: 1em
@@ -364,7 +380,7 @@ h1, .h1
     h1, .h1
         +adjust-font-size-to(64px)
 
-    header
+    header#home
         min-height: 65%
         margin-bottom: 5%
         padding: 20% 0 8% 0
@@ -457,6 +473,9 @@ h1, .h1
             border-right: rgba(255,255,255,0.3) 1px solid
     /* End navbar styling */
 
+    header
+        height: 7em
+
     // Making room for the navbar when using an anchor link
     .section-heading
         margin: 0 auto 0 auto
@@ -469,6 +488,9 @@ h1, .h1
         max-width: 20%
         float: left
         margin-right: 1em
+
+    h1
+        margin-top: 0
 
     h2
         +adjust-font-size-to(40px)
@@ -497,7 +519,7 @@ h1, .h1
     .section-heading
         font-size: 3em
 
-    header
+    header#home
         min-height: 95%
         margin-bottom: 5%
         padding: 40% 0 30% 0
@@ -514,8 +536,20 @@ h1, .h1
             background: url(../img/header-3.jpg) center center fixed no-repeat
             +background-size(cover)
 
+    a[href]
+        +primary-link(true)
+
+    h2 a[href]
+        text-decoration: none
+        &:after
+            content: "\00a0"
+
     p a[href]
         +primary-link(true)
+
+    #social-links a[href]:hover
+        color: $white
+        background: none
 
     footer p a[href]
         +secondary-link(true)
@@ -547,10 +581,7 @@ h1, .h1
     #social-links
         margin-bottom: 1em
         li
-            display: inline-block
             margin-right: 1em
-            &:last-child
-                margin-right: 0
         a
             i
                 +fade
