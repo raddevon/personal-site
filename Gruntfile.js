@@ -1,5 +1,12 @@
 var scripts = ['js/jquery.animate-enhanced.min.js', 'jquery.easing.min.js', 'js/**/*.js', '!js/scripts.js'];
 
+var exec = require('child_process').exec;
+process.on('SIGINT', function () {
+    exec('/Applications/MAMP/bin/stop.sh', function () {
+        process.exit();
+    });
+});
+
 module.exports = function (grunt) {
 
   // Project configuration.
