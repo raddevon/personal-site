@@ -1,0 +1,22 @@
+<koken:include file="includes/header.html" />
+<h1>Portfolio</h1>
+<section id="portfolio">
+	<div id="grid">
+		<koken:load source="albums" filter:category="portfolio" limit="12">
+			<koken:loop>
+				<div class="project">
+					<koken:link>
+					    <koken:img size="3:2" lazy="true" fade="200" />
+					</koken:link>
+					<h2>
+						<koken:link>
+							{{ album.title }}
+						</koken:link>
+					</h2>
+					<p>{{ album.description }}</p>
+				</div>
+			</koken:loop>
+		</koken:load>
+	</div>
+</section>
+<koken:include file="includes/footer.html" />
