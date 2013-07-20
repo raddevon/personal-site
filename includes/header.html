@@ -7,21 +7,25 @@
     <koken:asset file="css/screen.css" />
 </head>
 <body>
+<koken:if data="location.here" equals="/">
+    <header id="home">
+<koken:else>
     <header>
+</koken:if>
         <nav class="static-navbar">
             <div class="nav-list-wrapper">
-                <koken:if data="location.here" equals="/">
                     <ul class="inside-links nav-list">
                         <li>
                             <a href="#">
                                 <i class="icon-up"></i>
                             </a>
                         </li>
-                        <li><a href="#projects-heading">Projects</a></li>
-                        <li><a href="#testimonials-heading">Testimonials</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <koken:if data="location.here" equals="/">
+                            <li><a href="#projects-heading">Projects</a></li>
+                            <li><a href="#testimonials-heading">Testimonials</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </koken:if>
                     </ul>
-                </koken:if>
                 <div id="main-nav">
                     <koken:navigation />
                 </div>
