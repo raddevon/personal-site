@@ -383,12 +383,12 @@ body {
 }
 
 /* line 39, ../sass/_style.sass */
-b, em {
+b, strong {
   font-weight: 500;
 }
 
 /* line 42, ../sass/_style.sass */
-cite {
+em, cite {
   font-style: italic;
 }
 
