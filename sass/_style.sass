@@ -1,3 +1,31 @@
+////////////
+/* Colors */
+////////////
+
+// Named
+$dark-gray: #4f4f4f
+$gray: #9d9d9d
+$light-gray: #dbdbdb
+$white: #fff
+$near-white: #ececec
+$black: #000
+$near-black: lighten($black, 20%)
+$cyan: #4DFFE7
+$green: #A3FF4D
+
+$darken: rgba(0, 0, 0, 0.4)
+$very-darken: rgba(0, 0, 0, 0.7)
+$lighten: rgba(255, 255, 255, 0.2)
+
+// Semantic
+$background-color: $near-black
+$name-color: $near-white
+$text-color: $near-black
+$link: $black
+$secondary-link: $green
+$navbar-active: $light-gray
+$row-color: $light-gray
+
 ////////////////
 /* Typography */
 ////////////////
@@ -11,6 +39,7 @@ $nav-font: 'Code Pro', sans-serif
 $name-font: 'Code Pro', sans-serif
 $tagline-font: 'Code Pro', sans-serif
 $heading-font: 'Code Pro', sans-serif
+$meta-font: 'Code Pro', sans-serif
 $project-heading-font: 'Exo', sans-serif
 $body-font: 'Roboto', sans-serif
 
@@ -42,6 +71,18 @@ b, strong
 em, cite
     font-style: italic
 
+sup, sub
+    font-size: 0.75em
+    vertical-align: baseline
+    line-height: 0
+    position: relative
+
+sup
+    top: -0.5em
+
+sub
+    bottom: -0.25em
+
 #{headings()}
     font-family: $project-heading-font
     font-weight: 700
@@ -67,9 +108,15 @@ h1, .h1
     font-family: $heading-font
     font-weight: 200
 
-h2
+h2, #post h1
     +adjust-font-size-to(32px)
     font-style: italic
+    font-family: $project-heading-font
+    color: $text-color
+    letter-spacing: 0em
+
+#post h1
+    margin-bottom: 0
 
 h3
     +adjust-font-size-to(24px)
@@ -77,34 +124,6 @@ h3
 #credits
     +adjust-font-size-to(14px)
     line-height: 1.4em
-
-////////////
-/* Colors */
-////////////
-
-// Named
-$dark-gray: #4f4f4f
-$gray: #9d9d9d
-$light-gray: #dbdbdb
-$white: #fff
-$near-white: #ececec
-$black: #000
-$near-black: lighten($black, 20%)
-$cyan: #4DFFE7
-$green: #A3FF4D
-
-$darken: rgba(0, 0, 0, 0.4)
-$very-darken: rgba(0, 0, 0, 0.7)
-$lighten: rgba(255, 255, 255, 0.2)
-
-// Semantic
-$background-color: $near-black
-$name-color: $near-white
-$text-color: $near-black
-$link: $black
-$secondary-link: $green
-$navbar-active: $light-gray
-$row-color: $light-gray
 
 ///////////////////////////
 /* Media query variables */
@@ -187,17 +206,19 @@ a[href] i, i
     a[href]
         +secondary-link
 
-.project-wrap, #portfolio
+.project-wrap, #portfolio, #blog article, #post
     width: 100%
     position: relative
     background: $row-color
 
-.project-wrap
+.project-wrap, #blog article
     margin-bottom: 4em
     &:last-child
         margin-bottom: 0
     &:first-child
         margin-bottom: 4em
+    #pagination
+        padding: 1em
 
 #portfolio
     margin: 0
@@ -221,6 +242,7 @@ a[href] i, i
 
 .text
     padding: 0.2em
+    max-width: $text-width
     color: $text-color
     +clearfix
     a
@@ -258,6 +280,15 @@ blockquote
     text-align: right
     clear: both
     font-style: italic
+
+.meta
+    font-size: 0.7em
+    color: $dark-gray
+    text-transform: uppercase
+    font-family: $meta-font
+    font-weight: 700
+    sup
+        font-size: 0.65em
 
 header, footer
     border: none
@@ -509,7 +540,7 @@ h1, .h1
     h1
         margin-top: 0
 
-    h2
+    h2, #post h1
         +adjust-font-size-to(40px)
         font-style: italic
 

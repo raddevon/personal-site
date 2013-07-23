@@ -1,0 +1,15 @@
+<koken:include file="includes/header.html" />
+  <koken:load>
+      <article id="post">
+        <div class="text">
+          <h1>
+            {{ essay.title }}
+          </h1>
+          <div class="meta">
+          Posted {{ essay.published_on.timestamp date_format="F j\<\s\u\p\>S\<\/\s\u\p\>, Y" }}
+          </div>
+          {{ essay.content }}
+        </div>
+      </article>
+  </koken:load>
+<koken:include file="includes/footer.html" />
