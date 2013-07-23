@@ -173,6 +173,7 @@ a[href]
 a[href] i, i
     color: $dark-gray
     background: none
+    +fade
 
 .section-heading
     margin: 0.4em 0 0 0
@@ -294,6 +295,19 @@ footer
     margin: 20px inherit
     a[href]
         +secondary-link
+
+#pagination
+    text-align: center
+    font-size: 1.5em
+    letter-spacing: 0.5em
+    a:hover, a:active
+        background: none
+    a:active i
+        color: $white
+    i
+        color: $lighten
+    a i
+        color: $dark-gray
 
 #social-links
     text-align: center
@@ -566,6 +580,9 @@ h1, .h1
         overflow-x: hidden
         .text
             width: 50em
+
+    #pagination a:hover i
+        color: $white
 
     .text
         padding: 1em

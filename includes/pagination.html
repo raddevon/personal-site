@@ -4,23 +4,17 @@
 <div id="pagination">
 
   <koken:if condition="{{ page }} > 1">
-
-    <koken:link data="previous_page" title="View page {{ previous_page.number }}">
-      <i class="icon-left"></i>
-    </koken:link>
-
-
+    <koken:link data="previous_page" title="View page {{ previous_page.number }}"><i class="icon-left"></i></koken:link>
+  <koken:else>
+    <i class="icon-left"></i>
   </koken:if>
 
   {{ page }}
 
   <koken:if condition="{{ page }} < {{ pages }}">
-
-    <koken:link data="next_page" title="View page {{ next_page.number }}">
-      <i class="icon-right"></i>
-    </koken:link>
-
-
+    <koken:link data="next_page" title="View page {{ next_page.number }}"><i class="icon-right"></i></koken:link>
+  <koken:else>
+    <i class="icon-right"></i>
   </koken:if>
 
 </div>
