@@ -1,6 +1,6 @@
 <koken:include file="includes/header.html" />
 <h1>{{ labels.album.plural }}</h1>
-<section id="portfolio">
+<section id="content">
 	<div id="grid">
 		<koken:load source="albums" filter:category="portfolio" limit="12" filter:page="{{ location.parameters.page }}">
 			<koken:loop>
