@@ -218,10 +218,11 @@ a[href]:active i
     a[href]
         +secondary-link
 
-.project-wrap, #portfolio, #blog article, #content
+.project-wrap, #blog article, #content
     width: 100%
     position: relative
     background: $row-color
+    +clearfix
 
 .project-wrap, #blog article
     margin-bottom: 4em
@@ -229,13 +230,9 @@ a[href]:active i
         margin-bottom: 0
     &:first-child
         margin-bottom: 4em
-    #pagination
-        padding: 1em
 
-#portfolio
-    margin: 0
-    padding: 1em
-    +clearfix
+#grid
+    margin: 1em
 
 .project
     margin-bottom: 1em
@@ -349,6 +346,7 @@ footer
 #pagination
     text-align: center
     font-size: 1.5em
+    padding: 1em
     letter-spacing: 0.5em
     a:hover, a:active
         background: none
