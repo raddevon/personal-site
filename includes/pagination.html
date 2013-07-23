@@ -6,7 +6,7 @@
   <koken:if condition="{{ page }} > 1">
 
     <koken:link data="previous_page" title="View page {{ previous_page.number }}">
-      &larr; Previous&nbsp;&nbsp;
+      <i class="icon-left"></i>
     </koken:link>
 
 
@@ -17,7 +17,7 @@
   <koken:if condition="{{ page }} < {{ pages }}">
 
     <koken:link data="next_page" title="View page {{ next_page.number }}">
-      &nbsp;&nbsp;Next &rarr;
+      <i class="icon-right"></i>
     </koken:link>
 
 
