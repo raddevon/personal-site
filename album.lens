@@ -20,17 +20,19 @@
       <section id="images">
          <koken:loop>
           <div class="project-wrap">
+          <div class="text">
+            <h2>
+                <koken:link>
+                    {{ content.title }}
+                </koken:link>
+            </h2>
+          </div>
               <div class="project-image">
                   <koken:link>
                       <koken:img respond_to="width" lazy="true" fade="200" />
                   </koken:link>
               </div>
               <div class="text">
-                  <h2>
-                      <koken:link>
-                          {{ content.title }}
-                      </koken:link>
-                  </h2>
                   <p>{{ content.caption }}</p>
               </div>
           </div>
