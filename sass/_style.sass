@@ -34,6 +34,7 @@ $base-line-height: 30px
 +establish-baseline
 
 $text-width: 40em
+$image-width: 60em
 
 $nav-font: 'Code Pro', sans-serif
 $name-font: 'Code Pro', sans-serif
@@ -108,14 +109,14 @@ h1, .h1
     font-family: $heading-font
     font-weight: 200
 
-h2, #post h1
+h2, #content h1
     +adjust-font-size-to(32px)
     font-style: italic
     font-family: $project-heading-font
     color: $text-color
     letter-spacing: 0em
 
-#post h1
+#content h1
     margin-bottom: 0
 
 h3
@@ -139,8 +140,8 @@ $large-screen-min: 1824px
 ////////////
 /* Mixins */
 ////////////
-=fade
-    +single-transition(all, 0.2s, ease-out, 0)
+=fade($property:all)
+    +single-transition($property, 0.2s, ease-out, 0)
 
 =primary-link($desktop: false)
     color: $link
@@ -194,6 +195,17 @@ a[href] i, i
     background: none
     +fade
 
+a[href]:active i
+    background: none
+    color: $white
+
+#back a i
+    +fade(color)
+    background: $row-color
+    font-size: 1.5em
+    position: relative
+    top: 0.1em
+
 .section-heading
     margin: 0.4em 0 0 0
     color: $near-white
@@ -206,7 +218,7 @@ a[href] i, i
     a[href]
         +secondary-link
 
-.project-wrap, #portfolio, #blog article, #post
+.project-wrap, #portfolio, #blog article, #content
     width: 100%
     position: relative
     background: $row-color
@@ -229,7 +241,7 @@ a[href] i, i
     margin-bottom: 1em
 
 .project-image
-    max-width: 60em
+    max-width: $image-width
     max-height: 70vh
     overflow-y: hidden
     position: relative
@@ -239,6 +251,11 @@ a[href] i, i
         display: block
         max-width: 100%
         margin: auto
+
+#back
+    max-width: $image-width
+    margin: 0 auto
+    padding-top: 1em
 
 .text
     padding: 0.2em
@@ -540,7 +557,7 @@ h1, .h1
     h1
         margin-top: 0
 
-    h2, #post h1
+    h2, #content h1
         +adjust-font-size-to(40px)
         font-style: italic
 
@@ -586,6 +603,10 @@ h1, .h1
 
     a[href]
         +primary-link(true)
+
+    a[href]:hover i
+        background: none
+        color: $white
 
     h2 a[href]
         text-decoration: none
