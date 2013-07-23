@@ -2,7 +2,7 @@
 <h1>Portfolio</h1>
 <section id="portfolio">
 	<div id="grid">
-		<koken:load source="albums" filter:category="portfolio" limit="12">
+		<koken:load source="albums" filter:category="portfolio" limit="1">
 			<koken:loop>
 				<div class="project">
 					<koken:link>
@@ -16,7 +16,9 @@
 					<p>{{ album.description }}</p>
 				</div>
 			</koken:loop>
-		</koken:load>
+
 	</div>
+	<koken:include file="includes/pagination.html" />
+	</koken:load>
 </section>
 <koken:include file="includes/footer.html" />
