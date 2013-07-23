@@ -1,5 +1,21 @@
 <koken:include file="includes/header.html" />
     <koken:load>
+    <koken:load>
+      <meta property="og:title" content="{{ album.title strip_html="true" }}" />
+      <meta property="og:description" content="{{ album.summary strip_html="true" }}" />
+      <meta property="og:type" content="website" />
+      <meta property="og:image" content="{{ album.covers.first.presets.medium_large.url }}" />
+      <meta property="og:image:width" content="{{ album.covers.first.presets.medium_large.width }}" />
+      <meta property="og:image:height" content="{{ album.covers.first.presets.medium_large.height }}" />
+      <meta property="og:url" content="{{ album.url }}" />
+      <koken:content_image>
+          <koken:not empty="profile.twitter">
+              <meta name="twitter:card" content="photo" />
+              <meta name="twitter:site" content="@{{ profile.twitter }}" />
+              <meta name="twitter:creator" content="@{{ profile.twitter }}" />
+          </koken:not>
+      </koken:content_image>
+    </koken:load>
       <h1>{{ album.title }}</h1>
       <section id="images">
          <koken:loop>
