@@ -2,7 +2,7 @@
 <h1>Portfolio</h1>
 <section id="portfolio">
 	<div id="grid">
-		<koken:load source="albums" filter:category="portfolio" limit="1" filter:page="{{ location.parameters.page }}">
+		<koken:load source="albums" filter:category="portfolio" limit="12" filter:page="{{ location.parameters.page }}">
 			<koken:loop>
 				<div class="project">
 					<koken:link>
