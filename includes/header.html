@@ -6,6 +6,8 @@
     <koken:title />
     <koken:asset file="css/screen.css" />
     <meta property="og:site_name" content="{{ site.title }}" />
+    <link rel="alternate" type="application/rss+xml" title="Blog feed" href="{{ rss.essays }}" />
+    <link rel="alternate" type="application/rss+xml" title="Image feed" href="{{ rss.contents }}" />
 </head>
 <body>
 <koken:if data="location.here" equals="/">
