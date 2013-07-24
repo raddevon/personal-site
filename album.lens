@@ -1,6 +1,5 @@
 <koken:include file="includes/header.html" />
     <koken:load>
-    <koken:load>
       <meta property="og:title" content="{{ album.title strip_html="true" }}" />
       <meta property="og:description" content="{{ album.summary strip_html="true" }}" />
       <meta property="og:type" content="website" />
@@ -15,8 +14,12 @@
               <meta name="twitter:creator" content="@{{ profile.twitter }}" />
           </koken:not>
       </koken:content_image>
-    </koken:load>
       <h1>{{ album.title }}</h1>
+      <div class="project-wrap">
+        <div class="text">
+          {{ album.description }}
+        </div>
+      </div>
       <section id="images">
          <koken:loop>
           <div class="project-wrap">
