@@ -32,7 +32,7 @@
                                 {{ album.title }}
                             </koken:link>
                         </h2>
-                        <p>{{ album.description }}</p>
+                        <p>{{ album.summary }}</p>
                     </div>
                 </div>
             </koken:loop>
