@@ -59,7 +59,7 @@
             </koken:loop>
         <koken:else>
             <koken:note>
-                <p>This page displays testimonials. Create a new album with the person's name as the title, a photo as the cover image, the quote as the description, and assign it the "testimonials" category.</p>
+                <p>This page displays testimonials. Create a new album with the quoted party's name as the title, a photo as the cover image, the quote as the description, and assign the album the "testimonials" category.</p>
             </koken:note>
         </koken:load>
     </section>
@@ -69,5 +69,9 @@
                 {{ essay.content }}
             </div>
         </koken:loop>
+    <koken:else>
+        <koken:note>
+            <p>Add a contact form here by creating it as an essay and assigning it the "contact" category.</p>
+        </koken:note>
     </koken:load>
 <koken:include file="includes/footer.html" />
