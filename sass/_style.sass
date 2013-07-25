@@ -199,6 +199,11 @@ a[href]:active i
     background: none
     color: $white
 
+h2 a[href]
+    text-decoration: none
+    &:after
+        content: "\00a0"
+
 #back a i
     +fade(color)
     background: $row-color
@@ -612,11 +617,6 @@ h1, .h1
         background: none
         color: $white
 
-    h2 a[href]
-        text-decoration: none
-        &:after
-            content: "\00a0"
-
     p a[href]
         +primary-link(true)
 
@@ -645,8 +645,6 @@ h1, .h1
         width: $text-width
         margin: auto
         a
-            &:after
-                content: "\00a0"
             +primary-link(true)
             text-decoration: none
 
