@@ -15,11 +15,14 @@
           </koken:not>
       </koken:content_image>
       <h1>{{ album.title }}</h1>
-      <div class="project-wrap">
-        <div class="text">
-          {{ album.description }}
-        </div>
-      </div>
+      <koken:if empty="album.description">
+      <koken:else>
+        <div class="project-wrap">
+                <div class="text">
+                  {{ album.description }}
+                </div>
+              </div>
+      </koken:if>
       <section id="images">
          <koken:loop>
           <div class="project-wrap">
