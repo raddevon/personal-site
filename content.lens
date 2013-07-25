@@ -29,7 +29,7 @@
             {{ content.title }}
           </h1>
         </div>
-        <div class="project-image">
+        <div class="full project-image">
           <koken:img respond_to="width" lazy="true" fade="200" />
         </div>
         <div class="text">
