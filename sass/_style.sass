@@ -417,13 +417,13 @@ footer
 
 #social-links
     text-align: center
-    font-size: 2em
+    font-size: 1.2em
     a
         color: $gray
         text-decoration: none
     li
         display: inline-block
-        margin-right: 1em
+        margin-right: 0.5em
         &:last-child
             margin-right: 0
 
@@ -606,6 +606,19 @@ h1, .h1
     #testimonials h2
         margin-bottom: 0.4em
 
+
+    #social-links
+        font-size: 2em
+        margin-bottom: 1em
+        li
+            margin-right: 1em
+        a
+            i
+                +fade
+            &:hover i
+                color: $near-white
+                background: none
+
 /////////////////////////
 /* Desktop-only styles */
 /////////////////////////
@@ -684,17 +697,6 @@ h1, .h1
     #testimonials .project-wrap:hover blockquote
         &:before, &:after
             color: $white
-
-    #social-links
-        margin-bottom: 1em
-        li
-            margin-right: 1em
-        a
-            i
-                +fade
-            &:hover i
-                color: $near-white
-                background: none
 
     .typeform-widget
         width: 100%
