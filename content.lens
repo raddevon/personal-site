@@ -1,0 +1,43 @@
+<koken:include file="includes/header.html" />
+  <koken:load>
+  <koken:head>
+    <meta property="og:title" content="{{ content.title|content.filename strip_html="true" }}" />
+    <meta property="og:description" content="{{ content.caption strip_html="true" }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="{{ content.presets.medium_large.url }}" />
+    <meta property="og:image:width" content="{{ content.presets.medium_large.width }}" />
+    <meta property="og:image:height" content="{{ content.presets.medium_large.height }}" />
+    <meta property="og:url" content="{{ content.url }}" />
+    <koken:content_image>
+        <koken:not empty="profile.twitter">
+            <meta name="twitter:card" content="photo" />
+            <meta name="twitter:site" content="@{{ profile.twitter }}" />
+            <meta name="twitter:creator" content="@{{ profile.twitter }}" />
+        </koken:not>
+    </koken:content_image>
+  </koken:head>
+      <article id="content">
+        <div id="back">
+          <koken:parent>
+            <koken:link>
+              <i class="icon-left"></i>{{ album.title }}
+            </koken:link>
+          </koken:parent>
+        </div>
+        <div class="text">
+          <h1>
+            {{ content.title }}
+          </h1>
+        </div>
+        <div class="full project-image">
+          <koken:img respond_to="width" lazy="true" fade="200" />
+        </div>
+        <div class="text">
+          <div class="meta">
+          Posted {{ content.uploaded_on.timestamp date_format="F j\<\s\u\p\>S\<\/\s\u\p\>, Y" }}
+          </div>
+          <p>{{ content.caption }}</p>
+        </div>
+      </article>
+  </koken:load>
+<koken:include file="includes/footer.html" />

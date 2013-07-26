@@ -1,0 +1,44 @@
+<!doctype html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ site.description }}" />
+    <meta name="author" content="{{ profile.name }}" />
+    <meta name="keywords" content="{{ site.keywords }}" />
+    <koken:title />
+    <koken:asset file="css/screen.css" />
+    <meta property="og:site_name" content="{{ site.title }}" />
+    <link rel="alternate" type="application/rss+xml" title="Blog feed" href="{{ rss.essays }}" />
+    <link rel="alternate" type="application/rss+xml" title="Image feed" href="{{ rss.contents }}" />
+</head>
+<body>
+<koken:if data="location.here" equals="/">
+    <header id="home-header">
+<koken:else>
+    <header>
+</koken:if>
+        <nav class="static-navbar">
+            <div class="nav-list-wrapper">
+                    <ul class="inside-links nav-list">
+                        <li>
+                            <a href="#">
+                                <i class="icon-up"></i>
+                            </a>
+                        </li>
+                        <koken:if data="location.here" equals="/">
+                            <li><a href="#projects-heading">Projects</a></li>
+                            <li><a href="#testimonials-heading">Testimonials</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </koken:if>
+                    </ul>
+                <div id="main-nav">
+                    <koken:navigation />
+                </div>
+            </div>
+        </nav>
+        <koken:if data="location.here" equals="/">
+            <div id="me">
+                <h1><span id="name">{{ site.title }}</span>
+                <span id="tagline">{{ site.tagline }}</span></h1>
+            </div>
+        </koken:if>
+    </header>

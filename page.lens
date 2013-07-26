@@ -1,0 +1,24 @@
+<koken:include file="includes/header.html" />
+  <koken:load>
+  <koken:head>
+    <meta property="og:title" content="{{ page.title strip_html="true" }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ page.url }}" />
+    <koken:content_image>
+        <koken:not empty="profile.twitter">
+            <meta name="twitter:card" content="photo" />
+            <meta name="twitter:site" content="@{{ profile.twitter }}" />
+            <meta name="twitter:creator" content="@{{ profile.twitter }}" />
+        </koken:not>
+    </koken:content_image>
+  </koken:head>
+      <article id="content">
+        <div class="text">
+          <h1>
+            {{ page.title }}
+          </h1>
+          {{ page.content }}
+        </div>
+      </article>
+  </koken:load>
+<koken:include file="includes/footer.html" />

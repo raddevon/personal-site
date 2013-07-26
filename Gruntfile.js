@@ -1,4 +1,11 @@
-var scripts = ['js/jquery-1.9.1.js', 'js/jquery.animate-enhanced.min.js','jquery.easing.min.js', 'js/**/*.js', '!js/scripts.js'];
+var scripts = ['js/jquery.animate-enhanced.min.js', 'jquery.easing.min.js', 'js/**/*.js', '!js/scripts.js'];
+
+var exec = require('child_process').exec;
+process.on('SIGINT', function () {
+    exec('/Applications/MAMP/bin/stop.sh', function () {
+        process.exit();
+    });
+});
 
 module.exports = function (grunt) {
 
@@ -30,6 +37,7 @@ module.exports = function (grunt) {
 
     compass: {
       options: {
+       require: 'susy',
         sassDir: 'sass',
         cssDir: 'css'
       },
@@ -64,12 +72,12 @@ module.exports = function (grunt) {
       }
     },
 
-    connect: {
-      server: {
-        options: {
-          port: 8888,
-          hostname: '*'
-        }
+    exec: {
+      serverup: {
+        command: '/Applications/MAMP/bin/start.sh'
+      },
+      serverdown: {
+        command: '/Applications/MAMP/bin/stop.sh'
       }
     }
   });
@@ -79,12 +87,11 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-smushit');
+  grunt.loadNpmTasks('grunt-exec');
 
   // Development task checks and concatenates JS, compiles SASS preserving comments and nesting, runs dev server, and starts watch
-  grunt.registerTask('default', ['jshint','concat', 'compass:dev', 'connect:server', 'watch']);
+  grunt.registerTask('default', ['jshint', 'concat', 'compass:dev', 'exec:serverup', 'watch']);
   // Build task builds minified versions of static files
   grunt.registerTask('build', ['jshint', 'compass:production', 'concat', 'uglify', 'smushit']);
-
 };

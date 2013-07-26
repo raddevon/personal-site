@@ -1,3 +1,31 @@
+////////////
+/* Colors */
+////////////
+
+// Named
+$dark-gray: #4f4f4f
+$gray: #9d9d9d
+$light-gray: #dbdbdb
+$white: #fff
+$near-white: #ececec
+$black: #000
+$near-black: lighten($black, 20%)
+$cyan: #4DFFE7
+$green: #A3FF4D
+
+$darken: rgba(0, 0, 0, 0.4)
+$very-darken: rgba(0, 0, 0, 0.7)
+$lighten: rgba(255, 255, 255, 0.2)
+
+// Semantic
+$background-color: $near-black
+$name-color: $near-white
+$text-color: $near-black
+$link: $black
+$secondary-link: $green
+$navbar-active: $light-gray
+$row-color: $light-gray
+
 ////////////////
 /* Typography */
 ////////////////
@@ -5,10 +33,14 @@ $base-font-size: 20px
 $base-line-height: 30px
 +establish-baseline
 
+$text-width: 40em
+$image-width: 60em
+
 $nav-font: 'Code Pro', sans-serif
 $name-font: 'Code Pro', sans-serif
 $tagline-font: 'Code Pro', sans-serif
 $heading-font: 'Code Pro', sans-serif
+$meta-font: 'Code Pro', sans-serif
 $project-heading-font: 'Exo', sans-serif
 $body-font: 'Roboto', sans-serif
 
@@ -34,11 +66,23 @@ body
     font-weight: 300
     letter-spacing: 0.02em
 
-b, em
+b, strong
     font-weight: 500
 
-cite
+em, cite
     font-style: italic
+
+sup, sub
+    font-size: 0.75em
+    vertical-align: baseline
+    line-height: 0
+    position: relative
+
+sup
+    top: -0.5em
+
+sub
+    bottom: -0.25em
 
 #{headings()}
     font-family: $project-heading-font
@@ -54,18 +98,26 @@ cite
     font-family: $tagline-font
     line-height: 1.4em
 
-#featured-heading
+.section-heading
     font-style: normal
+    font-weight: 200
     font-size: 1.6em
+    font-family: $heading-font
 
 h1, .h1
     +adjust-font-size-to(40px)
     font-family: $heading-font
     font-weight: 200
 
-h2
+h2, #content h1
     +adjust-font-size-to(32px)
     font-style: italic
+    font-family: $project-heading-font
+    color: $text-color
+    letter-spacing: 0em
+
+#content h1
+    margin-bottom: 0
 
 h3
     +adjust-font-size-to(24px)
@@ -73,39 +125,6 @@ h3
 #credits
     +adjust-font-size-to(14px)
     line-height: 1.4em
-
-////////////
-/* Colors */
-////////////
-
-// Named
-$dark-gray: #4f4f4f
-$gray: #9d9d9d
-$light-gray: #dbdbdb
-$white: #fff
-$near-white: #ececec
-$black: #000
-$near-black: lighten($black, 20%)
-$cyan: #4DFFE7
-$green: #A3FF4D
-
-$darken: rgba(0, 0, 0, 0.1)
-$very-darken: rgba(0, 0, 0, 0.7)
-$lighten: rgba(255, 255, 255, 0.2)
-
-// Semantic
-$background-color: $near-black
-$name-color: $near-white
-$text-color: $near-black
-$link: $black
-$secondary-link: $green
-$navbar-active: $light-gray
-$expando-background: $light-gray
-
-// Project rows
-$row-even: $near-white
-$row-odd: $near-white
-$row-fallback: $near-white
 
 ///////////////////////////
 /* Media query variables */
@@ -121,8 +140,9 @@ $large-screen-min: 1824px
 ////////////
 /* Mixins */
 ////////////
-=fade
-    +single-transition(all, 0.2s, ease-out, 0)
+=fade($property:all)
+    +single-transition($property, 0.2s, ease-out, 0)
+>>>>>>> koken
 
 =primary-link($desktop: false)
     color: $link
@@ -159,7 +179,7 @@ body
     &:last-child
         margin-bottom: 2em
     > div
-        max-width: 40em
+        max-width: $text-width
         padding: 1em
         margin: auto
 
@@ -171,49 +191,105 @@ p
 a[href]
     +primary-link
 
-a[href] i, i, header > div#expando-wrapper h2 a[href].on
+a[href] i, i
     color: $dark-gray
     background: none
+    +fade
 
-#featured-heading
-    margin: 0
+a[href]:active i
+    background: none
+    color: $white
+
+h2 a[href]
+    text-decoration: none
+    &:after
+        content: "\00a0"
+
+#back a i
+    +fade(color)
+    background: $row-color
+    font-size: 1.5em
+    position: relative
+    top: 0.1em
+
+.section-heading
+    margin: 0.4em 0 0 0
     color: $near-white
 
-#featured-intro
+.section-intro
     color: $near-white
-    max-width: 40em
+    max-width: $text-width
     padding: 1em
     margin: auto
     a[href]
         +secondary-link
 
-#projects
-    div[data-picture]
-        text-align: center
-        > img
-            width: 95%
-            max-width: 95%
-            position: relative
-            margin: 1em inherit
-    div.project-wrap
-        margin-bottom: 4em
-        background: $row-fallback
-        &:nth-child(even) .project
-            background: $row-even
-        &:nth-child(odd) .project
-            background: $row-odd
-
-.text, .project-data
-    padding: 5px
-    color: $text-color
-
-.text
+.project-wrap, #blog article, #content
+    width: 100%
+    position: relative
+    background: $row-color
     +clearfix
 
-.project-data
-    border-top: rgba($gray, 0.5) 1px solid
+.project-wrap, #blog article
+    margin-bottom: 4em
+    &:last-child
+        margin-bottom: 0
+
+#testimonials .project-wrap:last-child
+    margin-bottom: 4em
+
+#grid
+    margin: 1em
+
+.project
+    margin-bottom: 1em
+
+.project-image
+    max-width: $image-width
+    max-height: 400px
+    max-height: 70vh
+    overflow-y: hidden
+    position: relative
+    margin: auto
+    padding: 1em
+    img
+        display: block
+        max-width: 100%
+        margin: auto
+    &.full
+        max-height: none
+
+#back
+    max-width: $image-width
+    margin: 0 auto
+    padding-top: 1em
+
+.text
+    padding: 0.2em
+    max-width: $text-width
+    color: $text-color
+    +clearfix
+    a
+        +primary-link
+        text-decoration: none
+    h2
+        text-align: center
+    + .project-image
+        padding-top: 0
+    ul
+        list-style-type: circle
+        margin: 0 0 1em 1em
+
+// Center images in blog posts
+[class*='k-source-essay'] article img
+    display: block
+    margin: 1em auto
+
+#testimonials h2
+    text-align: left
 
 .avatar
+    height: auto
     max-width: 40%
     float: left
     margin-right: 0.5em
@@ -223,10 +299,33 @@ a[href] i, i, header > div#expando-wrapper h2 a[href].on
 .avatar img
     max-width: 100%
 
+blockquote
+    quotes: "\201C""\201D""\2018""\2019"
+    &:before
+        content: "\201C"
+    &:after
+        content: "\201D"
+    &:before, &:after
+        +fade
+        font-family: $project-heading-font
+        color: $darken
+        font-size: 3em
+        line-height: 0.1em
+        vertical-align: -0.4em
+
 .quote-source
     text-align: right
     clear: both
     font-style: italic
+
+.meta
+    font-size: 0.7em
+    color: $dark-gray
+    text-transform: uppercase
+    font-family: $meta-font
+    font-weight: 700
+    sup
+        font-size: 0.65em
 
 header, footer
     border: none
@@ -243,10 +342,11 @@ header, footer
             color: $near-white
             padding: 0 10px
             margin: 0 auto 10px auto
-            max-width: 40em
+            max-width: $text-width
             max-width: 40rem
 
-header
+#home-header
+    height: auto
     padding: 5% 0
     background: $near-black
     &.background-1
@@ -264,11 +364,40 @@ footer
     a[href]
         +secondary-link
 
+#pagination
+    text-align: center
+    font-size: 1.5em
+    padding: 1em
+    letter-spacing: 0.5em
+    a:hover, a:active
+        background: none
+    a:active i
+        color: $white
+    i
+        color: $lighten
+    a i
+        color: $dark-gray
+
+#social-links
+    text-align: center
+    font-size: 2em
+    a
+        color: $gray
+        text-decoration: none
+    li
+        display: inline-block
+        margin-right: 1em
+        &:last-child
+            margin-right: 0
+
 .thinkful-badge
     display: block
     margin: 1em auto
 
 .static-navbar
+    display: none
+
+.nav-list-wrapper li a.k-nav-current
     display: none
 
 #name
@@ -284,52 +413,15 @@ h1, .h1
     text-align: center
     letter-spacing: 0.05em
     color: $name-color
-    margin-bottom: 0.4em
+    margin: 1em 0
 
-.social
-    text-align: center
-    a
-        text-decoration: none
-    div[data-picture]
-        display: inline-block
-        img
-            width: 32px
-            height: 32px
-
-#skills .set
-    margin-bottom: 10px
+.skillset
+    margin-bottom: 1em
+    &:last-child
+        margin-bottom: 0
 
 .slide-out
     display: none
-
-.project-data
-    h3
-        margin-bottom: 0.2em
-    h4
-        margin-top: 0.2em
-    ul
-        list-style: none
-    li
-        margin-top: 0.3em
-        width: 100%
-        overflow: hidden
-        text-overflow: ellipsis
-        white-space: nowrap
-        &.code
-            white-space: normal
-        // Icon bullets for .project-data div
-        &:before
-            +icon-styling
-            background: $dark-gray
-            border-radius: 50%
-            color: $near-white
-            padding: 0.1em 0.3em
-        &.git:before
-            content: '\e800'
-        &.code:before
-            content: '\e807'
-        &.link:before
-            content: '\e802'
 
 #credits p, #credits a
     color: $gray
@@ -368,13 +460,13 @@ h1, .h1
     #tagline
         font-size: 0.75em
 
-    #featured-heading
+    .section-heading
         font-size: 2.7em
 
-    h1
+    h1, .h1
         +adjust-font-size-to(64px)
 
-    header
+    #home-header
         min-height: 65%
         margin-bottom: 5%
         padding: 20% 0 8% 0
@@ -408,7 +500,7 @@ h1, .h1
 //////////////////////////////////
 @media screen and (min-width: $tablet-max)
 
-    .nav-list li
+    .nav-list-wrapper li
         font-size: 18px
 
 ////////////
@@ -423,28 +515,32 @@ h1, .h1
         z-index: 200
         width: 100%
         color: $near-white
+        #main-nav
+            float: right
+            li
+                border-left: rgba(255,255,255,0.3) 1px solid
     .nav-list-wrapper
         +clearfix
         background: $very-darken
-    .nav-list li
-        display: inline-block
-        float: left
-        font-size: 14px
-        a
-            display: block
-            padding: 1em
-            color: $near-white
-            text-decoration: none
-            height: 4.23em
-            &:hover, &.on
-                background: $navbar-active
+        li
+            display: inline-block
+            float: left
+            font-size: 14px
+            a
+                display: block
+                padding: 1em
+                color: $near-white
+                text-decoration: none
+                height: 4.23em
+                &:hover, &.on
+                    background: $navbar-active
+                    color: $near-black
+            a i
+                padding: 0
+                color: $near-white
+                vertical-align: middle
+            a:hover i
                 color: $near-black
-        a i
-            padding: 0
-            color: $near-white
-            vertical-align: middle
-        a:hover i
-            color: $near-black
     // Github icon needs to be a bit larger font size to appear the same size as the others
     i[class=icon-github]
         +adjust-font-size-to(24px)
@@ -461,39 +557,40 @@ h1, .h1
         float: left
         li
             border-right: rgba(255,255,255,0.3) 1px solid
-    .outside-links
-        float: right
-        li
-            border-left: rgba(255,255,255,0.3) 1px solid
     /* End navbar styling */
 
+    header
+        height: 7em
+
     // Making room for the navbar when using an anchor link
-    #featured-heading
+    .section-heading
         margin: 0 auto 0 auto
         padding: 80px 0
-    #featured-intro
+    .section-intro
         padding: 1em
         margin: -80px auto 3em auto
-    .wrapper > div
-        padding: 80px 1em
 
     .avatar
         max-width: 20%
         float: left
         margin-right: 1em
-        position: relative
-        top: 0.3em
 
-    h2
+    h1
+        margin-top: 0
+
+    h2, #content h1
         +adjust-font-size-to(40px)
         font-style: italic
+
+    #testimonials h2
+        margin-bottom: 0.4em
 
 /////////////////////////
 /* Desktop-only styles */
 /////////////////////////
 @media screen and (min-width: $desktop-min)
 
-    .nav-list li
+    .nav-list-wrapper li
         font-size: 20px
         a
             height: 3.5em
@@ -505,10 +602,10 @@ h1, .h1
     #name
         font-size: 1.5em
 
-    #featured-heading
+    .section-heading
         font-size: 3em
 
-    header
+    #home-header
         min-height: 95%
         margin-bottom: 5%
         padding: 40% 0 30% 0
@@ -525,74 +622,58 @@ h1, .h1
             background: url(../img/header-3.jpg) center center fixed no-repeat
             +background-size(cover)
 
+    a[href]
+        +primary-link(true)
+
+    a[href]:hover i
+        background: none
+        color: $white
+
     p a[href]
         +primary-link(true)
+
+    #social-links a[href]:hover
+        color: $white
+        background: none
 
     footer p a[href]
         +secondary-link(true)
 
-    #featured-intro
+    .section-intro
         a[href]
             +secondary-link(true)
 
     #projects
         width: 100%
         overflow-x: hidden
+        .text
+            width: 50em
 
-    div.project-wrap
-        position: relative
-        &:nth-child(even) .project
-            position: relative
-            left: -66%
-
-    div.project
-        display: table
-        width: 166.66666666666666%
-        .row
-            display: table-row
-            > div
-                display: table-cell
-                vertical-align: middle
-                position: relative
-                left: 0
-        [data-picture]
-            width: 33%
-            margin: 1em inherit
-            &:nth-child(even)
-                text-align: right
-            img
-                margin-bottom: -7px
+    #pagination a:hover i
+        color: $white
 
     .text
-        padding: 20px
-        width: 25%
+        padding: 1em
+        width: $text-width
+        margin: auto
+        a
+            +primary-link(true)
+            text-decoration: none
 
-    .project-data
-        padding: 20px
-        width: 40%
-        border: none
-        text-align: center
-        > div
-            text-align: left
-            display: inline-block
+    #testimonials .project-wrap:hover blockquote
+        &:before, &:after
+            color: $white
 
-    .collapse
-        position: absolute
-        left: -45px
-
-    div.project .row > .slider-control
-        position: relative
-        height: 2em
-        +adjust-font-size-to(30px)
-        display: none
-        +fade
-        &:hover
-            background: $darken
-            cursor: hand
-            cursor: pointer
-
-    .slide-out
-        display: table-cell
+    #social-links
+        margin-bottom: 1em
+        li
+            margin-right: 1em
+        a
+            i
+                +fade
+            &:hover i
+                color: $near-white
+                background: none
 
     .typeform-widget
         width: 100%

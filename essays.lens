@@ -1,0 +1,25 @@
+<koken:include file="includes/header.html" />
+<h1>{{ labels.essay.plural }}</h1>
+<section id="blog">
+  <koken:load source="essays" filter:category="blog" limit="5" order_by="created_on" order_direction="desc" filter:page="{{ location.parameters.page }}">
+      <koken:loop>
+        <article>
+          <div class="text">
+            <h2>
+              <koken:link>
+                {{ essay.title }}
+              </koken:link>
+            </h2>
+            <div class="meta">
+            Posted {{ essay.published_on.timestamp date_format="F j\<\s\u\p\>S\<\/\s\u\p\>, Y" }}
+            </div>
+            {{ essay.content }}
+          </div>
+        </article>
+      </koken:loop>
+      <div class="project-wrap">
+        <koken:include file="includes/pagination.html" />
+      </div>
+  </koken:load>
+</section>
+<koken:include file="includes/footer.html" />

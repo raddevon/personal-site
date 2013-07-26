@@ -1,0 +1,17 @@
+@import susy
+
++border-box-sizing
+
+$total-columns  : 2
+$column-width   : 20em
+$gutter-width   : 1em
+$grid-padding   : $gutter-width
+$base-font-size : 20px
+
+#grid
+    +container(2, 3)
+
+.project
+    @for $break from 2 through 3
+        +at-breakpoint($break)
+            +isolate-grid(1)
