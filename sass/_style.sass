@@ -142,7 +142,6 @@ $large-screen-min: 1824px
 ////////////
 =fade($property:all)
     +single-transition($property, 0.2s, ease-out, 0)
->>>>>>> koken
 
 =primary-link($desktop: false)
     color: $link
@@ -211,6 +210,40 @@ h2 a[href]
     font-size: 1.5em
     position: relative
     top: 0.1em
+
+/* Navbar display and styling */
+.static-navbar
+    display: block
+    position: fixed
+    top: 0
+    z-index: 200
+    width: 100%
+    color: $near-white
+#main-nav
+    width: 100%
+    li
+        border-right: rgba(255,255,255,0.3) 1px solid
+.inside-links
+    display: none
+.nav-list-wrapper
+    +clearfix
+    background: $very-darken
+    li
+        display: inline-block
+        float: left
+        font-size: 14px
+    a[href]
+        display: block
+        padding: 1em
+        color: $near-white
+        text-decoration: none
+        &:hover, &.on
+            background: $navbar-active
+            color: $near-black
+header
+    position: relative
+    top: 2.5em
+/* End navbar styling */
 
 .section-heading
     margin: 0.4em 0 0 0
@@ -394,9 +427,6 @@ footer
     display: block
     margin: 1em auto
 
-.static-navbar
-    display: none
-
 .nav-list-wrapper li a.k-nav-current
     display: none
 
@@ -509,51 +539,29 @@ h1, .h1
 @media screen and (min-width: $tablet)
     /* Navbar display and styling */
     .static-navbar
-        display: block
-        position: fixed
         top: 0.5em
-        z-index: 200
-        width: 100%
-        color: $near-white
-        #main-nav
-            float: right
-            li
-                border-left: rgba(255,255,255,0.3) 1px solid
-    .nav-list-wrapper
-        +clearfix
-        background: $very-darken
+    #main-nav
+        width: auto
+        float: right
         li
-            display: inline-block
-            float: left
-            font-size: 14px
-            a
-                display: block
-                padding: 1em
-                color: $near-white
-                text-decoration: none
-                height: 4.23em
-                &:hover, &.on
-                    background: $navbar-active
-                    color: $near-black
-            a i
+            border-left: rgba(255,255,255,0.3) 1px solid
+            border-right: none
+    .nav-list-wrapper
+        a[href]
+            i
                 padding: 0
                 color: $near-white
                 vertical-align: middle
-            a:hover i
+            &:hover i
                 color: $near-black
-    // Github icon needs to be a bit larger font size to appear the same size as the others
-    i[class=icon-github]
-        +adjust-font-size-to(24px)
-    // Its a element needs less padding to keep the same overall height as the other navbar buttons
-    a[href="http://github.com/raddevon"]
-        padding: 0.95em 0.95em
+        // Up arrow's 'a' element needs less padding to keep the same overall height as the other navbar buttons
+        a[href="#"]
+            padding: 0.78em 0.78em
     // Larger to-the-top icon
     i[class=icon-up]
         font-size: 1.7em
-    // Its a element needs less padding to keep the same overall height as the other navbar buttons
-    a[href="#"]
-        padding: 0.78em 0.78em
     .inside-links
+        display: block
         float: left
         li
             border-right: rgba(255,255,255,0.3) 1px solid
@@ -561,6 +569,10 @@ h1, .h1
 
     header
         height: 7em
+        top: 0
+        -webkit-background-size: auto auto
+        -o-background-size: auto auto
+        background-size: auto auto
 
     // Making room for the navbar when using an anchor link
     .section-heading
@@ -597,7 +609,7 @@ h1, .h1
     // Correct back-to-top icon positioning
     i[class=icon-up]
         position: relative
-        top: -0.15em
+        top: 0
 
     #name
         font-size: 1.5em
