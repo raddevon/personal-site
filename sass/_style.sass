@@ -94,7 +94,7 @@ sub
     font-weight: normal
 
 #tagline
-    font-size: 0.7em
+    font-size: 0.6em
     font-family: $tagline-font
     line-height: 1.4em
 
@@ -243,6 +243,10 @@ h2 a[href]
 header
     position: relative
     top: 2.5em
+
+// Clear the way for the header
+#about-me + .section-heading
+    margin-top: 2em
 /* End navbar styling */
 
 .section-heading
@@ -443,7 +447,7 @@ h1, .h1
     text-align: center
     letter-spacing: 0.05em
     color: $name-color
-    margin: 1em 0
+    margin: 0.5em 0
 
 .skillset
     margin-bottom: 1em
@@ -495,6 +499,7 @@ h1, .h1
 
     h1, .h1
         +adjust-font-size-to(64px)
+        margin: 1em 0
 
     #home-header
         min-height: 65%
@@ -565,6 +570,10 @@ h1, .h1
         float: left
         li
             border-right: rgba(255,255,255,0.3) 1px solid
+
+    // Reset the mobile styling
+    #about-me + .section-heading
+        margin-top: 0
     /* End navbar styling */
 
     header
