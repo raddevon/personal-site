@@ -16,7 +16,7 @@
         </koken:note>
     </koken:load>
     <h2 class="section-heading h1" id="projects-heading">Featured Projects</h2>
-    <p class="section-intro">Below, you'll find some of my best recent work. Check out <a href="http://raddevon.dunked.com/" target="_blank">my comprehensive portfolio</a> to see the rest.</p>
+    <p class="section-intro">Below, you'll find some of my best recent work. Check out <a href="/portfolio/">my comprehensive portfolio</a> to see the rest.</p>
     <section id="projects">
         <koken:load source="featured_albums" limit="4">
             <koken:loop>
