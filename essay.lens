@@ -19,7 +19,7 @@
             {{ essay.title }}
           </h1>
           <div class="meta">
-          Posted {{ essay.published_on.timestamp date_format="F j\<\s\u\p\>S\<\/\s\u\p\>, Y" }}
+          Posted {{ essay.published_on.timestamp date_format="F j\<\s\u\p\>S\<\/\s\u\p\>, Y" }} by {{ profile.name }}
           </div>
           {{ essay.content }}
         </div>
