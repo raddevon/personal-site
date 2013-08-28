@@ -3,7 +3,7 @@
   <koken:head>
     <meta property="og:title" content="{{ essay.title strip_html="true" }}" />
     <meta property="og:description" content="{{ essay.excerpt strip_html="true" }}" />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content="article" />
     <meta property="og:url" content="{{ essay.url }}" />
     <koken:content_image>
         <koken:not empty="profile.twitter">
