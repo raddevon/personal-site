@@ -1,6 +1,7 @@
 <koken:include file="includes/header.html" />
   <koken:load>
   <koken:head>
+    <meta name="description" content="{{ essay.excerpt }}" />
     <meta property="og:title" content="{{ essay.title strip_html="true" }}" />
     <meta property="og:description" content="{{ essay.excerpt strip_html="true" }}" />
     <meta property="og:type" content="article" />
