@@ -236,6 +236,10 @@ h2 a[href]
         border-right: rgba(255,255,255,0.3) 1px solid
 .inside-links
     display: none
+.inside-links, .home-link
+    float: left
+    li
+        border-right: rgba(255,255,255,0.3) 1px solid
 .nav-list-wrapper
     +clearfix
     background: $very-darken
@@ -601,9 +605,6 @@ h1, .h1
         font-size: 1.7em
     .inside-links
         display: block
-        float: left
-        li
-            border-right: rgba(255,255,255,0.3) 1px solid
 
     // Reset the mobile styling
     #about-me + .section-heading
