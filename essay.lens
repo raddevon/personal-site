@@ -1,5 +1,11 @@
 <koken:include file="includes/header.html" />
   <koken:load>
+    <h1>
+      {{ essay.title }}
+    </h1>
+    <div class="meta">
+    Posted {{ essay.published_on.timestamp date_format="F j\<\s\u\p\>S\<\/\s\u\p\>, Y" }} by {{ profile.name }}
+    </div>
   <koken:head>
     <meta name="description" content="{{ essay.excerpt }}" />
     <meta property="og:title" content="{{ essay.title strip_html="true" }}" />
@@ -16,12 +22,6 @@
   </koken:head>
       <article id="content">
         <div class="text">
-          <h1>
-            {{ essay.title }}
-          </h1>
-          <div class="meta">
-          Posted {{ essay.published_on.timestamp date_format="F j\<\s\u\p\>S\<\/\s\u\p\>, Y" }} by {{ profile.name }}
-          </div>
           {{ essay.content }}
         </div>
       </article>
