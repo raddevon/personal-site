@@ -1,4 +1,4 @@
-var scripts = ['js/jquery.animate-enhanced.min.js', 'jquery.easing.min.js', 'js/**/*.js', '!js/scripts.js'];
+var scripts = ['js/jquery.animate-enhanced.min.js', 'jquery.easing.min.js', 'js/**/*.js', '!js/project.js', 'js/project.js', '!js/scripts.js'];
 
 var exec = require('child_process').exec;
 process.on('SIGINT', function () {
@@ -17,7 +17,7 @@ module.exports = function (grunt) {
       options: {
         force: true
       },
-      all: scripts + ['!js/jquery-1.9.1.js', '!js/jquery.animate-enhanced.min.js', '!jquery.easing.min.js']
+      all: scripts + ['!js/jquery-1.9.1.js', '!js/jquery.animate-enhanced.min.js', '!jquery.easing.min.js', '!responsive-nav.min.js']
     },
 
     concat: {

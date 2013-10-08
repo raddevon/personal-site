@@ -21,16 +21,18 @@
 </koken:if>
         <nav class="static-navbar">
             <div class="nav-list-wrapper">
-                    <ul class="inside-links nav-list">
                         <koken:if data="location.here" equals="/">
-                            <li><a href="#projects-heading">Projects</a></li>
-                            <li><a href="#testimonials-heading">Testimonials</a></li>
-                            <li><a href="#contact">Contact</a></li>
+                            <ul class="inside-links nav-list">
+                                <li><a href="#projects-heading">Projects</a></li>
+                                <li><a href="#testimonials-heading">Testimonials</a></li>
+                                <li><a href="#contact">Contact</a></li>
+                            </ul>
                         <koken:else>
-                            <li><a href="/">raddevon.com</a></li>
+                            <ul class="home-link nav-list">
+                                <li><a href="{{ location.site_url }}">{{ site.title }}</a></li>
+                            </ul>
                         </koken:if>
-                    </ul>
-                <div id="main-nav">
+                <div id="main-nav" class="nav-collapse">
                     <koken:navigation />
                 </div>
             </div>

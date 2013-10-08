@@ -34,3 +34,6 @@ $('#social-links').find('a[href]').each(function(i, e) {
         }
     }
 });
+
+// Initialize responsive nav
+var nav = responsiveNav('.nav-collapse');

@@ -241,12 +241,11 @@ h2 a[href]
     li
         border-right: rgba(255,255,255,0.3) 1px solid
 .nav-list-wrapper
-    +clearfix
+    overflow: auto
     background: $very-darken
     li
         display: inline-block
         float: left
-        font-size: 14px
     a[href]
         display: block
         padding: 1em
@@ -580,36 +579,7 @@ h1, .h1
 /* Tablet */
 ////////////
 @media screen and (min-width: $tablet)
-    /* Navbar display and styling */
-    .static-navbar
-        top: 0.5em
-    #main-nav
-        width: auto
-        float: right
-        li
-            border-left: rgba(255,255,255,0.3) 1px solid
-            border-right: none
-    .nav-list-wrapper
-        a[href]
-            i
-                padding: 0
-                color: $near-white
-                vertical-align: middle
-            &:hover i
-                color: $near-black
-        // Up arrow's 'a' element needs less padding to keep the same overall height as the other navbar buttons
-        a[href="#"]
-            padding: 0.78em 0.78em
-    // Larger to-the-top icon
-    i[class=icon-up]
-        font-size: 1.7em
-    .inside-links
-        display: block
 
-    // Reset the mobile styling
-    #about-me + .section-heading
-        margin-top: 0
-    /* End navbar styling */
 
     header
         height: 7em
